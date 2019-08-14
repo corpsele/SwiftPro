@@ -21,6 +21,7 @@ import JJException
 import Eureka
 import SwiftMessages
 import Realm
+import Toast_Swift
 
 struct MainStatusView {
     static var statusView: UIView?;
