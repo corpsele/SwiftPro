@@ -54,6 +54,7 @@ target 'SwiftPro' do
     pod 'RxKeyboard'
     pod 'SQLite'
     pod 'R.swift'
+    pod 'SSZipArchive'
     
     # Swift 版本声明
     post_install do |installer|
