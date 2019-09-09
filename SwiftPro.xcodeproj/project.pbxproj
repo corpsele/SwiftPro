@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C14FE2223262B5900BBA8FC /* Pods_SwiftPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C14FE2123262B5900BBA8FC /* Pods_SwiftPro.framework */; };
+		5C14FE2323262B5900BBA8FC /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BC6FB622E16BA90051A79D /* libbz2.tbd */; };
+		5C14FE2423262B5900BBA8FC /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A17CD522DD63FD003C249D /* libiconv.tbd */; };
+		5C14FE2523262B5900BBA8FC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 64A17CD722DD63FD003C249D /* libz.tbd */; };
+		5C14FE3923262B5900BBA8FC /* libc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C14FE3423262B5900BBA8FC /* libc.tbd */; };
+		5C14FE3A23262B5900BBA8FC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C14FE3523262B5900BBA8FC /* XCTest.framework */; };
+		5C14FE3C23262B5900BBA8FC /* libobjc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C14FE3723262B5900BBA8FC /* libobjc.tbd */; };
+		5C14FE3E23262DC800BBA8FC /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64ECDE6D22E85A4F005ACB34 /* SQLite.framework */; };
+		5C14FE3F23262EAD00BBA8FC /* SwipeCellKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6413CC382303D13D007807D7 /* SwipeCellKit.framework */; };
+		5C14FE4023262EB300BBA8FC /* Sica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6413CC282303D12C007807D7 /* Sica.framework */; };
+		5C14FE4123262EB900BBA8FC /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642965B422F969CD00F35197 /* SideMenu.framework */; };
+		5C14FE4323262EC100BBA8FC /* SwiftMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C14FE4223262EC100BBA8FC /* SwiftMessages.framework */; };
 		6413CC392303D14C007807D7 /* SwipeCellKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6413CC382303D13D007807D7 /* SwipeCellKit.framework */; };
 		6413CC3A2303D14C007807D7 /* SwipeCellKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6413CC382303D13D007807D7 /* SwipeCellKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6413CC3D2303D14C007807D7 /* Sica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6413CC282303D12C007807D7 /* Sica.framework */; };
@@ -190,55 +202,6 @@
 			remoteGlobalIDString = 86AEDCE21D5D1DB70030232E;
 			remoteInfo = Demo;
 		};
-		64A8B1B822D88A6000897918 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 64A8B1AF22D88A6000897918 /* Sica.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D4A60FE320ABC9890079871A;
-			remoteInfo = "Sica-iOS";
-		};
-		64A8B1BA22D88A6000897918 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 64A8B1AF22D88A6000897918 /* Sica.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9D436C3F20E9E4DD00A1B938;
-			remoteInfo = "Sica-macOS";
-		};
-		64A8B1BC22D88A6000897918 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 64A8B1AF22D88A6000897918 /* Sica.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9D436C5120E9E71900A1B938;
-			remoteInfo = "Sica-tvOS";
-		};
-		64A8B1BE22D88A6000897918 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 64A8B1AF22D88A6000897918 /* Sica.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D4A60FEC20ABC9890079871A;
-			remoteInfo = "SicaTests-iOS";
-		};
-		64A8B1C022D88A6000897918 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 64A8B1AF22D88A6000897918 /* Sica.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9D436C5F20E9E8F200A1B938;
-			remoteInfo = "SicaTests-tvOS";
-		};
-		64A8B1C222D88A6000897918 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 64A8B1AF22D88A6000897918 /* Sica.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9D436C6D20E9EA1E00A1B938;
-			remoteInfo = "SicaTests-macOS";
-		};
-		64A8B1D622D88F4200897918 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 64A8B1D222D88F4200897918 /* SwipeCellKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3F234AC31E44A7A400E22A38;
-			remoteInfo = SwipeCellKit;
-		};
 		64DB5EBF22D732110067DD61 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 64DB5EA222D732110067DD61 /* Project object */;
@@ -322,6 +285,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5C14FE2123262B5900BBA8FC /* Pods_SwiftPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_SwiftPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C14FE3423262B5900BBA8FC /* libc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libc.tbd; path = usr/lib/libc.tbd; sourceTree = SDKROOT; };
+		5C14FE3523262B5900BBA8FC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5C14FE3623262B5900BBA8FC /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = DEVELOPER_DIR; };
+		5C14FE3723262B5900BBA8FC /* libobjc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libobjc.tbd; path = usr/lib/libobjc.tbd; sourceTree = SDKROOT; };
+		5C14FE3823262B5900BBA8FC /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
+		5C14FE4223262EC100BBA8FC /* SwiftMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6413CC1E2303D12B007807D7 /* Sica.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sica.xcodeproj; path = Sica/Sica.xcodeproj; sourceTree = "<group>"; };
 		6413CC332303D13D007807D7 /* SwipeCellKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwipeCellKit.xcodeproj; path = SwipeCellKit/SwipeCellKit.xcodeproj; sourceTree = "<group>"; };
 		6426830522FD1F4E00029E30 /* SwiftMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -504,8 +474,6 @@
 		64A8B1A822D8589100897918 /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
 		64A8B1AA22D858B100897918 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		64A8B1AC22D858C300897918 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
-		64A8B1AF22D88A6000897918 /* Sica.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sica.xcodeproj; path = "Carthage/Checkouts/Sica-master/Sica.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		64A8B1D222D88F4200897918 /* SwipeCellKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwipeCellKit.xcodeproj; path = "Carthage/Checkouts/SwipeCellKit-develop/SwipeCellKit.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		64BA466522FBF627005D8E8A /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 		64BC6C8722E065BE0051A79D /* KxMovieViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMovieViewController.m; sourceTree = "<group>"; };
 		64BC6C8822E065BE0051A79D /* KxMovieDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMovieDecoder.h; sourceTree = "<group>"; };
@@ -613,6 +581,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C14FE4323262EC100BBA8FC /* SwiftMessages.framework in Frameworks */,
+				5C14FE4123262EB900BBA8FC /* SideMenu.framework in Frameworks */,
+				5C14FE4023262EB300BBA8FC /* Sica.framework in Frameworks */,
+				5C14FE3F23262EAD00BBA8FC /* SwipeCellKit.framework in Frameworks */,
+				5C14FE3E23262DC800BBA8FC /* SQLite.framework in Frameworks */,
+				5C14FE3923262B5900BBA8FC /* libc.tbd in Frameworks */,
+				5C14FE3A23262B5900BBA8FC /* XCTest.framework in Frameworks */,
+				5C14FE3C23262B5900BBA8FC /* libobjc.tbd in Frameworks */,
+				5C14FE2223262B5900BBA8FC /* Pods_SwiftPro.framework in Frameworks */,
+				5C14FE2323262B5900BBA8FC /* libbz2.tbd in Frameworks */,
+				5C14FE2423262B5900BBA8FC /* libiconv.tbd in Frameworks */,
+				5C14FE2523262B5900BBA8FC /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,38 +969,15 @@
 		64A8B1AE22D88A2700897918 /* Sica */ = {
 			isa = PBXGroup;
 			children = (
-				64A8B1AF22D88A6000897918 /* Sica.xcodeproj */,
 			);
 			path = Sica;
-			sourceTree = "<group>";
-		};
-		64A8B1B022D88A6000897918 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				64A8B1B922D88A6000897918 /* Sica.framework */,
-				64A8B1BB22D88A6000897918 /* Sica.framework */,
-				64A8B1BD22D88A6000897918 /* Sica.framework */,
-				64A8B1BF22D88A6000897918 /* SicaTests.xctest */,
-				64A8B1C122D88A6000897918 /* SicaTests.xctest */,
-				64A8B1C322D88A6000897918 /* SicaTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		64A8B1CC22D88F1200897918 /* SwipeCellKit */ = {
 			isa = PBXGroup;
 			children = (
-				64A8B1D222D88F4200897918 /* SwipeCellKit.xcodeproj */,
 			);
 			path = SwipeCellKit;
-			sourceTree = "<group>";
-		};
-		64A8B1D322D88F4200897918 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				64A8B1D722D88F4200897918 /* SwipeCellKit.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		64BA465622FBF60A005D8E8A /* Cache */ = {
@@ -1234,6 +1191,13 @@
 		6EDD233904CF2427747B23E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5C14FE4223262EC100BBA8FC /* SwiftMessages.framework */,
+				5C14FE3623262B5900BBA8FC /* InterfaceBuilderKit.framework */,
+				5C14FE3423262B5900BBA8FC /* libc.tbd */,
+				5C14FE3723262B5900BBA8FC /* libobjc.tbd */,
+				5C14FE3823262B5900BBA8FC /* XcodeKit.framework */,
+				5C14FE3523262B5900BBA8FC /* XCTest.framework */,
+				5C14FE2123262B5900BBA8FC /* Pods_SwiftPro.framework */,
 				645A00BA22F8224000F3BC9B /* SwiftMessages.framework */,
 				64BC6FB622E16BA90051A79D /* libbz2.tbd */,
 				64BC6FAF22E16B310051A79D /* VideoToolbox.framework */,
@@ -1268,6 +1232,7 @@
 				64DB5EA822D732110067DD61 /* Resources */,
 				64A8B1C822D88A9800897918 /* Embed Frameworks */,
 				B7CEE9AB18EBD75E3BADF43F /* [CP] Embed Pods Frameworks */,
+				6449F5CD23069BA100EBADAE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1358,10 +1323,6 @@
 					ProjectRef = 645A00B322F8221600F3BC9B /* Demo.xcodeproj */;
 				},
 				{
-					ProductGroup = 64A8B1B022D88A6000897918 /* Products */;
-					ProjectRef = 64A8B1AF22D88A6000897918 /* Sica.xcodeproj */;
-				},
-				{
 					ProductGroup = 6413CC1F2303D12B007807D7 /* Products */;
 					ProjectRef = 6413CC1E2303D12B007807D7 /* Sica.xcodeproj */;
 				},
@@ -1376,10 +1337,6 @@
 				{
 					ProductGroup = 6413CC342303D13D007807D7 /* Products */;
 					ProjectRef = 6413CC332303D13D007807D7 /* SwipeCellKit.xcodeproj */;
-				},
-				{
-					ProductGroup = 64A8B1D322D88F4200897918 /* Products */;
-					ProjectRef = 64A8B1D222D88F4200897918 /* SwipeCellKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1462,55 +1419,6 @@
 			remoteRef = 645A00B822F8221600F3BC9B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		64A8B1B922D88A6000897918 /* Sica.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Sica.framework;
-			remoteRef = 64A8B1B822D88A6000897918 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		64A8B1BB22D88A6000897918 /* Sica.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Sica.framework;
-			remoteRef = 64A8B1BA22D88A6000897918 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		64A8B1BD22D88A6000897918 /* Sica.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Sica.framework;
-			remoteRef = 64A8B1BC22D88A6000897918 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		64A8B1BF22D88A6000897918 /* SicaTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SicaTests.xctest;
-			remoteRef = 64A8B1BE22D88A6000897918 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		64A8B1C122D88A6000897918 /* SicaTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SicaTests.xctest;
-			remoteRef = 64A8B1C022D88A6000897918 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		64A8B1C322D88A6000897918 /* SicaTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = SicaTests.xctest;
-			remoteRef = 64A8B1C222D88A6000897918 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		64A8B1D722D88F4200897918 /* SwipeCellKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SwipeCellKit.framework;
-			remoteRef = 64A8B1D622D88F4200897918 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		64ECDE6D22E85A4F005ACB34 /* SQLite.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -1591,6 +1499,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6449F5CD23069BA100EBADAE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		ADAEC8EBAD7CB4C2304CF8D9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

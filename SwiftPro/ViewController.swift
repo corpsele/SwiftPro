@@ -12,7 +12,7 @@ import Sica
 import SwipeCellKit
 import Alamofire
 import ZHRefresh
-import SQLite
+import SQLite.Swift
 //import ToastSwiftFramework
 import RealmSwift
 import Material
