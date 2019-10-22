@@ -292,6 +292,7 @@
 		5C14FE3723262B5900BBA8FC /* libobjc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libobjc.tbd; path = usr/lib/libobjc.tbd; sourceTree = SDKROOT; };
 		5C14FE3823262B5900BBA8FC /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
 		5C14FE4223262EC100BBA8FC /* SwiftMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C1BA646235E9677007829A7 /* SwiftPro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftPro.entitlements; sourceTree = "<group>"; };
 		6413CC1E2303D12B007807D7 /* Sica.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sica.xcodeproj; path = Sica/Sica.xcodeproj; sourceTree = "<group>"; };
 		6413CC332303D13D007807D7 /* SwipeCellKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwipeCellKit.xcodeproj; path = SwipeCellKit/SwipeCellKit.xcodeproj; sourceTree = "<group>"; };
 		6426830522FD1F4E00029E30 /* SwiftMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1050,6 +1051,7 @@
 		64DB5EAC22D732110067DD61 /* SwiftPro */ = {
 			isa = PBXGroup;
 			children = (
+				5C1BA646235E9677007829A7 /* SwiftPro.entitlements */,
 				646EF8E52300F8460026868D /* SwipeCell */,
 				64BA465622FBF60A005D8E8A /* Cache */,
 				6429658822F95AC700F35197 /* SliderMenu */,
@@ -1817,6 +1819,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SwiftPro/SwiftPro.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1856,6 +1859,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = SwiftPro/SwiftPro.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (

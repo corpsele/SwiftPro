@@ -2,5 +2,8 @@
 R.generated.swift
 Third/FFmpeg-iOS/include/
 Third/FFmpeg-iOS/lib/
+id_rsa
+id_rsa.pub
+
 
 

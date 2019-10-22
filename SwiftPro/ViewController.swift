@@ -22,6 +22,11 @@ import Eureka
 import SwiftMessages
 import Realm
 import Toast_Swift
+import RxSwift
+import RxCocoa
+import AuthenticationServices
+import CoreServices
+import LocalAuthentication
 
 struct MainStatusView {
     static var statusView: UIView?;
@@ -40,15 +45,17 @@ struct CellDic {
 
 enum ViewControllerCellType {
     case VCCellTypeDisplay(UITableViewCell)
+    case VCCellTypeAuth(TableViewCell)
 }
 
 // MARK: - TableViewCell Identify
 struct TableViewCellIdentify {
      static let kkTableViewCell: String = "TableViewCell";
     static let kkTableViewCellCheck: String = "TableViewCheckCell";
+    static let kkTableViewCellAuth: String = "TableViewCheckCellAuth"
 }
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ASAuthorizationControllerDelegate, ASWebAuthenticationPresentationContextProviding {
     var arrayCell: [Any] = [Any](repeating: 0, count: 500);
     
     
@@ -79,7 +86,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }()
     
     fileprivate lazy var xMovieVC: KxMovieViewController? = {
-        let vc = KxMovieViewController.movieViewController(withContentPath: "http://he.yinyuetai.com/uploads/videos/common/34350147473EDF94089FEB46AB31CA49.flv", parameters: nil) as? KxMovieViewController;
+        let vc = KxMovieViewController.movieViewController(withContentPath: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", parameters: nil) as? KxMovieViewController;
         return vc;
     }()
         
@@ -102,6 +109,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         arrayCell[10] = type;
         arrayCell[15] = ViewControllerCellType.VCCellTypeDisplay(UITableViewCell())
         tableView.register(type.cellType, forCellReuseIdentifier: type.cellIdentify);
+        
+//        let authType = CellDic(cellIdentify: TableViewCellIdentify.kkTableViewCellAuth, cellType: TableViewCell.self);
+        arrayCell[20] = ViewControllerCellType.VCCellTypeAuth(TableViewCell());
 
         if #available(iOS 11.0, *) {
             // 作用于指定的UIScrollView
@@ -243,6 +253,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             case ViewControllerCellType.VCCellTypeDisplay(let cell):
                 cell.textLabel?.text = getTotalCacheSize()
                 return cell
+            case ViewControllerCellType.VCCellTypeAuth(let cell):
+                if #available(iOS 13.0, *) {
+                    let btnAuth = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .black);
+                    btnAuth.addTarget(self, action: #selector(btnAuthAction(sender:)), for: .touchUpInside);
+                    cell.addSubview(btnAuth);
+                    return cell;
+                }
+
             default:
                 print("no")
                 
@@ -287,11 +305,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         case 4:
             playWithVLCInLocal();
         case 5:
-            performSQLite();
+//            performSQLite();
+            break
         case 6:
-            writeColmn(id: indexPath.row, name: indexPath.row.string);
+//            writeColmn(id: indexPath.row, name: indexPath.row.string);
+            break
         case 7:
-            getColmn();
+//            getColmn();
+            break
         case 8:
             let vc = EurekaTestViewController(style: .plain);
             self.navigationController?.pushViewController(vc);
@@ -325,6 +346,47 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    @objc func btnAuthAction(sender: Any){
+        if #available(iOS 13.0, *) {
+            let appleIDProvider = ASAuthorizationAppleIDProvider.init();
+            
+             // 创建新的AppleID 授权请求
+            let appleIDRequest = appleIDProvider.createRequest();
+             
+             // 在用户授权期间请求的联系信息
+            appleIDRequest.requestedScopes = [ASAuthorization.Scope.fullName, ASAuthorization.Scope.email];
+             
+             // 由ASAuthorizationAppleIDProvider创建的授权请求 管理授权请求的控制器
+            let authorizationController = ASAuthorizationController.init(authorizationRequests: [appleIDRequest]);
+             
+             // 设置授权控制器通知授权请求的成功与失败的代理
+            authorizationController.delegate = self;
+             
+             // 设置提供 展示上下文的代理，在这个上下文中 系统可以展示授权界面给用户
+            authorizationController.presentationContextProvider = self as? ASAuthorizationControllerPresentationContextProviding;
+             
+             // 在控制器初始化期间启动授权流
+            authorizationController.performRequests();
+
+        }
+         
+
+    }
+    
+    func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
+        return self.view.window!;
+    }
+    
+    @available(iOS 13.0, *)
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        
+    }
+    
+    @available(iOS 13.0, *)
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        
+    }
+    
     fileprivate func getTotalCacheSize() -> String{
         let p1 = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).last!
         let d1 = CacheManager.getCacheSize(path: p1)
@@ -356,74 +418,74 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     }
     
-    fileprivate func performSQLite(){
-        do {
-
-            let dataPath = getDBFilePath()[0];
-             let tmp = getDBFilePath()[1];
-            let manager = FileManager.default;
-           
-            if manager.fileExists(atPath: tmp) == false{
-                
-                try manager.createDirectory(atPath: dataPath, withIntermediateDirectories: true, attributes: nil);
-                manager.createFile(atPath: tmp, contents: nil, attributes: nil);
-            }
-            let db = try Connection(tmp);
-            let table = Table("MyTable");
-            let id = Expression<Int64>("id")
-            let name = Expression<String?>("name")
-            try db.run(table.create(block: { (tb) in
-                tb.column(id, primaryKey: true);
-                tb.column(name);
-            }));
-        } catch let err as NSError {
-            print(err.localizedDescription);
-            if err.code == 14 {
-                view.makeToast("无法保存文件");
-            }
-            else if err.code == 0 {
-                view.makeToast("数据库已被创建");
-            }
-        }
-        
-        
-//        let strCreate = "create table MySQL ( id int primary key, name text );"
-//        sqlite.execute(query: strCreate);
-    }
+//    fileprivate func performSQLite(){
+//        do {
+//
+//            let dataPath = getDBFilePath()[0];
+//             let tmp = getDBFilePath()[1];
+//            let manager = FileManager.default;
+//
+//            if manager.fileExists(atPath: tmp) == false{
+//
+//                try manager.createDirectory(atPath: dataPath, withIntermediateDirectories: true, attributes: nil);
+//                manager.createFile(atPath: tmp, contents: nil, attributes: nil);
+//            }
+//            let db = try RxSwift.Connection(tmp);
+//            let table = Table("MyTable");
+//            let id = Expression<Int64>("id")
+//            let name = Expression<String?>("name")
+//            try db.run(table.create(block: { (tb) in
+//                tb.column(id, primaryKey: true);
+//                tb.column(name);
+//            }));
+//        } catch let err as NSError {
+//            print(err.localizedDescription);
+//            if err.code == 14 {
+//                view.makeToast("无法保存文件");
+//            }
+//            else if err.code == 0 {
+//                view.makeToast("数据库已被创建");
+//            }
+//        }
+//
+//
+////        let strCreate = "create table MySQL ( id int primary key, name text );"
+////        sqlite.execute(query: strCreate);
+//    }
     
-    fileprivate func writeColmn(id: Int, name: String) {
-        do {
-            let db = try Connection(getDBFilePath()[1]);
-            let table = Table("MyTable");
-            let id1 = Expression<Int64>("id")
-            let name1 = Expression<String?>("name")
-            let insert = table.insert(id1 <- Int64(id), name1 <- name);
-            let rowid = try db.run(insert);
-            print(rowid);
-        } catch let err as NSError {
-            print(err.localizedDescription);
-            view.makeToast("插入数据失败");
-        }
-    }
-    
-    fileprivate func getColmn(){
-        do {
-            let db = try Connection(getDBFilePath()[1]);
-            let table = Table("MyTable");
-            let id1 = Expression<Int64>("id");
-            let name1 = Expression<String?>("name");
-//            let select = table.select(id1, name1);
-            for t in try db.prepare(table) {
-                print("id: \(t[id1]), name: \(t[name1]!)")
-                // id: 1, name: Optional("Alice"), email: alice@mac.com
-            }
-            
-        } catch let err as NSError {
-            print(err.localizedDescription);
-        }
-
-        
-    }
+//    fileprivate func writeColmn(id: Int, name: String) {
+//        do {
+//            let db = try Connection(getDBFilePath()[1]);
+//            let table = Table("MyTable");
+//            let id1 = Expression<Int64>("id")
+//            let name1 = Expression<String?>("name")
+//            let insert = table.insert(id1 <- Int64(id), name1 <- name);
+//            let rowid = try db.run(insert);
+//            print(rowid);
+//        } catch let err as NSError {
+//            print(err.localizedDescription);
+//            view.makeToast("插入数据失败");
+//        }
+//    }
+//
+//    fileprivate func getColmn(){
+//        do {
+//            let db = try Connection(getDBFilePath()[1]);
+//            let table = Table("MyTable");
+//            let id1 = Expression<Int64>("id");
+//            let name1 = Expression<String?>("name");
+////            let select = table.select(id1, name1);
+//            for t in try db.prepare(table) {
+//                print("id: \(t[id1]), name: \(t[name1]!)")
+//                // id: 1, name: Optional("Alice"), email: alice@mac.com
+//            }
+//
+//        } catch let err as NSError {
+//            print(err.localizedDescription);
+//        }
+//
+//
+//    }
     
     fileprivate func getDBFilePath() -> [String] {
         let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
@@ -471,14 +533,41 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
+    fileprivate func showVideoChoose(){
+        let view = UIView()
+        view.snp.makeConstraints { (make) in
+            make.left.equalToSuperview()
+            make.top.equalTo(self.view.snp.bottom)
+            make.width.equalToSuperview();
+            make.height.equalTo(200.0)
+        }
+        self.view.addSubview(view)
+        
+        
+        let tableView = UITableView()
+        
+        tableView.rx.itemSelected.subscribe({(indexPath) in
+            
+        })
+        tableView.separatorStyle = .none
+        tableView.snp.makeConstraints { (make) in
+            make.left.right.top.bottom.equalToSuperview()
+        }
+        view.addSubview(tableView)
+        
+    }
+    
+    
+    
 
     
     fileprivate func playWithKXMovie(){
         DispatchQueue.main.async {
             MainStatusView.statusView?.isHidden = true;
             MainStatusView.statusWindow?.isHidden = true;
-            self.present(self.xMovieVC ?? UIViewController(), animated: true, completion: nil);
-//            self.navigationController?.pushViewController(self.xMovieVC ?? UIViewController(), animated: true);
+//            self.present(self.xMovieVC ?? UIViewController(), animated: true, completion: nil);
+            
+            self.navigationController?.pushViewController(self.xMovieVC ?? UIViewController(), animated: true);
         }
     }
     
