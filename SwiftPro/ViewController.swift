@@ -46,6 +46,7 @@ struct CellDic {
 enum ViewControllerCellType {
     case VCCellTypeDisplay(UITableViewCell)
     case VCCellTypeAuth(TableViewCell)
+    case VCCellTypeCForm(TableViewCell)
 }
 
 // MARK: - TableViewCell Identify
