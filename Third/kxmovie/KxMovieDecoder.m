@@ -765,6 +765,56 @@ static int interrupt_callback(void *ctx);
     return YES;
 }
 
+- (BOOL) openFile: (NSString *) path
+            error: (NSError **) perror withParam:(NSDictionary *)dic
+{
+    NSAssert(path, @"nil path");
+    NSAssert(!_formatCtx, @"already open");
+    
+    _isNetwork = isNetworkPath(path);
+    
+    static BOOL needNetworkInit = YES;
+    if (needNetworkInit && _isNetwork) {
+        
+        needNetworkInit = NO;
+        avformat_network_init();
+    }
+    
+    _path = path;
+    
+    kxMovieError errCode = [self openInput:path withParam:dic];
+    
+    if (errCode == kxMovieErrorNone) {
+        
+        kxMovieError videoErr = [self openVideoStream];
+        kxMovieError audioErr = [self openAudioStream];
+        
+        _subtitleStream = -1;
+        
+        if (videoErr != kxMovieErrorNone &&
+            audioErr != kxMovieErrorNone) {
+         
+            errCode = videoErr; // both fails
+            
+        } else {
+            
+            _subtitleStreams = collectStreams(_formatCtx, AVMEDIA_TYPE_SUBTITLE);
+        }
+    }
+    
+    if (errCode != kxMovieErrorNone) {
+        
+        [self closeFile];
+        NSString *errMsg = errorMessage(errCode);
+        LoggerStream(0, @"%@, %@", errMsg, path.lastPathComponent);
+        if (perror)
+            *perror = kxmovieError(errCode, errMsg);
+        return NO;
+    }
+        
+    return YES;
+}
+
 - (kxMovieError) openInput: (NSString *) path
 {
     AVFormatContext *formatCtx = NULL;
@@ -780,6 +830,69 @@ static int interrupt_callback(void *ctx);
     }
     
     if (avformat_open_input(&formatCtx, [path cStringUsingEncoding: NSUTF8StringEncoding], NULL, NULL) < 0) {
+        
+        if (formatCtx)
+            avformat_free_context(formatCtx);
+        return kxMovieErrorOpenFile;
+    }
+    
+    if (avformat_find_stream_info(formatCtx, NULL) < 0) {
+        
+        avformat_close_input(&formatCtx);
+        return kxMovieErrorStreamInfoNotFound;
+    }
+
+    av_dump_format(formatCtx, 0, [path.lastPathComponent cStringUsingEncoding: NSUTF8StringEncoding], false);
+    
+    _formatCtx = formatCtx;
+    return kxMovieErrorNone;
+}
+
+- (AVDictionary*) createAVFormatContextOptions: (NSDictionary*)dict
+{
+    AVDictionary *options = NULL;
+    for (NSString* keyString in dict) {
+        av_dict_set(&options, [keyString UTF8String], [[dict objectForKey:keyString] UTF8String], 0);
+    }
+    
+    return options;
+}
+
+- (kxMovieError) openInput: (NSString *) path withParam:(NSDictionary *)dic
+{
+    AVFormatContext *formatCtx = NULL;
+    
+    if (_interruptCallback) {
+        
+        formatCtx = avformat_alloc_context();
+        if (!formatCtx)
+            return kxMovieErrorOpenFile;
+        
+        AVIOInterruptCB cb = {interrupt_callback, (__bridge void *)(self)};
+        formatCtx->interrupt_callback = cb;
+    }
+    
+    
+//    NSMutableString* cookieString = [NSMutableString stringWithString:@"Cookie: "];
+//    for (NSHTTPCookie* cookie in [NSHTTPCookieStorage sharedHTTPCookieStorage].cookies) {
+//        [cookieString appendFormat:@"%@=%@;", cookie.name, cookie.value];
+//    }
+//    [cookieString appendString:@"\n"];
+    AVDictionary* options = nil;
+    
+    if (dic != nil ) {
+        NSMutableString *cookieString = [NSMutableString string];
+            [cookieString appendFormat:@"%@=%@", @"token", dic[@"token"]];
+        //    [cookieString appendString:@"\n"];
+            NSDictionary* dict = [NSDictionary dictionaryWithObject:cookieString forKey: @"headers"];
+        options = [self createAVFormatContextOptions:dict];
+    }
+    
+    
+    
+    
+    
+    if (avformat_open_input(&formatCtx, [path cStringUsingEncoding: NSUTF8StringEncoding], NULL, options == nil ? NULL : &options) < 0) {
         
         if (formatCtx)
             avformat_free_context(formatCtx);

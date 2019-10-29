@@ -362,11 +362,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self?.playWithKXMovie(movieVC: vc)
         }
         let action2 = UIAlertAction(title: "sv_flv", style: .default) { [weak self] _ in
-            let vc = KxMovieViewController.movieViewController(withContentPath: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4", parameters: nil) as! KxMovieViewController
+            let vc = KxMovieViewController.movieViewController(withContentPath: "https://sample-videos.com/video123/flv/720/big_buck_bunny_720p_30mb.flv", parameters: nil) as! KxMovieViewController
             self?.playWithKXMovie(movieVC: vc)
         }
+        let action3 = UIAlertAction(title: "sv_mkv", style: .default) { [weak self] _ in
+            let vc = KxMovieViewController.movieViewController(withContentPath: "https://sample-videos.com/video123/mkv/720/big_buck_bunny_720p_30mb.mkv", parameters: nil) as! KxMovieViewController
+            self?.playWithKXMovie(movieVC: vc)
+        }
+        let action4 = UIAlertAction(title: "test_avi", style: .default) { [weak self] _ in
+            let vc = KxMovieViewController.movieViewController(withContentPath: "http://43.248.49.206/hgmeap-pluginserver-hgmeapDMZVideo/hgmeapAssist/video/avi.avi?token=1ZUWlS11Av7HIn41gsI9rZj7Q2YA3123gNXlujrIwLiTmKF4Sj", parameters: nil) as! KxMovieViewController
+            self?.playWithKXMovie(movieVC: vc)
+        }
+//        http://43.248.49.206:80/hgmeap-pluginserver-hgmeapDMZVideo/hgmeapAssist/video/avi.avi?token=9fjeVM641qXWs9YCPZ1h1h6wBM9DLol18bRDro5NR7FL1pXX9S
         sheetAlert.addAction(action1)
         sheetAlert.addAction(action2)
+        sheetAlert.addAction(action3)
+        sheetAlert.addAction(action4)
         sheetAlert.addAction(title: "取消", style: .cancel, isEnabled: true) { _ in
         }
 

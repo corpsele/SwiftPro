@@ -156,6 +156,11 @@ static NSMutableDictionary * gHistory;
     CGRect newTopBarFrame;
     CGRect newTopHudFrame;
     CGRect newBottomBarFrame;
+    
+    CGFloat oldTopBarY;
+    CGFloat oldBottomBarY;
+    CGFloat newTopBarY;
+    CGFloat newBottomBarY;
 }
 
 @property (readwrite) BOOL playing;
@@ -207,7 +212,7 @@ static NSMutableDictionary * gHistory;
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
     
             NSError *error = nil;
-            [decoder openFile:path error:&error];
+            [decoder openFile:path error:&error withParam:parameters];
                         
             __strong KxMovieViewController *strongSelf = weakSelf;
             if (strongSelf) {
@@ -248,6 +253,10 @@ static NSMutableDictionary * gHistory;
 
 - (void)loadView
 {
+    oldTopBarY = -1.0;
+    oldBottomBarY = -1.0;
+    newTopBarY = -1.0;
+    newBottomBarY = -1.0;
     // LoggerStream(1, @"loadView");
     CGRect bounds = [[UIScreen mainScreen] applicationFrame];
 //    if (isIphoneX) {
@@ -399,13 +408,20 @@ _messageLabel.hidden = YES;
 //    if (UIDevice.currentDevice.systemVersion.floatValue <= 11.0f) {
 //        viewTemp.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
 //    }
+    viewTemp.userInteractionEnabled = true;
     
        btnFull = [UIButton buttonWithType:UIButtonTypeSystem];
+//    btnFull.userInteractionEnabled = true;
+    
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 13.f) {
         btnFull.frame = CGRectMake(0.0, 40.0, 50.0, 50.0);
     }else{
-        btnFull.frame = CGRectMake(-30.0, -15.0, 50.0, 50.0);
+//        viewTemp.frame = CGRectMake(-50.0, -25.0, 60.0, 90.0);
+        btnFull.frame = CGRectMake(0.0, 0.0, 50.0, 50.0);
+        
+//        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(fullScreenEvent:)];
+//        [viewTemp addGestureRecognizer:tap];
     }
 
 //    btnFull.imageEdgeInsets = UIEdgeInsetsMake(30.0, 0.0, 30.0, 0.0);
@@ -427,8 +443,13 @@ _messageLabel.hidden = YES;
     #endif
     [btnFull addTarget:self action:@selector(fullScreenEvent:) forControlEvents:UIControlEventTouchUpInside];
     [btnFull setImage:[UIImage imageNamed:@"player_fullscreen"] forState:UIControlStateNormal];
-    [viewTemp addSubview:btnFull];
-    _btnFullScreen = [[UIBarButtonItem alloc] initWithCustomView:viewTemp];
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 13.f) {
+       [viewTemp addSubview:btnFull];
+       _btnFullScreen = [[UIBarButtonItem alloc] initWithCustomView:viewTemp];
+    }else{
+       _btnFullScreen = [[UIBarButtonItem alloc] initWithCustomView:btnFull];
+    }
+    
     
 
     [self updateBottomBar];
@@ -582,7 +603,8 @@ _messageLabel.hidden = YES;
 }
 
 - (void) viewWillDisappear:(BOOL)animated
-{    
+{
+    [self restoreScreenMode];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     
     [super viewWillDisappear:animated];
@@ -771,8 +793,19 @@ _messageLabel.hidden = YES;
     [self.navigationController.view setNeedsLayout];
     [self.navigationController.view setNeedsDisplay];
     
+    
     _topBar.frame = newTopBarFrame;
     _bottomBar.frame = newBottomBarFrame;
+    
+    if ([UIDevice currentDevice].systemVersion.floatValue < 13.0f) {
+        if (newBottomBarY == -1.0) {
+            
+             newBottomBarFrame.origin.y = newBottomBarFrame.origin.y - 30.0;
+            newBottomBarY = newBottomBarFrame.origin.y;
+            _bottomBar.frame = newBottomBarFrame;
+        }
+
+    }
     
     _topHUD.frame = newTopHudFrame;
 }
@@ -782,13 +815,26 @@ _messageLabel.hidden = YES;
     self.navigationController.view.frame = CGRectMake(0.0, 0.0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     
     CGRect restoreTopBarFrame = _topBar.frame;
-    restoreTopBarFrame.origin.y = restoreTopBarFrame.origin.y + 30;
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 13.0f) {
+//        if (oldTopBarY == -1.0) {
+           restoreTopBarFrame.origin.y = restoreTopBarFrame.origin.y + 30;
+            oldTopBarY = restoreTopBarFrame.origin.y;
+//        }
+        
+    }
+    
     _topBar.frame = restoreTopBarFrame;
     _topHUD.frame = restoreTopBarFrame;
     
     
     CGRect restoreBottomBarFrame = _bottomBar.frame;
-    restoreBottomBarFrame.origin.y = restoreBottomBarFrame.origin.y - 30;
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 13.0f) {
+//        if (oldBottomBarY == -1.0) {
+           restoreBottomBarFrame.origin.y = restoreBottomBarFrame.origin.y - 30;
+            oldBottomBarY = restoreBottomBarFrame.origin.y;
+//        }
+    
+    }
     _bottomBar.frame = restoreBottomBarFrame;
     
 //    _topBar.frame = oldTopBarFrame;
@@ -887,6 +933,7 @@ _messageLabel.hidden = YES;
                 
         // allow to tweak some parameters at runtime
         if (_parameters.count) {
+            
             
             id val;
             

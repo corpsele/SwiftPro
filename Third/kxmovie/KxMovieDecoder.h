@@ -115,6 +115,9 @@ typedef BOOL(^KxMovieDecoderInterruptCallback)(void);
 - (BOOL) openFile: (NSString *) path
             error: (NSError **) perror;
 
+- (BOOL) openFile: (NSString *) path
+            error: (NSError **) perror withParam:(NSDictionary *)dic;
+
 -(void) closeFile;
 
 - (BOOL) setupVideoFrameFormat: (KxVideoFrameFormat) format;
