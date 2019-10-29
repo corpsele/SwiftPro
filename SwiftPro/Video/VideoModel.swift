@@ -6,31 +6,29 @@
 //  Copyright © 2019 eport. All rights reserved.
 //
 
-import UIKit
 import ObjectMapper
+import UIKit
 
-class VideoModel: NSObject, Mappable{
+class VideoModel: NSObject, Mappable {
     var urlPath: String?
     var url: URL?
     static let shared = VideoModel()
     fileprivate override init() {
-        super.init();
+        super.init()
     }
+
     required init?(map: Map) {
-        urlPath <- map["urlPath"];
-        url = URL(string: urlPath ?? "");
+        urlPath <- map["urlPath"]
+        url = URL(string: urlPath ?? "")
     }
-    
+
     func mapping(map: Map) {
-        urlPath <- map["urlPath"];
-    }
-    
-    static func getModel(_ dic: Dictionary<String, Any>) -> VideoModel {
-        shared.urlPath = dic["urlPath"] as? String ?? "";
-        shared.url = URL(string: shared.urlPath ?? "");
-        return shared;
+        urlPath <- map["urlPath"]
     }
 
-    
-
+    static func getModel(_ dic: [String: Any]) -> VideoModel {
+        shared.urlPath = dic["urlPath"] as? String ?? ""
+        shared.url = URL(string: shared.urlPath ?? "")
+        return shared
+    }
 }

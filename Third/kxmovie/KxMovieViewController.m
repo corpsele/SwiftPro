@@ -142,6 +142,20 @@ static NSMutableDictionary * gHistory;
     BOOL                _savedIdleTimer;
     
     NSDictionary        *_parameters;
+    
+    UIButton *btnFull;
+    
+    UIWindow *windowPlayer;
+    
+    UIView *viewPlayer;
+    
+    CGRect oldTopBarFrame;
+    CGRect oldTopHudFrame;
+    CGRect oldBottomBarFrame;
+    
+    CGRect newTopBarFrame;
+    CGRect newTopHudFrame;
+    CGRect newBottomBarFrame;
 }
 
 @property (readwrite) BOOL playing;
@@ -223,6 +237,14 @@ static NSMutableDictionary * gHistory;
     LoggerStream(1, @"%@ dealloc", self);
 }
 
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationPortrait | UIInterfaceOrientationLandscapeRight;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    return UIInterfaceOrientationLandscapeRight;
+}
+
 
 - (void)loadView
 {
@@ -269,7 +291,7 @@ _messageLabel.hidden = YES;
     
     if (iphoneX) {
         y = kStatusBarHeight;
-        heightY = height-botH-38.0;
+        heightY = height-botH-38.0-30.0;
         heightheight = botH + 38.0;
     }
 
@@ -338,7 +360,7 @@ _messageLabel.hidden = YES;
     [_topHUD addSubview:_progressLabel];
     [_topHUD addSubview:_progressSlider];
     [_topHUD addSubview:_leftLabel];
-    [_topHUD addSubview:_infoButton];
+//    [_topHUD addSubview:_infoButton];
 
     // bottom hud
 
@@ -369,11 +391,49 @@ _messageLabel.hidden = YES;
                                                                  target:self
                                                                  action:@selector(forwardDidTouch:)];
     
-    _btnFullScreen = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward
-                                                                   target:self
-                                                                   action:@selector(fullScreenEvent:)];
+//    _btnFullScreen = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+//                                                                   target:self
+//                                                                   action:@selector(fullScreenEvent:)];
+//    _btnFullScreen = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"player_fullscreen"] style:UIBarButtonItemStyleDone target:self action:@selector(fullScreenEvent:)];
+    UIView *viewTemp = [[UIView alloc] initWithFrame:CGRectMake(30.0, 0.0, 60.0, 90.0)];
+//    if (UIDevice.currentDevice.systemVersion.floatValue <= 11.0f) {
+//        viewTemp.frame = CGRectMake(0.0, 0.0, 30.0, 30.0);
+//    }
+    
+       btnFull = [UIButton buttonWithType:UIButtonTypeSystem];
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 13.f) {
+        btnFull.frame = CGRectMake(0.0, 40.0, 50.0, 50.0);
+    }else{
+        btnFull.frame = CGRectMake(-30.0, -15.0, 50.0, 50.0);
+    }
+
+//    btnFull.imageEdgeInsets = UIEdgeInsetsMake(30.0, 0.0, 30.0, 0.0);
+//    btnFull.contentEdgeInsets = UIEdgeInsetsMake(10.0, 0.0, 0.0, 0.0);
+//    btnFull.titleEdgeInsets = UIEdgeInsetsMake(10.0, 0.0, 0.0, 0.0);
+    #ifdef __IPHONE_9_0
+        if ([btnFull respondsToSelector:@selector(widthAnchor)]) {
+//            if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 13.f) {
+                [btnFull.widthAnchor constraintEqualToConstant:50].active = YES;
+//            }
+            
+        }
+        if ([btnFull respondsToSelector:@selector(heightAnchor)]) {
+//            if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 13.f) {
+                [btnFull.heightAnchor constraintEqualToConstant:50].active = YES;
+//            }
+            
+        }
+    #endif
+    [btnFull addTarget:self action:@selector(fullScreenEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [btnFull setImage:[UIImage imageNamed:@"player_fullscreen"] forState:UIControlStateNormal];
+    [viewTemp addSubview:btnFull];
+    _btnFullScreen = [[UIBarButtonItem alloc] initWithCustomView:viewTemp];
+    
 
     [self updateBottomBar];
+    
+    _infoButton.hidden = YES;
 
     if (_decoder) {
         
@@ -386,8 +446,19 @@ _messageLabel.hidden = YES;
         _leftLabel.hidden = YES;
         _infoButton.hidden = YES;
     }
+    
+    viewPlayer = self.view;
+    
+    [self initWindowPlayer];
 }
 
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    if ([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeRight) {
+        NSLog(@"横屏");
+    }else{
+        NSLog(@"竖屏");
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -443,7 +514,7 @@ _messageLabel.hidden = YES;
             statusBarHeight = 44.0;
         }
         y = statusBarHeight;
-        heightY = height-botH-38.0;
+        heightY = height-botH-38.0 - 30.0;
         heightheight = botH + 38.0;
     }
     
@@ -452,11 +523,21 @@ _messageLabel.hidden = YES;
     
     _topHUD.frame = CGRectMake(0,y,width,_topBar.frame.size.height);
     
+    oldTopBarFrame = CGRectMake(0, y, width, topH);
+    oldTopHudFrame = CGRectMake(0,y,width,topH);
+    oldBottomBarFrame = CGRectMake(0,heightY,width,heightheight);
+    
+    newTopBarFrame = CGRectMake(0, 0, width, topH);
+    newBottomBarFrame = CGRectMake(0, heightY + 30, width, heightheight);
+    newTopHudFrame = CGRectMake(0,0,width,topH);
+    
 }
 
 - (BOOL)shouldAutorotate {
     return true;
 }
+
+
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -531,10 +612,10 @@ _messageLabel.hidden = YES;
     LoggerStream(1, @"viewWillDisappear %@", self);
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+//{
+//    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+//}
 
 - (void) applicationWillResignActive: (NSNotification *)notification
 {
@@ -684,7 +765,83 @@ _messageLabel.hidden = YES;
     [self setMoviePosition: _moviePosition - 10];
 }
 
+- (void)toFullScreenMode{
+    self.navigationController.view.transform = CGAffineTransformMakeRotation(M_PI_2);
+    self.navigationController.view.frame = CGRectMake(0.0, 0.0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    [self.navigationController.view setNeedsLayout];
+    [self.navigationController.view setNeedsDisplay];
+    
+    _topBar.frame = newTopBarFrame;
+    _bottomBar.frame = newBottomBarFrame;
+    
+    _topHUD.frame = newTopHudFrame;
+}
+
+- (void)restoreScreenMode{
+    self.navigationController.view.transform = CGAffineTransformMakeRotation(0.0);
+    self.navigationController.view.frame = CGRectMake(0.0, 0.0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+    
+    CGRect restoreTopBarFrame = _topBar.frame;
+    restoreTopBarFrame.origin.y = restoreTopBarFrame.origin.y + 30;
+    _topBar.frame = restoreTopBarFrame;
+    _topHUD.frame = restoreTopBarFrame;
+    
+    
+    CGRect restoreBottomBarFrame = _bottomBar.frame;
+    restoreBottomBarFrame.origin.y = restoreBottomBarFrame.origin.y - 30;
+    _bottomBar.frame = restoreBottomBarFrame;
+    
+//    _topBar.frame = oldTopBarFrame;
+//    _bottomBar.frame = oldBottomBarFrame;
+//
+//    _topHUD.frame = oldTopHudFrame;
+    
+//    [self.navigationController.view setNeedsLayout];
+//    [self.navigationController.view setNeedsDisplay];
+    
+}
+
 - (void) fullScreenEvent:(id)sender{
+        _fullscreen = !_fullscreen;
+//    [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationLandscapeRight;
+    
+    if (_fullscreen) {
+        [self toFullScreenMode];
+        
+    }else{
+        [self restoreScreenMode];
+    }
+    
+    
+    
+//    return;
+//
+//    [windowPlayer makeKeyAndVisible];
+//    [[UIApplication sharedApplication].keyWindow makeKeyAndVisible];
+//
+//    [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationLandscapeRight;
+//    windowPlayer.transform = CGAffineTransformMakeRotation(M_PI_2);
+//    windowPlayer.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.height, [UIScreen mainScreen].bounds.size.width);
+//
+//    _fullscreen = !_fullscreen;
+//    //强制旋转成竖屏
+//    NSNumber *value1 = [NSNumber numberWithInt:UIDeviceOrientationUnknown];
+//    [[UIDevice currentDevice]setValue:value1 forKey:@"orientation"];
+//        NSNumber *value = [NSNumber numberWithInt:UIDeviceOrientationLandscapeRight];
+//       [[UIDevice currentDevice]setValue:value forKey:@"orientation"];
+//       [UIViewController attemptRotationToDeviceOrientation];
+
+    
+//    [self fullscreenMode:_fullscreen];
+}
+
+- (void)initWindowPlayer{
+    [self.view removeFromSuperview];
+    windowPlayer = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    windowPlayer.windowLevel = UIWindowLevelStatusBar + 1000;
+    [windowPlayer addSubview:self.view];
+    [[UIApplication sharedApplication].keyWindow addSubview:windowPlayer];
+    
     
 }
 
@@ -1360,8 +1517,9 @@ _messageLabel.hidden = YES;
 - (void) updateBottomBar
 {
     UIBarButtonItem *playPauseBtn = self.playing ? _pauseBtn : _playBtn;
+    
     [_bottomBar setItems:@[_spaceItem, _rewindBtn, _fixedSpaceItem, playPauseBtn,
-                           _fixedSpaceItem, _fforwardBtn, _spaceItem] animated:NO];
+                           _fixedSpaceItem, _fforwardBtn, _spaceItem, _btnFullScreen] animated:NO];
 }
 
 - (void) updatePlayButton

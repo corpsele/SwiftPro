@@ -6,8 +6,8 @@
 //  Copyright © 2019 eport. All rights reserved.
 //
 
-import UIKit
 import RealmSwift
+import UIKit
 
 class TestModel: Object {
     var id: Int64?

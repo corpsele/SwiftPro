@@ -6,23 +6,23 @@
 //  Copyright © 2019 eport. All rights reserved.
 //
 
-import UIKit
 import Alamofire
 import AlamofireImage
 import AlamofireObjectMapper
-import RxSwift
-import ReactiveSwift
-import ReactiveCocoa
-import Reachability
-import SwiftyJSON
-import SwifterSwift
-import SwiftHEXColors
-import Toast_Swift
 import CryptoSwift
-import SQLite
+import ObjectMapper
+import Reachability
+import ReactiveCocoa
+import ReactiveSwift
+import Realm
 import RxAlamofire
+import RxCocoa
+import RxSwift
 import SnapKit
 import Spring
-import ObjectMapper
-import RxCocoa
-import Realm
+import SQLite
+import SwifterSwift
+import SwiftHEXColors
+import SwiftyJSON
+import Toast_Swift
+import UIKit

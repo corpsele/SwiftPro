@@ -23,8 +23,7 @@ extension UIViewController: NavigationProtocol {
 }
 
 extension UINavigationController: UINavigationBarDelegate, UIGestureRecognizerDelegate {
-    
-    public func navigationBar(_ navigationBar: UINavigationBar, shouldPop item: UINavigationItem) -> Bool {
+    public func navigationBar(_ navigationBar: UINavigationBar, shouldPop _: UINavigationItem) -> Bool {
         if viewControllers.count < (navigationBar.items?.count)! {
             return true
         }
@@ -39,7 +38,7 @@ extension UINavigationController: UINavigationBarDelegate, UIGestureRecognizerDe
             }
         } else {
             for subview in navigationBar.subviews {
-                if 0.0 < subview.alpha && subview.alpha < 1.0 {
+                if subview.alpha > 0.0, subview.alpha < 1.0 {
                     UIView.animate(withDuration: 0.25) {
                         subview.alpha = 1.0
                     }
@@ -48,9 +47,9 @@ extension UINavigationController: UINavigationBarDelegate, UIGestureRecognizerDe
         }
         return false
     }
-    
-    public func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        if children.count == 1 {
+
+    public func gestureRecognizerShouldBegin(_: UIGestureRecognizer) -> Bool {
+        if childViewControllers.count == 1 {
             return false
         } else {
             if topViewController?.responds(to: #selector(navigationShouldPopMethod)) != nil {

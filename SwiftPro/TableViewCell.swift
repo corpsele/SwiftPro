@@ -6,11 +6,10 @@
 //  Copyright © 2019 eport. All rights reserved.
 //
 
-import UIKit
 import SwipeCellKit
+import UIKit
 
 class TableViewCell: SwipeTableViewCell {
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,5 +20,4 @@ class TableViewCell: SwipeTableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

@@ -13,8 +13,6 @@ class SliderMenuTestVC: BaseWithNaviVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
         SideMenuManager.default.leftMenuNavigationController = leftSideVC
 
         SideMenuManager.default.addPanGestureToPresent(toView: navigationController!.navigationBar)
@@ -28,7 +26,6 @@ class SliderMenuTestVC: BaseWithNaviVC {
             make.width.equalTo(150.0)
             make.height.equalTo(50.0)
         }
-        
     }
 
     lazy var leftSideVC: LeftSideVC = {
@@ -44,23 +41,19 @@ class SliderMenuTestVC: BaseWithNaviVC {
         return btn
     }()
 
-    @objc func btnShowLeftEvent(sender: UIButton) {
+    @objc func btnShowLeftEvent(sender _: UIButton) {
         present(leftSideVC, animated: true) {}
-        
     }
-    
-    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        
-    }
-    
+
+    func navigationController(_: UINavigationController, willShow _: UIViewController, animated _: Bool) {}
+
     override func cyl_pushOrPop(to viewController: UIViewController, animated: Bool, callback: @escaping CYLPushOrPopCallback) {
         super.cyl_pushOrPop(to: viewController, animated: animated, callback: callback)
     }
-    
+
     override func navigationShouldPopMethod() -> Bool {
 //        rx.observe(String.self, NSStringFromClass(self.superclass!))
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "popVC"), object: self.superclass, userInfo: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "popVC"), object: superclass, userInfo: nil)
         return true
     }
-
 }

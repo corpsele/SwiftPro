@@ -9,7 +9,6 @@
 import XCTest
 
 class SwiftProUITests: XCTestCase {
-
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
@@ -27,26 +26,26 @@ class SwiftProUITests: XCTestCase {
     }
 
     func testExample() {
-                        // Use recording to get started writing UI tests.
+        // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        
+
         let app = XCUIApplication()
         let tablesQuery = app.tables
         tablesQuery.cells.element(boundBy: 3).swipeUp()
         let cell15 = tablesQuery.cells.element(boundBy: 14)
         cell15.tap()
         app.buttons["显示左侧menu"].tap()
-        expectation(for: NSPredicate{(_, _) in
-            struct Holder {static let startTime = CACurrentMediaTime()}
-            
+        expectation(for: NSPredicate { _, _ in
+            struct Holder { static let startTime = CACurrentMediaTime() }
+
 //            if checkSomehowThatCallbackFired() {
 //                XCTFail("Callback fired when it shouldn't have.")
 //                return true
 //            }
-            
+
             return Holder.startTime.distance(to: CACurrentMediaTime()) > 1.0 // or however long you want to wait
         }, evaluatedWith: self, handler: nil)
-        waitForExpectations(timeout: 10.0 /*longer than wait time above*/, handler: nil)
+        waitForExpectations(timeout: 10.0 /* longer than wait time above */, handler: nil)
 
 //        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["22"]/*[[".cells.staticTexts[\"22\"]",".staticTexts[\"22\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
 //
@@ -67,8 +66,5 @@ class SwiftProUITests: XCTestCase {
 //        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .other).element.tap()
 //        backButton.tap()
 //        backButton.tap()
-        
-        
     }
-
 }
