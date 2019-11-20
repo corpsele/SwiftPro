@@ -4,6 +4,11 @@ R.generated.swift
 #Third/FFmpeg-iOS/lib/
 id_rsa
 id_rsa.pub
-
+.clang-format
+SwiftPro/Src/.DS_Store
+SwiftPro/Src/HGNotifactionMainView.zip
+SwiftPro/resource/
+Third/privateframework/
+WiFiVelocity.h
 
 

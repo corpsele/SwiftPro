@@ -7,7 +7,7 @@
 //
 
 import Alamofire
-import AuthenticationServices
+//import AuthenticationServices
 import CoreServices
 import Eureka
 import JJException
@@ -27,6 +27,9 @@ import SwipeCellKit
 import Toast_Swift
 import UIKit
 import ZHRefresh
+
+
+typealias initWithServers = (Any) -> (Any);
 
 struct MainStatusView {
     static var statusView: UIView?
@@ -56,7 +59,8 @@ struct TableViewCellIdentify {
     static let kkTableViewCellAuth: String = "TableViewCheckCellAuth"
 }
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ASAuthorizationControllerDelegate, ASWebAuthenticationPresentationContextProviding {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource//, ASAuthorizationControllerDelegate, ASWebAuthenticationPresentationContextProviding
+{
     var arrayCell: [Any] = [Any](repeating: 0, count: 500)
 
     required init?(coder aDecoder: NSCoder) {
@@ -133,6 +137,37 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
 
 //        view.subviews[999];
+//        /System/Library/PrivateFrameworks/WiFiKit.framework
+       let lib = dlopen("/Users/eport2/Documents/Apple-Runtime-Headers/iOS_S/System/Library/PrivateFrameworks/NetworkExtension.framework/NetworkExtension", RTLD_LAZY);
+        if (lib != nil) {
+            print("framework init successed");
+//            initWithServers = dlsym(lib, "initWithServers");
+        }
+        
+//        printApplicationState();
+        
+        
+        if let framework = Bundle(path: "/Users/eport2/Documents/Apple-Runtime-Headers/iOS_S/System/Library/PrivateFrameworks/NetworkExtension.framework") {
+            print("bundle framework init successed");
+            do {
+                try framework.loadAndReturnError();
+                
+                let DnsSettingsClass = NSClassFromString("NEDNSSettings") as? NSObject.Type;
+                
+//                dns.perform(Selector("initWithServers"), with: "192.168.0.101");
+                
+                
+//                let dns = DnsSettingsClass.initWithServers("192.168.0.101");
+                
+                print("dns = \(DnsSettingsClass)");
+                let dns = DnsSettingsClass?.init();
+                dns?.perform(Selector("initWithServers:"), with: "192.168.0.101");
+            } catch let err {
+                print(err.localizedDescription);
+            }
+
+        }
+        
     }
 
     @objc func deviceOrientationListener(noti _: Notification) {
@@ -241,12 +276,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 cell.textLabel?.text = getTotalCacheSize()
                 return cell
             case let ViewControllerCellType.VCCellTypeAuth(cell):
-                if #available(iOS 13.0, *) {
-                    let btnAuth = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .black)
-                    btnAuth.addTarget(self, action: #selector(btnAuthAction(sender:)), for: .touchUpInside)
-                    cell.addSubview(btnAuth)
-                    return cell
-                }
+//                if #available(iOS 13.0, *) {
+//                    let btnAuth = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .black)
+//                    btnAuth.addTarget(self, action: #selector(btnAuthAction(sender:)), for: .touchUpInside)
+//                    cell.addSubview(btnAuth)
+//                    return cell
+//                }
+                break
 
             default:
                 print("no")
@@ -319,6 +355,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         case 16:
             let vc = SwipeVC()
             navigationController?.pushViewController(vc, animated: true)
+        case 19:
+//            let url = URL(string: "CustomseSpace://dfdf");
+            let url = URL.init(string: "CustomseSpace://dfdf");
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url ?? URL.init(fileURLWithPath: ""), options: [:],
+                                           completionHandler: {
+                                             (success) in
+                                            print(success);
+                 })
+             } else {
+                 UIApplication.shared.openURL(url ?? URL.init(fileURLWithPath: ""))
+             }
+        case 20:
+            let vc = TestViewController()
+            navigationController?.pushViewController(vc, animated: true)
         default:
             print(indexPath.row)
         }
@@ -330,7 +381,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print("no")
         }
     }
-
+/*
     @objc func btnAuthAction(sender _: Any) {
         if #available(iOS 13.0, *) {
             let appleIDProvider = ASAuthorizationAppleIDProvider()
@@ -354,7 +405,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             authorizationController.performRequests()
         }
     }
-
+*/
     fileprivate func chooseVideoURL() {
         let sheetAlert = UIAlertController(title: "播放视频", message: "选择视频地址", preferredStyle: .actionSheet)
         let action1 = UIAlertAction(title: "sv_mp4", style: .default) { [weak self] _ in
@@ -373,11 +424,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let vc = KxMovieViewController.movieViewController(withContentPath: "http://43.248.49.206/hgmeap-pluginserver-hgmeapDMZVideo/hgmeapAssist/video/avi.avi?token=1ZUWlS11Av7HIn41gsI9rZj7Q2YA3123gNXlujrIwLiTmKF4Sj", parameters: nil) as! KxMovieViewController
             self?.playWithKXMovie(movieVC: vc)
         }
+        let action5 = UIAlertAction(title: "test_mp3", style: .default) { [weak self] _ in
+//            http://43.248.49.206/hgmeap-pluginserver-hgmeapDMZVideo/hgmeapAssist/video/mp3.mp3?token=lCJ8a5aB7Segc8ZS2337aFpXHvKMCGCkV0LGC190kFkz8kt5GT
+            let vc = KxMovieViewController.movieViewController(withContentPath: "http://43.248.49.206/hgmeap-pluginserver-hgmeapDMZVideo/hgmeapAssist/video/mp3.mp3?token=lCJ8a5aB7Segc8ZS2337aFpXHvKMCGCkV0LGC190kFkz8kt5GT", parameters: nil) as! KxMovieViewController
+            self?.playWithKXMovie(movieVC: vc)
+        }
+                let action6 = UIAlertAction(title: "test_wma", style: .default) { [weak self] _ in
+        //            http://43.248.49.206/hgmeap-pluginserver-hgmeapDMZVideo/hgmeapAssist/video/mp3.mp3?token=lCJ8a5aB7Segc8ZS2337aFpXHvKMCGCkV0LGC190kFkz8kt5GT
+                    let tmp = Bundle.main.path(forResource: "wma", ofType: "wma")
+                    let vc =
+                        KxMovieViewController.movieViewController(withContentPath: tmp, parameters: nil) as! KxMovieViewController
+                    self?.playWithKXMovie(movieVC: vc)
+                }
+        
+        let action7 = UIAlertAction(title: "test_wav", style: .default) { [weak self] _ in
+        //            http://43.248.49.206/hgmeap-pluginserver-hgmeapDMZVideo/hgmeapAssist/video/mp3.mp3?token=lCJ8a5aB7Segc8ZS2337aFpXHvKMCGCkV0LGC190kFkz8kt5GT
+                    let tmp = Bundle.main.path(forResource: "wav", ofType: "wav")
+                    let vc =
+                        KxMovieViewController.movieViewController(withContentPath: tmp, parameters: nil) as! KxMovieViewController
+                    self?.playWithKXMovie(movieVC: vc)
+                }
 //        http://43.248.49.206:80/hgmeap-pluginserver-hgmeapDMZVideo/hgmeapAssist/video/avi.avi?token=9fjeVM641qXWs9YCPZ1h1h6wBM9DLol18bRDro5NR7FL1pXX9S
         sheetAlert.addAction(action1)
         sheetAlert.addAction(action2)
         sheetAlert.addAction(action3)
         sheetAlert.addAction(action4)
+        sheetAlert.addAction(action5)
+        sheetAlert.addAction(action6)
+        sheetAlert.addAction(action7)
         sheetAlert.addAction(title: "取消", style: .cancel, isEnabled: true) { _ in
         }
 
@@ -386,16 +460,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        playWithKXMovie();
     }
 
-    @available(iOS 13.0, *)
-    func presentationAnchor(for _: ASWebAuthenticationSession) -> ASPresentationAnchor {
-        return view.window!
-    }
-
-    @available(iOS 13.0, *)
-    func authorizationController(controller _: ASAuthorizationController, didCompleteWithError _: Error) {}
-
-    @available(iOS 13.0, *)
-    func authorizationController(controller _: ASAuthorizationController, didCompleteWithAuthorization _: ASAuthorization) {}
+//    @available(iOS 13.0, *)
+//    func presentationAnchor(for _: ASWebAuthenticationSession) -> ASPresentationAnchor {
+//        return view.window!
+//    }
+//
+//    @available(iOS 13.0, *)
+//    func authorizationController(controller _: ASAuthorizationController, didCompleteWithError _: Error) {}
+//
+//    @available(iOS 13.0, *)
+//    func authorizationController(controller _: ASAuthorizationController, didCompleteWithAuthorization _: ASAuthorization) {}
 
     fileprivate func getTotalCacheSize() -> String {
         let p1 = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).last!
@@ -543,6 +617,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let tableView = UITableView()
 
         tableView.rx.itemSelected.subscribe { _ in
+            print("item selected");
         }
         tableView.separatorStyle = .none
         tableView.snp.makeConstraints { make in

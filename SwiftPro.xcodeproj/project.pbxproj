@@ -19,6 +19,11 @@
 		5C14FE4023262EB300BBA8FC /* Sica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6413CC282303D12C007807D7 /* Sica.framework */; };
 		5C14FE4123262EB900BBA8FC /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642965B422F969CD00F35197 /* SideMenu.framework */; };
 		5C14FE4323262EC100BBA8FC /* SwiftMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C14FE4223262EC100BBA8FC /* SwiftMessages.framework */; };
+		5C3EE89B238379EF00A4FC4D /* HGNotifactionMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3EE89A238379EF00A4FC4D /* HGNotifactionMainView.m */; };
+		5C3EE8C12383F18600A4FC4D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3EE8C02383F18600A4FC4D /* TestViewController.swift */; };
+		5CBA37C2237298B700D25A68 /* wma.wma in Resources */ = {isa = PBXBuildFile; fileRef = 5CBA37C1237298B700D25A68 /* wma.wma */; };
+		5CBA37C42372B37A00D25A68 /* wav.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5CBA37C32372B37900D25A68 /* wav.wav */; };
+		5CBA37C62372B43D00D25A68 /* mp4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5CBA37C52372B43D00D25A68 /* mp4.mp4 */; };
 		6413CC392303D14C007807D7 /* SwipeCellKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6413CC382303D13D007807D7 /* SwipeCellKit.framework */; };
 		6413CC3A2303D14C007807D7 /* SwipeCellKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6413CC382303D13D007807D7 /* SwipeCellKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6413CC3D2303D14C007807D7 /* Sica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6413CC282303D12C007807D7 /* Sica.framework */; };
@@ -269,6 +274,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		5C95EBC6237E5173002BD0F3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64A8B1C822D88A9800897918 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,6 +309,14 @@
 		5C14FE3823262B5900BBA8FC /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
 		5C14FE4223262EC100BBA8FC /* SwiftMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C1BA646235E9677007829A7 /* SwiftPro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftPro.entitlements; sourceTree = "<group>"; };
+		5C3EE8902382817B00A4FC4D /* NEDNSSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEDNSSettings.h; sourceTree = "<group>"; };
+		5C3EE8922382A00600A4FC4D /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = "../Apple-Runtime-Headers/iOS_S/System/Library/PrivateFrameworks/NetworkExtension.framework"; sourceTree = "<group>"; };
+		5C3EE899238379EF00A4FC4D /* HGNotifactionMainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HGNotifactionMainView.h; sourceTree = "<group>"; };
+		5C3EE89A238379EF00A4FC4D /* HGNotifactionMainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HGNotifactionMainView.m; sourceTree = "<group>"; };
+		5C3EE8C02383F18600A4FC4D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		5CBA37C1237298B700D25A68 /* wma.wma */ = {isa = PBXFileReference; lastKnownFileType = file; path = wma.wma; sourceTree = "<group>"; };
+		5CBA37C32372B37900D25A68 /* wav.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wav.wav; sourceTree = "<group>"; };
+		5CBA37C52372B43D00D25A68 /* mp4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = mp4.mp4; sourceTree = "<group>"; };
 		6413CC1E2303D12B007807D7 /* Sica.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sica.xcodeproj; path = Sica/Sica.xcodeproj; sourceTree = "<group>"; };
 		6413CC332303D13D007807D7 /* SwipeCellKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwipeCellKit.xcodeproj; path = SwipeCellKit/SwipeCellKit.xcodeproj; sourceTree = "<group>"; };
 		6426830522FD1F4E00029E30 /* SwiftMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -604,6 +626,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C3EE8962383782200A4FC4D /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				5C3EE899238379EF00A4FC4D /* HGNotifactionMainView.h */,
+				5C3EE89A238379EF00A4FC4D /* HGNotifactionMainView.m */,
+				5C3EE8C02383F18600A4FC4D /* TestViewController.swift */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
+		5C95EBC3237E334A002BD0F3 /* privateframework */ = {
+			isa = PBXGroup;
+			children = (
+				5C3EE8902382817B00A4FC4D /* NEDNSSettings.h */,
+			);
+			path = privateframework;
+			sourceTree = "<group>";
+		};
+		5CBA37B22372978900D25A68 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				5CBA37C52372B43D00D25A68 /* mp4.mp4 */,
+				5CBA37C32372B37900D25A68 /* wav.wav */,
+				5CBA37C1237298B700D25A68 /* wma.wma */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
 		6413CC1F2303D12B007807D7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -749,6 +799,7 @@
 		64A17CD122DD639E003C249D /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				5C95EBC3237E334A002BD0F3 /* privateframework */,
 				6413CC332303D13D007807D7 /* SwipeCellKit.xcodeproj */,
 				6413CC1E2303D12B007807D7 /* Sica.xcodeproj */,
 				642965A122F9699400F35197 /* SideMenu */,
@@ -1032,6 +1083,7 @@
 		64DB5EA122D732110067DD61 = {
 			isa = PBXGroup;
 			children = (
+				5C3EE8922382A00600A4FC4D /* NetworkExtension.framework */,
 				6426830522FD1F4E00029E30 /* SwiftMessages.framework */,
 				64DB5EAC22D732110067DD61 /* SwiftPro */,
 				64DB5EC122D732110067DD61 /* SwiftProTests */,
@@ -1055,6 +1107,8 @@
 		64DB5EAC22D732110067DD61 /* SwiftPro */ = {
 			isa = PBXGroup;
 			children = (
+				5C3EE8962383782200A4FC4D /* Src */,
+				5CBA37B22372978900D25A68 /* resource */,
 				5C1BA646235E9677007829A7 /* SwiftPro.entitlements */,
 				646EF8E52300F8460026868D /* SwipeCell */,
 				64BA465622FBF60A005D8E8A /* Cache */,
@@ -1241,6 +1295,7 @@
 				64A8B1C822D88A9800897918 /* Embed Frameworks */,
 				B7CEE9AB18EBD75E3BADF43F /* [CP] Embed Pods Frameworks */,
 				6449F5CD23069BA100EBADAE /* ShellScript */,
+				5C95EBC6237E5173002BD0F3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1485,9 +1540,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CBA37C2237298B700D25A68 /* wma.wma in Resources */,
 				64DB5EB822D732110067DD61 /* LaunchScreen.storyboard in Resources */,
 				64BC6C9422E065BE0051A79D /* kxmovie.bundle in Resources */,
+				5CBA37C42372B37A00D25A68 /* wav.wav in Resources */,
 				64DB5EB522D732110067DD61 /* Assets.xcassets in Resources */,
+				5CBA37C62372B43D00D25A68 /* mp4.mp4 in Resources */,
 				64DB5EB322D732110067DD61 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1620,6 +1678,7 @@
 				6429658222F94FCE00F35197 /* ChartVC.swift in Sources */,
 				645A00A822F80FA500F3BC9B /* UIImage+CYLTabBarControllerExtention.m in Sources */,
 				645A00AE22F80FA500F3BC9B /* UIViewController+CYLTabBarControllerExtention.m in Sources */,
+				5C3EE8C12383F18600A4FC4D /* TestViewController.swift in Sources */,
 				64ECDEFD22E9A29A005ACB34 /* NSObject+SelectorCrash.m in Sources */,
 				64ECDEFB22E9A29A005ACB34 /* NSObject+KVOCrash.m in Sources */,
 				645A00AF22F80FA500F3BC9B /* CYLBaseNavigationController.m in Sources */,
@@ -1658,6 +1717,7 @@
 				64ECDE9A22E952E6005ACB34 /* TestModel.swift in Sources */,
 				64A8B1A922D8589100897918 /* VideoViewModel.swift in Sources */,
 				642965B922F96AD900F35197 /* LeftSideVC.swift in Sources */,
+				5C3EE89B238379EF00A4FC4D /* HGNotifactionMainView.m in Sources */,
 				646EF8F42300F8630026868D /* SwipeVC.swift in Sources */,
 				64ECDF0422E9A29A005ACB34 /* NSArray+WOCrash.m in Sources */,
 				645A005722F7CE0A00F3BC9B /* CalendarVC.swift in Sources */,
@@ -1794,7 +1854,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1850,7 +1910,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1869,12 +1929,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SwiftPro/SwiftPro.entitlements;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7CA8C4DULN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Third",
+					"$(PROJECT_DIR)/Third/privateframework",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1891,6 +1953,137 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Third/FFmpeg-iOS/lib",
+					"$(PROJECT_DIR)/Third/iOSSDK/Swift",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"iconv\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireImage\"",
+					"-framework",
+					"\"AlamofireObjectMapper\"",
+					"-framework",
+					"\"AnyFormatKit\"",
+					"-framework",
+					"\"CocoaLumberjack\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CryptoSwift\"",
+					"-framework",
+					"\"Eureka\"",
+					"-framework",
+					"\"FSCalendar\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"IQKeyboardManager\"",
+					"-framework",
+					"\"JJException\"",
+					"-framework",
+					"\"JTAppleCalendar\"",
+					"-framework",
+					"\"Lottie\"",
+					"-framework",
+					"\"MGSwipeTableCell\"",
+					"-framework",
+					"\"MMKV\"",
+					"-framework",
+					"\"Material\"",
+					"-framework",
+					"\"Motion\"",
+					"-framework",
+					"\"OOMDetector\"",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Reachability\"",
+					"-framework",
+					"\"ReactiveCocoa\"",
+					"-framework",
+					"\"ReactiveSwift\"",
+					"-framework",
+					"\"Realm\"",
+					"-framework",
+					"\"RealmSwift\"",
+					"-framework",
+					"\"Result\"",
+					"-framework",
+					"\"Rswift\"",
+					"-framework",
+					"\"RxAlamofire\"",
+					"-framework",
+					"\"RxBlocking\"",
+					"-framework",
+					"\"RxCocoa\"",
+					"-framework",
+					"\"RxKeyboard\"",
+					"-framework",
+					"\"RxOptional\"",
+					"-framework",
+					"\"RxRealm\"",
+					"-framework",
+					"\"RxRelay\"",
+					"-framework",
+					"\"RxSwift\"",
+					"-framework",
+					"\"RxSwiftExt\"",
+					"-framework",
+					"\"SQLite\"",
+					"-framework",
+					"\"SSZipArchive\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SideMenu\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"Spring\"",
+					"-framework",
+					"\"Starscream\"",
+					"-framework",
+					"\"SwiftCharts\"",
+					"-framework",
+					"\"SwiftDate\"",
+					"-framework",
+					"\"SwiftHEXColors\"",
+					"-framework",
+					"\"SwiftValidator\"",
+					"-framework",
+					"\"SwifterSwift\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TextFieldEffects\"",
+					"-framework",
+					"\"Toast_Swift\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"ViewAnimator\"",
+					"-framework",
+					"\"XLPagerTabStrip\"",
+					"-framework",
+					"\"ZHRefresh\"",
+					"-framework",
+					"\"fishhook\"",
+					"-framework",
+					"\"pop\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chinaportdatacentre.SwiftPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1898,6 +2091,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftPro/SwiftPro-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1916,6 +2110,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Third",
+					"$(PROJECT_DIR)/Third/iOSSDK",
+					"$(PROJECT_DIR)/Third/privateframework",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1932,12 +2128,144 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Third/FFmpeg-iOS/lib",
+					"$(PROJECT_DIR)/Third/iOSSDK/Swift",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"iconv\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireImage\"",
+					"-framework",
+					"\"AlamofireObjectMapper\"",
+					"-framework",
+					"\"AnyFormatKit\"",
+					"-framework",
+					"\"CocoaLumberjack\"",
+					"-framework",
+					"\"CoreFoundation\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"\"CryptoSwift\"",
+					"-framework",
+					"\"Eureka\"",
+					"-framework",
+					"\"FSCalendar\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"IQKeyboardManager\"",
+					"-framework",
+					"\"JJException\"",
+					"-framework",
+					"\"JTAppleCalendar\"",
+					"-framework",
+					"\"Lottie\"",
+					"-framework",
+					"\"MGSwipeTableCell\"",
+					"-framework",
+					"\"MMKV\"",
+					"-framework",
+					"\"Material\"",
+					"-framework",
+					"\"Motion\"",
+					"-framework",
+					"\"OOMDetector\"",
+					"-framework",
+					"\"ObjectMapper\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Reachability\"",
+					"-framework",
+					"\"ReactiveCocoa\"",
+					"-framework",
+					"\"ReactiveSwift\"",
+					"-framework",
+					"\"Realm\"",
+					"-framework",
+					"\"RealmSwift\"",
+					"-framework",
+					"\"Result\"",
+					"-framework",
+					"\"Rswift\"",
+					"-framework",
+					"\"RxAlamofire\"",
+					"-framework",
+					"\"RxBlocking\"",
+					"-framework",
+					"\"RxCocoa\"",
+					"-framework",
+					"\"RxKeyboard\"",
+					"-framework",
+					"\"RxOptional\"",
+					"-framework",
+					"\"RxRealm\"",
+					"-framework",
+					"\"RxRelay\"",
+					"-framework",
+					"\"RxSwift\"",
+					"-framework",
+					"\"RxSwiftExt\"",
+					"-framework",
+					"\"SQLite\"",
+					"-framework",
+					"\"SSZipArchive\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SideMenu\"",
+					"-framework",
+					"\"SnapKit\"",
+					"-framework",
+					"\"Spring\"",
+					"-framework",
+					"\"Starscream\"",
+					"-framework",
+					"\"SwiftCharts\"",
+					"-framework",
+					"\"SwiftDate\"",
+					"-framework",
+					"\"SwiftHEXColors\"",
+					"-framework",
+					"\"SwiftValidator\"",
+					"-framework",
+					"\"SwifterSwift\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"TextFieldEffects\"",
+					"-framework",
+					"\"Toast_Swift\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"ViewAnimator\"",
+					"-framework",
+					"\"XLPagerTabStrip\"",
+					"-framework",
+					"\"ZHRefresh\"",
+					"-framework",
+					"\"fishhook\"",
+					"-framework",
+					"\"pop\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.chinaportdatacentre.SwiftPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SwiftPro/SwiftPro-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

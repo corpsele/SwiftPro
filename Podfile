@@ -57,23 +57,31 @@ target 'SwiftPro' do
     pod 'SSZipArchive'
     pod 'Spring'
     pod 'SideMenu'
+    pod 'Masonry'
+    pod 'SDWebImage'
     
     # Swift 版本声明
-#    post_install do |installer|
-#      installer.pods_project.targets.each do |target|
-#        if ['Spring', 'SideMenu'].include? target.name
+    post_install do |installer|
+      installer.pods_project.targets.each do |target|
+        if ['SideMenu'].include? target.name
+          target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.2'
+            config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
+          end
+#          else
 #          target.build_configurations.each do |config|
 #            config.build_settings['SWIFT_VERSION'] = '4'
 #            config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
 #          end
-##          else
-##          target.build_configurations.each do |config|
-##            config.build_settings['SWIFT_VERSION'] = '4.1'
-##            config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
-##          end
-#        end
-#      end
-#    end
+        end
+        if ['Spring'].include? target.name
+          target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4'
+            config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
+            end
+        end
+      end
+    end
     
     target 'SwiftProUITests' do
       
