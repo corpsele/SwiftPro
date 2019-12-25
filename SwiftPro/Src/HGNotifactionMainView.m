@@ -129,6 +129,7 @@
     }];
 }
 
+// MARK: 添加铺垫视图
 - (void)addTmpView
 {
             UIView *viewSub = [UIView new];
@@ -243,9 +244,10 @@
 {
     __weak __typeof(self) weakSelf = self;
     if (timer == nil) {
-       timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_global_queue(0, 0));
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+       timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
     }
-    dispatch_source_set_timer(timer, dispatch_walltime(NULL, 0), duration * NSEC_PER_SEC,  0); //每秒执行
+    dispatch_source_set_timer(timer, dispatch_walltime(NULL, 0), duration * NSEC_PER_SEC,  0);
     dispatch_source_set_event_handler(timer, ^{
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf runTimePage];
@@ -289,6 +291,7 @@
     }
    curPage = page > self->arraySource.count ? 0 : page;
 //   pcMain.currentPage = page;
+    NSLog(@"page = %ld", page);
    [self turnPage];
 }
 
@@ -298,11 +301,15 @@
     NSInteger page = curPage;
     CGRect rect = self->rectMain;
     if (page == 0) {
+        //一直向上滚动效果，到铺垫视图后到第一视图
         [svMain setContentOffset:CGPointMake(svMain.frame.origin.x, 0) animated:false];
         [svMain scrollRectToVisible:CGRectMake(svMain.frame.origin.x, 0, self->rectMain.size.width, self->rectMain.size.height) animated:false];
         [svMain setContentOffset:CGPointMake(svMain.frame.origin.x, self->rectMain.size.height) animated:true];
         [svMain scrollRectToVisible:CGRectMake(svMain.frame.origin.x, self->rectMain.size.height, self->rectMain.size.width, self->rectMain.size.height) animated:true];
+        //赋值后修正第一视图后慢的问题
+        curPage = 1;
     }else{
+        //正常滚动
        [svMain setContentOffset:CGPointMake(svMain.frame.origin.x, rect.size.height * page) animated:true];
        [svMain scrollRectToVisible:CGRectMake(svMain.frame.origin.x, rect.size.height * page, rect.size.width, rect.size.height) animated:true];
     }

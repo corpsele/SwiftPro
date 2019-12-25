@@ -12,6 +12,8 @@ class TestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad();
         
+        self.navigationController?.isNavigationBarHidden = false
+        
         self.view.backgroundColor = UIColor.white
         
         let model1 = HGNotifactionMainDataSource();

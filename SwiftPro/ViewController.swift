@@ -370,6 +370,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         case 20:
             let vc = TestViewController()
             navigationController?.pushViewController(vc, animated: true)
+        case 21:
+            let vc = ApiTestViewController();
+            navigationController?.pushViewController(vc, animated: true)
         default:
             print(indexPath.row)
         }

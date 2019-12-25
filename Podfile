@@ -137,6 +137,8 @@ target 'SwiftPro' do
       pod 'SQLite'
       pod 'R.swift'
       pod 'SSZipArchive'
+      pod 'HandyJSON'
+      pod 'RxDataSources'
       
       # Swift 版本声明
 #      post_install do |installer|

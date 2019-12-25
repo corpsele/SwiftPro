@@ -21,6 +21,9 @@
 		5C14FE4323262EC100BBA8FC /* SwiftMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C14FE4223262EC100BBA8FC /* SwiftMessages.framework */; };
 		5C3EE89B238379EF00A4FC4D /* HGNotifactionMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3EE89A238379EF00A4FC4D /* HGNotifactionMainView.m */; };
 		5C3EE8C12383F18600A4FC4D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3EE8C02383F18600A4FC4D /* TestViewController.swift */; };
+		5C8ABA4023B19FBE00E48318 /* ApiTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABA3F23B19FBE00E48318 /* ApiTestViewController.swift */; };
+		5C8ABA4223B19FDA00E48318 /* ApiTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABA4123B19FDA00E48318 /* ApiTestViewModel.swift */; };
+		5C8ABA4423B19FEB00E48318 /* ApiTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABA4323B19FEB00E48318 /* ApiTestModel.swift */; };
 		5CBA37C2237298B700D25A68 /* wma.wma in Resources */ = {isa = PBXBuildFile; fileRef = 5CBA37C1237298B700D25A68 /* wma.wma */; };
 		5CBA37C42372B37A00D25A68 /* wav.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5CBA37C32372B37900D25A68 /* wav.wav */; };
 		5CBA37C62372B43D00D25A68 /* mp4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5CBA37C52372B43D00D25A68 /* mp4.mp4 */; };
@@ -314,6 +317,9 @@
 		5C3EE899238379EF00A4FC4D /* HGNotifactionMainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HGNotifactionMainView.h; sourceTree = "<group>"; };
 		5C3EE89A238379EF00A4FC4D /* HGNotifactionMainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HGNotifactionMainView.m; sourceTree = "<group>"; };
 		5C3EE8C02383F18600A4FC4D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		5C8ABA3F23B19FBE00E48318 /* ApiTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTestViewController.swift; sourceTree = "<group>"; };
+		5C8ABA4123B19FDA00E48318 /* ApiTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTestViewModel.swift; sourceTree = "<group>"; };
+		5C8ABA4323B19FEB00E48318 /* ApiTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTestModel.swift; sourceTree = "<group>"; };
 		5CBA37C1237298B700D25A68 /* wma.wma */ = {isa = PBXFileReference; lastKnownFileType = file; path = wma.wma; sourceTree = "<group>"; };
 		5CBA37C32372B37900D25A68 /* wav.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wav.wav; sourceTree = "<group>"; };
 		5CBA37C52372B43D00D25A68 /* mp4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = mp4.mp4; sourceTree = "<group>"; };
@@ -634,6 +640,16 @@
 				5C3EE8C02383F18600A4FC4D /* TestViewController.swift */,
 			);
 			path = Src;
+			sourceTree = "<group>";
+		};
+		5C8ABA3023B19F8200E48318 /* ApiTest */ = {
+			isa = PBXGroup;
+			children = (
+				5C8ABA3F23B19FBE00E48318 /* ApiTestViewController.swift */,
+				5C8ABA4123B19FDA00E48318 /* ApiTestViewModel.swift */,
+				5C8ABA4323B19FEB00E48318 /* ApiTestModel.swift */,
+			);
+			path = ApiTest;
 			sourceTree = "<group>";
 		};
 		5C95EBC3237E334A002BD0F3 /* privateframework */ = {
@@ -1107,6 +1123,7 @@
 		64DB5EAC22D732110067DD61 /* SwiftPro */ = {
 			isa = PBXGroup;
 			children = (
+				5C8ABA3023B19F8200E48318 /* ApiTest */,
 				5C3EE8962383782200A4FC4D /* Src */,
 				5CBA37B22372978900D25A68 /* resource */,
 				5C1BA646235E9677007829A7 /* SwiftPro.entitlements */,
@@ -1701,6 +1718,7 @@
 				64ECDEB222E985CE005ACB34 /* CellAnimator.swift in Sources */,
 				64A8B1AD22D858C300897918 /* VideoViewController.swift in Sources */,
 				64ECDF0722E9A29A005ACB34 /* NSMutableString+WOCrash.m in Sources */,
+				5C8ABA4223B19FDA00E48318 /* ApiTestViewModel.swift in Sources */,
 				645A009E22F80FA500F3BC9B /* CYLTabBar+CYLTabBarControllerExtention.m in Sources */,
 				645A00AB22F80FA500F3BC9B /* UITabBarItem+CYLTabBarControllerExtention.m in Sources */,
 				645A00AA22F80FA500F3BC9B /* UIView+CYLBadgeExtention.m in Sources */,
@@ -1712,12 +1730,14 @@
 				645A009F22F80FA500F3BC9B /* UIView+CYLTabBarControllerExtention.m in Sources */,
 				64A8B1A722D831CA00897918 /* VideoModel.swift in Sources */,
 				645A00A522F80FA500F3BC9B /* NSObject+CYLTabBarControllerExtention.m in Sources */,
+				5C8ABA4423B19FEB00E48318 /* ApiTestModel.swift in Sources */,
 				64ECDF0322E9A29A005ACB34 /* NSMutableDictionary+WOCrash.m in Sources */,
 				64ECDF0122E9A29A005ACB34 /* WOCrashProtectorManager.m in Sources */,
 				64ECDE9A22E952E6005ACB34 /* TestModel.swift in Sources */,
 				64A8B1A922D8589100897918 /* VideoViewModel.swift in Sources */,
 				642965B922F96AD900F35197 /* LeftSideVC.swift in Sources */,
 				5C3EE89B238379EF00A4FC4D /* HGNotifactionMainView.m in Sources */,
+				5C8ABA4023B19FBE00E48318 /* ApiTestViewController.swift in Sources */,
 				646EF8F42300F8630026868D /* SwipeVC.swift in Sources */,
 				64ECDF0422E9A29A005ACB34 /* NSArray+WOCrash.m in Sources */,
 				645A005722F7CE0A00F3BC9B /* CalendarVC.swift in Sources */,

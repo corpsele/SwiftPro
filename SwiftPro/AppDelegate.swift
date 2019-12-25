@@ -36,7 +36,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = mainNavi
 
 //        addStatusBar();
-        IQKeyboardManager.shared().enableDebugging = true
+        let manager = IQKeyboardManager.shared()
+        
+        manager.isEnabled = true;
+        manager.shouldResignOnTouchOutside = true;
+        manager.shouldToolbarUsesTextFieldTintColor = true;
+        manager.keyboardDistanceFromTextField=60;
+        manager.isEnableAutoToolbar = false;
+        manager.enableDebugging = true
 
 //        DDLog.add(DDOSLogger.sharedInstance) // Uses os_log
 //
@@ -53,6 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 //        OOMDetector.getInstance()?.setupWithDefaultConfig()
 //        OOMDetector.getInstance()?.setupLeakChecker()
+        
 
         return true
     }
