@@ -58,3 +58,28 @@ func toolBarHeight() -> CGFloat {
 func navigationHeight() -> CGFloat {
     return 44 + safeAreaTop()
 }
+
+extension Int {
+    //前+
+    static prefix  func ++(num:inout Int) -> Int  {
+        num += 1
+        return num
+    }
+    //后缀+
+    static postfix  func ++(num:inout Int) -> Int  {
+        let temp = num
+        num += 1
+        return temp
+    }
+    //前 -
+    static prefix  func --(num:inout Int) -> Int  {
+        num -= 1
+        return num
+    }
+    //后-
+    static postfix  func --(num:inout Int) -> Int  {
+        let temp = num
+        num -= 1
+        return temp
+    }
+}

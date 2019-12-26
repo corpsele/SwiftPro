@@ -42,6 +42,15 @@ class ApiTestViewController: UIViewController {
             observer.send(value: (self?.view)!)
             observer.sendCompleted()
         }
+        vm.clickCommand.subscribe(onNext: {[weak self] (i) in
+            self?.btnSearch.setTitle("搜索(\(i))", for: .normal)
+        }, onError: { (err) in
+            
+        }, onCompleted: {
+            
+        }) {
+            
+        }
         
         
     }

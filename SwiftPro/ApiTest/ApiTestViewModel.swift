@@ -31,6 +31,8 @@ class ApiTestViewModel: NSObject {
         return cell!
     })
     
+    var isBinded: Bool = false
+    
     var viewSignal: SignalProducer<UIView, Never>?{
         didSet{
             self.viewSignal?.producer.startWithValues({[weak self] (v) in
@@ -38,6 +40,9 @@ class ApiTestViewModel: NSObject {
             })
         }
     }
+    
+    let clickCommand = PublishSubject<Int>()
+    var count: Int = 0
     
     var tableViewProperty: Property<UITableView>?{
         didSet{
@@ -51,7 +56,9 @@ class ApiTestViewModel: NSObject {
     var btnSearchDriver: ControlEvent<Void>?{
         didSet{
             btnSearchDriver?.subscribe(onNext: {[weak self] () in
-                NVActivityIndicatorPresenter.sharedInstance.startAnimating(ActivityData())
+                self?.count = (self?.count)! + 1
+                self?.clickCommand.onNext((self?.count)!)
+                 NVActivityIndicatorPresenter.sharedInstance.startAnimating(ActivityData())
                 self?.requestApi()
                 })
         }
@@ -76,14 +83,19 @@ class ApiTestViewModel: NSObject {
             print("model = \(model)")
             NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
             self?.bindData()
-            })
+            }).disposed(by: disposeBag)
+        if !isBinded {
+            apiModel?.bind(to: (tableView?.rx.items(dataSource: dataSource))!).disposed(by: disposeBag)
+            isBinded = true
+        }
+        
 
     }
     
     private func bindData()
     {
         
-        apiModel?.bind(to: (tableView?.rx.items(dataSource: dataSource))!)
+        
         tableView?.rx.itemSelected.map({ (index) in
             return (index,self.dataSource[index])
         }).subscribe(onNext: {[weak self] (index, city) in
