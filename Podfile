@@ -59,6 +59,7 @@ target 'SwiftPro' do
     pod 'SideMenu'
     pod 'Masonry'
     pod 'SDWebImage'
+    pod 'RxDataSources'
     
     # Swift 版本声明
     post_install do |installer|

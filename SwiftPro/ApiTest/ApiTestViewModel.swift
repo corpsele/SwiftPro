@@ -15,61 +15,68 @@ import RxSwift
 import SwiftyJSON
 import RxAlamofire
 import Alamofire
+import RxDataSources
 
 class ApiTestViewModel: NSObject {
-    var apiModel: Observable<ApiTestModel>?
+    private var apiModel: Observable<[SectionModel<String, City>]>?
+    private var tableView: UITableView?
+    private let disposeBag = DisposeBag()
+    private let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, City>>(configureCell: { (_, table, index, model) in
+        let cell = table.dequeueReusableCell(withIdentifier: "Cell")
+            cell?.textLabel?.text = model.cityname
+        return cell!
+    })
+    
+    var tableViewProperty: Property<UITableView>?{
+        didSet{
+            tableViewProperty?.producer.startWithValues({[weak self] (table) in
+                print("tableView = \(table)")
+                self?.tableView = table
+            })
+
+        }
+    }
     var btnSearchDriver: ControlEvent<Void>?{
         didSet{
-            let disposeBag = DisposeBag()
             btnSearchDriver?.subscribe(onNext: {[weak self] () in
                 self?.requestApi()
-            }, onError: { (err) in
-                
-            }, onCompleted: {
-                
-            }, onDisposed: {
-                
-                }).disposed(by: disposeBag)
+                })
         }
     }
     
     var searchText: ControlProperty<String?>?{
         didSet{
-            let disposeBag = DisposeBag()
+//            let disposeBag = DisposeBag()
             self.searchText?.subscribe(onNext: {[weak self] (str) in
                 print("str = \(str!)")
                 
-            }, onError: { (err) in
-                
-            }, onCompleted: {
-                
-            }, onDisposed: {
-                
-                }).disposed(by: disposeBag)
+                })
             
             
         }
     }
     
     private func requestApi(){
-        let disposeBag = DisposeBag()
         apiModel = ApiTestModel.requestApi()
         apiModel?.subscribe(onNext: {[weak self] (model) in
             print("model = \(model)")
             self?.bindData()
-        }, onError: { (err) in
-            
-        }, onCompleted: {
-            
-        }, onDisposed: {
-            
-            }).disposed(by: disposeBag)
+            })
+
     }
     
     private func bindData()
     {
-//        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Any>>()
-//        let dataArray = Variable([SectionModel<String, Any>]())
+        
+        apiModel?.bind(to: (tableView?.rx.items(dataSource: dataSource))!)
+        print("row total = \((tableView?.numberOfRows())!)")
+//        dataSource.configureCell = { (_, tableView, indexPath, model) in
+////            let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
+//            //处理返回数据
+//
+//            return cell!
+//        }
     }
     
     override init() {

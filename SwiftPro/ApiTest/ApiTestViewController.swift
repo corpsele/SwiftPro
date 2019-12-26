@@ -34,8 +34,10 @@ class ApiTestViewController: UIViewController {
         
         vm.btnSearchDriver = btnSearch.rx.tap.asControlEvent()
         vm.searchText = searchView.rx.text
-
-        
+        vm.tableViewProperty = Property<UITableView>.init(initial: tableView, then: SignalProducer{[weak self] (observer, lifttime) in
+            observer.send(value: (self?.tableView)!)
+            observer.sendCompleted()
+        })
         
     }
     
@@ -81,6 +83,7 @@ class ApiTestViewController: UIViewController {
        let view = UITableView()
         view.contentInset = .zero
         view.contentInsetAdjustmentBehavior = .never
+        view.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         return view
     }()
 

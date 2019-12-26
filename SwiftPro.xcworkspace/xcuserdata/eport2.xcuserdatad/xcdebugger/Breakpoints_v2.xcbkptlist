@@ -642,58 +642,10 @@
             filePath = "SwiftPro/ApiTest/ApiTestViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "bindData()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9CC874D4-6236-4CA5-8883-430B75FE430F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftPro/ApiTest/ApiTestViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "btnSearchDriver"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "9CC874D4-6236-4CA5-8883-430B75FE430F - ad248edbc039a2e4"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in SwiftPro.ApiTestViewModel.btnSearchDriver.didset : Swift.Optional&lt;RxCocoa.ControlEvent&lt;()&gt;&gt;"
-                  moduleName = "SwiftPro"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/ApiTest/ApiTestViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  uuid = "9CC874D4-6236-4CA5-8883-430B75FE430F - 24fe05b259cd0c90"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Error) -&gt; () in SwiftPro.ApiTestViewModel.btnSearchDriver.didset : Swift.Optional&lt;RxCocoa.ControlEvent&lt;()&gt;&gt;"
-                  moduleName = "SwiftPro"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/ApiTest/ApiTestViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -706,58 +658,10 @@
             filePath = "SwiftPro/ApiTest/ApiTestViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "searchText"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "90D0D8EB-264E-4748-BDE4-86D2F46157BD"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftPro/ApiTest/ApiTestViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "searchText"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "90D0D8EB-264E-4748-BDE4-86D2F46157BD - 8fb105ca93cb380a"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;) -&gt; () in SwiftPro.ApiTestViewModel.searchText.didset : Swift.Optional&lt;RxCocoa.ControlProperty&lt;Swift.Optional&lt;Swift.String&gt;&gt;&gt;"
-                  moduleName = "SwiftPro"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/ApiTest/ApiTestViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "19">
-               </Location>
-               <Location
-                  uuid = "90D0D8EB-264E-4748-BDE4-86D2F46157BD - 366cf7fab7bfc450"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Error) -&gt; () in SwiftPro.ApiTestViewModel.searchText.didset : Swift.Optional&lt;RxCocoa.ControlProperty&lt;Swift.Optional&lt;Swift.String&gt;&gt;&gt;"
-                  moduleName = "SwiftPro"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/ApiTest/ApiTestViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -770,42 +674,10 @@
             filePath = "SwiftPro/ApiTest/ApiTestViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "searchText"
             landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "CB7614C6-49CB-4A76-A1BC-0184A44BB4ED - 66aa4090075140a9"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftPro.ApiTestViewModel.searchText.didset : Swift.Optional&lt;RxCocoa.ControlProperty&lt;Swift.Optional&lt;Swift.String&gt;&gt;&gt;"
-                  moduleName = "SwiftPro"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/ApiTest/ApiTestViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "120">
-               </Location>
-               <Location
-                  uuid = "CB7614C6-49CB-4A76-A1BC-0184A44BB4ED - 8fb105ca93cb380a"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;) -&gt; () in SwiftPro.ApiTestViewModel.searchText.didset : Swift.Optional&lt;RxCocoa.ControlProperty&lt;Swift.Optional&lt;Swift.String&gt;&gt;&gt;"
-                  moduleName = "SwiftPro"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/ApiTest/ApiTestViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "19">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -818,8 +690,8 @@
             filePath = "SwiftPro/ApiTest/ApiTestViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "btnSearchDriver"
             landmarkType = "24">
          </BreakpointContent>
@@ -834,10 +706,42 @@
             filePath = "SwiftPro/ApiTest/ApiTestViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "ApiTestViewModel"
-            landmarkType = "3">
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "requestApi()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3BD72A54-864B-4DEA-9D7F-934D42040108 - f13298ed0d716c01"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftPro.ApiTestViewModel.(requestApi in _F77AC353B763AF039419F05164B46D82)() -&gt; ()"
+                  moduleName = "SwiftPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/ApiTest/ApiTestViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "3BD72A54-864B-4DEA-9D7F-934D42040108 - 9648912d7c47af8"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (SwiftPro.ApiTestModel) -&gt; () in SwiftPro.ApiTestViewModel.(requestApi in _F77AC353B763AF039419F05164B46D82)() -&gt; ()"
+                  moduleName = "SwiftPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/ApiTest/ApiTestViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "115">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -850,8 +754,8 @@
             filePath = "SwiftPro/ApiTest/ApiTestViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "requestApi()"
             landmarkType = "7">
          </BreakpointContent>
@@ -870,6 +774,246 @@
             endingLineNumber = "39"
             landmarkName = "requestApi()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "389DEEBF-2908-4A6F-BD3E-DCFB2215B2CF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/ApiTest/ApiTestViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "initVM()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EAE4EE8E-C9DF-4AA1-8CD6-FF6A0A3C918E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/ApiTest/ApiTestViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "btnSearchDriver"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "EAE4EE8E-C9DF-4AA1-8CD6-FF6A0A3C918E - f313abaa3d58576d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftPro.ApiTestViewModel.btnSearchDriver.didset : Swift.Optional&lt;RxCocoa.ControlEvent&lt;()&gt;&gt;"
+                  moduleName = "SwiftPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/ApiTest/ApiTestViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "129">
+               </Location>
+               <Location
+                  uuid = "EAE4EE8E-C9DF-4AA1-8CD6-FF6A0A3C918E - ad248edbc039a2e4"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in SwiftPro.ApiTestViewModel.btnSearchDriver.didset : Swift.Optional&lt;RxCocoa.ControlEvent&lt;()&gt;&gt;"
+                  moduleName = "SwiftPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/ApiTest/ApiTestViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "45">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4932D965-86B4-4CA0-8FF5-8CD8617E0426"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/ApiTest/ApiTestViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "btnSearchDriver"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "92A9A07F-C37C-45C1-8746-BBC6C8FA8188"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/ApiTest/ApiTestViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "searchText"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E3FA9D43-7115-46E4-8951-C7D15DA69C16"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/ApiTest/ApiTestViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "initVM()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "86175B2F-EC63-4CE1-9122-8B9AA29AA51B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/ApiTest/ApiTestViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "initVM()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "88DBAD17-E391-4D9A-88F6-E1E823D6B6C3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/ApiTest/ApiTestViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "bindData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "95C48504-F8EF-4482-A9D3-2ED2375CF73E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/ApiTest/ApiTestViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "bindData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FC12B36A-56A1-4528-8891-C285E7C84D9E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/ApiTest/ApiTestViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "bindData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FC12B36A-56A1-4528-8891-C285E7C84D9E - f1db54a12b2b405f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftPro.ApiTestViewModel.(bindData in _F77AC353B763AF039419F05164B46D82)(Swift.Array&lt;Differentiator.SectionModel&lt;Swift.String, SwiftPro.ApiTestModel&gt;&gt;) -&gt; ()"
+                  moduleName = "SwiftPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/ApiTest/ApiTestViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "145">
+               </Location>
+               <Location
+                  uuid = "FC12B36A-56A1-4528-8891-C285E7C84D9E - f1db54a12b2b405f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftPro.ApiTestViewModel.(bindData in _F77AC353B763AF039419F05164B46D82)(Swift.Array&lt;Differentiator.SectionModel&lt;Swift.String, SwiftPro.ApiTestModel&gt;&gt;) -&gt; ()"
+                  moduleName = "SwiftPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/ApiTest/ApiTestViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "1146">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E05806EB-0C87-4DA9-901D-D911D8DDE380"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/ApiTest/ApiTestViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "initVM()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "982DA92B-B251-4787-A914-86A2665A52F4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/ApiTest/ApiTestViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "dataSource"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -317,6 +317,10 @@
 		5C3EE899238379EF00A4FC4D /* HGNotifactionMainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HGNotifactionMainView.h; sourceTree = "<group>"; };
 		5C3EE89A238379EF00A4FC4D /* HGNotifactionMainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HGNotifactionMainView.m; sourceTree = "<group>"; };
 		5C3EE8C02383F18600A4FC4D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		5C700F7423B30C8E008BF4B5 /* Differentiator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Differentiator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C700F7523B30C8E008BF4B5 /* RxDataSources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxDataSources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C700F8823B30D2E008BF4B5 /* Differentiator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Differentiator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C700F8A23B30D2E008BF4B5 /* RxDataSources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxDataSources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C8ABA3F23B19FBE00E48318 /* ApiTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTestViewController.swift; sourceTree = "<group>"; };
 		5C8ABA4123B19FDA00E48318 /* ApiTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTestViewModel.swift; sourceTree = "<group>"; };
 		5C8ABA4323B19FEB00E48318 /* ApiTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTestModel.swift; sourceTree = "<group>"; };
@@ -1268,6 +1272,10 @@
 		6EDD233904CF2427747B23E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5C700F8823B30D2E008BF4B5 /* Differentiator.framework */,
+				5C700F8A23B30D2E008BF4B5 /* RxDataSources.framework */,
+				5C700F7423B30C8E008BF4B5 /* Differentiator.framework */,
+				5C700F7523B30C8E008BF4B5 /* RxDataSources.framework */,
 				5C14FE4223262EC100BBA8FC /* SwiftMessages.framework */,
 				5C14FE3623262B5900BBA8FC /* InterfaceBuilderKit.framework */,
 				5C14FE3423262B5900BBA8FC /* libc.tbd */,

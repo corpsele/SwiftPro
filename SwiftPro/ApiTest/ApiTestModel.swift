@@ -12,10 +12,11 @@ import ReactiveCocoa
 import RxSwift
 import Alamofire
 import RxAlamofire
+import RxDataSources
 
 class ApiTestModel: NSObject {
     var dn: String?
-    var city: [City]?
+    var city: [City]
     var error_code: Int?
     
     init(data: JSON) {
@@ -30,14 +31,16 @@ class ApiTestModel: NSObject {
         error_code = data["error_code"].intValue
     }
     
-    static func requestApi() -> Observable<ApiTestModel> {
+    static func requestApi() -> Observable<[SectionModel<String, City>]> {
         let disposeBag = DisposeBag()
-        let apiObModel: Observable<ApiTestModel> = Observable<ApiTestModel>.create { observer -> Disposable in
+        let apiObModel: Observable<[SectionModel<String, City>]> = Observable<[SectionModel<String, City>]>.create { observer -> Disposable in
             requestJSON(.get, "http://zhouxunwang.cn/data/", parameters: ["id":"7","key":"AOrA8YduH93+jJuK8o87QW/HMwTgsJeZ/px1","name":"beijing"], encoding: URLEncoding.queryString, headers: [:]).subscribe(onNext: { (response, json) in
                 
                 let model = ApiTestModel.init(data: JSON(json))
-                observer.onNext(model)
-                observer.onCompleted()
+                let section: [SectionModel<String, City>] = [SectionModel<String, City>(model: "", items: model.city)]
+                observer.onNext(section)
+                    observer.onCompleted()
+
             }, onError: { (err) in
                 
             }, onCompleted: {
@@ -95,4 +98,21 @@ struct City {
         time = data["time"].stringValue
         url = data["url"].stringValue
     }
+}
+
+struct ApiTestSectionModel {
+    var items: [Item]
+}
+
+extension ApiTestSectionModel: SectionModelType {
+  
+    // 重定义 Item 的类型为 LXFModel
+    typealias Item = City
+  
+    // 实现协议中的方式
+    init(original: ApiTestSectionModel, items: [ApiTestSectionModel.Item]) {
+        self = original
+        self.items = items
+    }
+    
 }
