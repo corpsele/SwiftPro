@@ -13,6 +13,7 @@ import RxSwift
 import Alamofire
 import RxAlamofire
 import RxDataSources
+import Toast_Swift
 
 class ApiTestModel: NSObject {
     var dn: String?

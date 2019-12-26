@@ -16,16 +16,28 @@ import SwiftyJSON
 import RxAlamofire
 import Alamofire
 import RxDataSources
+import Toast_Swift
+import NVActivityIndicatorView
 
 class ApiTestViewModel: NSObject {
     private var apiModel: Observable<[SectionModel<String, City>]>?
     private var tableView: UITableView?
+    private var view: UIView?
     private let disposeBag = DisposeBag()
     private let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, City>>(configureCell: { (_, table, index, model) in
         let cell = table.dequeueReusableCell(withIdentifier: "Cell")
             cell?.textLabel?.text = model.cityname
+        cell?.detailTextLabel?.text = "\(model.stateDetailed!) | \(model.windState!)"
         return cell!
     })
+    
+    var viewSignal: SignalProducer<UIView, Never>?{
+        didSet{
+            self.viewSignal?.producer.startWithValues({[weak self] (v) in
+                self?.view = v
+            })
+        }
+    }
     
     var tableViewProperty: Property<UITableView>?{
         didSet{
@@ -39,6 +51,7 @@ class ApiTestViewModel: NSObject {
     var btnSearchDriver: ControlEvent<Void>?{
         didSet{
             btnSearchDriver?.subscribe(onNext: {[weak self] () in
+                NVActivityIndicatorPresenter.sharedInstance.startAnimating(ActivityData())
                 self?.requestApi()
                 })
         }
@@ -57,9 +70,11 @@ class ApiTestViewModel: NSObject {
     }
     
     private func requestApi(){
+        
         apiModel = ApiTestModel.requestApi()
         apiModel?.subscribe(onNext: {[weak self] (model) in
             print("model = \(model)")
+            NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
             self?.bindData()
             })
 
@@ -69,7 +84,17 @@ class ApiTestViewModel: NSObject {
     {
         
         apiModel?.bind(to: (tableView?.rx.items(dataSource: dataSource))!)
-        print("row total = \((tableView?.numberOfRows())!)")
+        tableView?.rx.itemSelected.map({ (index) in
+            return (index,self.dataSource[index])
+        }).subscribe(onNext: {[weak self] (index, city) in
+            self?.view?.makeToast(city.cityname)
+        }, onError: { (err) in
+            
+        }, onCompleted: {
+            
+        }, onDisposed: {
+            
+        })
 //        dataSource.configureCell = { (_, tableView, indexPath, model) in
 ////            let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
 //            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")

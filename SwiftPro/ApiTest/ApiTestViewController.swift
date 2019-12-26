@@ -38,6 +38,11 @@ class ApiTestViewController: UIViewController {
             observer.send(value: (self?.tableView)!)
             observer.sendCompleted()
         })
+        vm.viewSignal = SignalProducer<UIView, Never> {[weak self] observer,lifetime  in
+            observer.send(value: (self?.view)!)
+            observer.sendCompleted()
+        }
+        
         
     }
     
@@ -46,7 +51,7 @@ class ApiTestViewController: UIViewController {
         view.addSubview(searchView)
         searchView.snp.makeConstraints({ (make) in
             make.left.equalToSuperview()
-            make.top.equalTo(kkTopHeight)
+            make.top.equalTo(navigationHeight())
             make.right.equalToSuperview().offset(-100.0)
             make.height.equalTo(80.0)
         })
@@ -54,7 +59,7 @@ class ApiTestViewController: UIViewController {
         view.addSubview(btnSearch)
         btnSearch.snp.makeConstraints { (make) in
             make.right.equalToSuperview()
-            make.top.equalTo(kkTopHeight)
+            make.top.equalTo(navigationHeight())
             make.width.equalTo(80.0)
             make.height.equalTo(80.0)
         }
@@ -69,6 +74,8 @@ class ApiTestViewController: UIViewController {
     
     private lazy var searchView: UITextField = {
         let view = UITextField()
+        view.backgroundColor = UIColor.black
+        view.textColor = UIColor.white
         return view
     }()
     

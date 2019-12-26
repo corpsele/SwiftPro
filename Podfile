@@ -60,6 +60,7 @@ target 'SwiftPro' do
     pod 'Masonry'
     pod 'SDWebImage'
     pod 'RxDataSources'
+    pod 'NVActivityIndicatorView'
     
     # Swift 版本声明
     post_install do |installer|
@@ -140,6 +141,7 @@ target 'SwiftPro' do
       pod 'SSZipArchive'
       pod 'HandyJSON'
       pod 'RxDataSources'
+      pod 'NVActivityIndicatorView'
       
       # Swift 版本声明
 #      post_install do |installer|
