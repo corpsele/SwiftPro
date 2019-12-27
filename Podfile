@@ -61,6 +61,10 @@ target 'SwiftPro' do
     pod 'SDWebImage'
     pod 'RxDataSources'
     pod 'NVActivityIndicatorView'
+#    pod 'ReactiveViewModel'
+    pod 'ReactiveObjC'
+    pod 'Toast'
+    pod "NSLogger"
     
     # Swift 版本声明
     post_install do |installer|

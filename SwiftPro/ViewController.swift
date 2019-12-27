@@ -373,6 +373,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         case 21:
             let vc = ApiTestViewController();
             navigationController?.pushViewController(vc, animated: true)
+        case 22:
+            let vc = OCMVVMVC()
+            navigationController?.pushViewController(vc, animated: true)
         default:
             print(indexPath.row)
         }

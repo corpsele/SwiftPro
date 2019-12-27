@@ -8,11 +8,12 @@
 
 import IQKeyboardManager
 import UIKit
-// import CocoaLumberjack
+import CocoaLumberjack
 // import Spring
 // import pop
 // import JJException
 // import OOMDetector
+//let ddLogLevel: Int = Int(DDLogLevel.verbose.rawValue);
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -61,6 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        OOMDetector.getInstance()?.setupWithDefaultConfig()
 //        OOMDetector.getInstance()?.setupLeakChecker()
         
+        // 定义日志级别
+        DDLog.add(DDTTYLogger.sharedInstance)
+        DDTTYLogger.sharedInstance.colorsEnabled = true
 
         return true
     }

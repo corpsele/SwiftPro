@@ -19,6 +19,7 @@ class ApiTestViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "ApiTest"
         view.backgroundColor = UIColor.white
         navigationController?.isNavigationBarHidden = false
         
