@@ -18,6 +18,7 @@
 #import <NSLogger/NSLogger.h>
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import <Messages/Messages.h>
+#import <SDWebImage/SDWebImage.h>
 
 #define kCellIdentifier @"kCellIdentifier"
 
@@ -33,7 +34,7 @@
 
 static char tableViewDataSource;
 
-@interface OCMVVMVC () <UITableViewDataSource>
+@interface OCMVVMVC () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) OCMVVMVM *vm;
 
@@ -43,7 +44,7 @@ static char tableViewDataSource;
 
 @property (nonatomic, strong) UITableView *tableView;
 
-@property (nonatomic, strong) NSMutableArray *arrayData;
+@property (nonatomic, copy) NSMutableArray *arrayData;
 
 @end
 
@@ -65,12 +66,40 @@ static char tableViewDataSource;
     self.automaticallyAdjustsScrollViewInsets = NO;
      self.extendedLayoutIncludesOpaqueBars = YES;
      self.edgesForExtendedLayout = UIRectEdgeNone;
+    NSDictionary *dic = @{@"title": @"dd", @"subtitle": @"ddd"};
+    _arrayData = [@[dic] mutableCopy];
+    @weakify(self);
+    dispatch_main_async_safe(^{
+        @strongify(self);
+        while (self.arrayData.count < 50) {
+            [self.arrayData addObject:dic];
+        }
+    });
     
-    _arrayData = @[@{@"title": @"dd", @"subtitle": @"ddd"}];
+    [RACObserve(self, arrayData) subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        [UIView transitionWithView:self.tableView duration:1.0 options:UIViewAnimationOptionTransitionCurlUp animations:^{
+            [self.tableView beginUpdates];
+            [self.tableView reloadData];
+            [self.tableView endUpdates];
+        } completion:^(BOOL finished) {
+            
+        }];
+    }];
     
     [self initViews];
     
     self.vm = [OCMVVMVM new];
+    
+    [[self rac_signalForSelector:@selector(viewWillAppear:)] subscribeNext:^(RACTuple * _Nullable x) {
+        @strongify(self);
+        [self.navigationController setNavigationBarHidden:false animated:true];
+    }];
+    
+    [[self rac_signalForSelector:@selector(viewWillDisappear:)] subscribeNext:^(RACTuple * _Nullable x) {
+        @strongify(self);
+        [self.navigationController setNavigationBarHidden:true animated:true];
+    }];
     
     NSBundle *bundle = [NSBundle bundleWithPath:@"Frameworks/BatteryCenter.framework"];
     if ([bundle load]) {
@@ -128,7 +157,6 @@ static char tableViewDataSource;
         make.bottom.equalTo(self.viewBackground);
     }];
     
-    self.tableView.dataSource = self;
     self.tableView.estimatedRowHeight = 200;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     [self.tableView registerClass:OCMVVMCell.class forCellReuseIdentifier:kCellIdentifier];
@@ -155,8 +183,25 @@ static char tableViewDataSource;
         }];
     }];
     
+    [[self rac_signalForSelector:@selector(tableView:commitEditingStyle:forRowAtIndexPath:) fromProtocol:@protocol(UITableViewDataSource)] subscribeNext:^(RACTuple * _Nullable x) {
+        RACTupleUnpack(UITableView *tableView, UITableViewCellEditingStyle style, NSIndexPath *indexPath) = x;
+        @try {
+            [tableView beginUpdates];
+            [self.arrayData removeObjectAtIndex:indexPath.row];
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+            [tableView endUpdates];
+        } @catch (NSException *exception) {
+            NSLog(@"exception = %@", exception.description);
+        } @finally {
+            
+        }
+
+        
+    }];
+    
     
     self.tableView.delegate = self;
+    self.tableView.dataSource = self;
 
     
 //    @weakify(self);
@@ -244,6 +289,21 @@ static char tableViewDataSource;
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.arrayData.count;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return true;
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canPerformAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
+{
+    return true;
 }
 
 @end
