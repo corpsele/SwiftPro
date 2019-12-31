@@ -1042,8 +1042,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>
@@ -1058,8 +1058,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>
@@ -1074,8 +1074,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>
@@ -1090,8 +1090,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "163"
-            endingLineNumber = "163"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>
@@ -1106,8 +1106,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>
@@ -1202,8 +1202,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "202"
-            endingLineNumber = "202"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1218,8 +1218,88 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "-initViews"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8615E0FA-90FF-46C7-8466-8704B9120F2F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "-initViews"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8615E0FA-90FF-46C7-8466-8704B9120F2F - cce16f03c7f703ab"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__21-[OCMVVMVC initViews]_block_invoke.291"
+                  moduleName = "SwiftPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/OCMVVM/OCMVVMVC.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "127"
+                  endingLineNumber = "127"
+                  offsetFromSymbolStart = "806">
+               </Location>
+               <Location
+                  uuid = "8615E0FA-90FF-46C7-8466-8704B9120F2F - 440d6dbd227b873f"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__21-[OCMVVMVC initViews]_block_invoke_2.292"
+                  moduleName = "SwiftPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/OCMVVM/OCMVVMVC.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "129"
+                  endingLineNumber = "129"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "140B7731-0514-4ECA-B362-314CD15B5FAB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2A705617-5F12-4533-9F0E-23B637CE59F6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>

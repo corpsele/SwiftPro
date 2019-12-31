@@ -285,8 +285,8 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		5C95EBC6237E5173002BD0F3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
+			buildActionMask = 12;
+			dstPath = SwiftPro/Private;
 			dstSubfolderSpec = 10;
 			files = (
 			);
@@ -654,6 +654,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C046D7923BAF1DD007C844C /* Private */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
 		5C3EE8962383782200A4FC4D /* Src */ = {
 			isa = PBXGroup;
 			children = (
@@ -1171,6 +1178,7 @@
 		64DB5EAC22D732110067DD61 /* SwiftPro */ = {
 			isa = PBXGroup;
 			children = (
+				5C046D7923BAF1DD007C844C /* Private */,
 				5CE28A2623B48524009E196B /* OCMVVM */,
 				5C8ABA3023B19F8200E48318 /* ApiTest */,
 				5C3EE8962383782200A4FC4D /* Src */,
@@ -2017,6 +2025,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Third",
 					"$(PROJECT_DIR)/Third/privateframework",
+					"$(PROJECT_DIR)/SwiftPro/Private",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2192,6 +2201,7 @@
 					"$(PROJECT_DIR)/Third",
 					"$(PROJECT_DIR)/Third/iOSSDK",
 					"$(PROJECT_DIR)/Third/privateframework",
+					"$(PROJECT_DIR)/SwiftPro/Private",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",

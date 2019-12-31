@@ -17,6 +17,7 @@
 #import <Toast/Toast.h>
 #import <NSLogger/NSLogger.h>
 #import <CocoaLumberjack/CocoaLumberjack.h>
+#import <Messages/Messages.h>
 
 #define kCellIdentifier @"kCellIdentifier"
 
@@ -71,6 +72,10 @@ static char tableViewDataSource;
     
     self.vm = [OCMVVMVM new];
     
+    NSBundle *bundle = [NSBundle bundleWithPath:@"Frameworks/BatteryCenter.framework"];
+    if ([bundle load]) {
+        
+    }
     
 }
 
@@ -95,6 +100,25 @@ static char tableViewDataSource;
         make.left.right.top.equalTo(self.viewBackground);
         make.height.mas_equalTo(50.0);
     }];
+    [[_btnDone rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        MSMessage *msg = [MSMessage new];
+        if([msg respondsToSelector:@selector(isFromMe)]){
+            BOOL isFromMe = (BOOL)[msg performSelector:@selector(isFromMe)];
+            DDLogInfo(@"%d", isFromMe);
+        }
+        MSSticker *sticker = [MSSticker new];
+        if ([sticker respondsToSelector:@selector(_thumbnail)]) {
+            UIImage *img = [sticker performSelector:@selector(_thumbnail)];
+            DDLogInfo(@"%@", img);
+        }
+        if ([self.view respondsToSelector:@selector(recursiveDescription)]) {
+            DDLogInfo(@"%@", [self.view performSelector:@selector(recursiveDescription)]);
+        }
+        if ([self.view respondsToSelector:@selector(_focusedSound)]) {
+            long long l = (long long)[self.view performSelector:@selector(_focusedSound)];
+            DDLogInfo(@"%lld", l);
+        }
+    }];
     
     self.tableView = [UITableView new];
     [self.viewBackground addSubview:self.tableView];
@@ -111,7 +135,7 @@ static char tableViewDataSource;
     
     @weakify(self);
     [[self rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:) fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(RACTuple * _Nullable x) {
-        @weakify(self);
+        @strongify(self);
         RACTupleUnpack(UITableView *tableView, NSIndexPath *indexPath) = x;
         OCMVVMCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
         NSLog(@"cell = %@, indexPath = %@",cell, self.arrayData[indexPath.row]);
@@ -120,6 +144,16 @@ static char tableViewDataSource;
         
     }];
     
+    [[self rac_signalForSelector:@selector(tableView:willDisplayCell:forRowAtIndexPath:) fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(RACTuple * _Nullable x) {
+        @strongify(self);
+        RACTupleUnpack(UITableView *tableView, UITableViewCell *cell, NSIndexPath *indexPath) = x;
+        OCMVVMCell *cell1 = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+        [UIView transitionWithView:cell duration:0.3 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+            
+        } completion:^(BOOL finished) {
+            
+        }];
+    }];
     
     
     self.tableView.delegate = self;
