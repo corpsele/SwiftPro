@@ -191,7 +191,7 @@ static char tableViewDataSource;
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
             [tableView endUpdates];
         } @catch (NSException *exception) {
-            NSLog(@"exception = %@", exception.description);
+            DDLogInfo(@"exception = %@", exception.description);
         } @finally {
             
         }
