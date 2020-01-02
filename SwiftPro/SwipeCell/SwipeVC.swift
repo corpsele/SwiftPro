@@ -56,8 +56,8 @@ class SwipeVC: BaseWithNaviVC, UITableViewDelegate, UITableViewDataSource {
         let rightExSetting = MGSwipeExpansionSettings()
         rightExSetting.expansionLayout = .center
         cell1.rightExpansion = rightExSetting
-        let btnRIght1 = MGSwipeButton(title: "Trash", backgroundColor: .blue)
-        cell1.rightButtons = [btnRIght1]
+        let btnRight1 = MGSwipeButton(title: "Trash", backgroundColor: .blue)
+        cell1.rightButtons = [btnRight1]
 
         arrayCell.append(.kMGSwipeCellNormal(title: "mg2", cell: cell1, index: 1))
     }

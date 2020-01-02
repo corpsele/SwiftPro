@@ -22,6 +22,7 @@
 
 #define kCellIdentifier @"kCellIdentifier"
 
+
 #ifdef DEBUG
 
     static const int ddLogLevel = DDLogLevelInfo;

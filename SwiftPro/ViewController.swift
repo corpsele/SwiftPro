@@ -328,13 +328,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         case 4:
             playWithVLCInLocal()
         case 5:
-//            performSQLite();
+            performSQLite();
             break
         case 6:
-//            writeColmn(id: indexPath.row, name: indexPath.row.string);
+            writeColmn(id: indexPath.row, name: indexPath.row.string);
             break
         case 7:
-//            getColmn();
+            getColmn();
             break
         case 8:
             let vc = EurekaTestViewController(style: .plain)
@@ -507,74 +507,85 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         SwiftMessages.show(view: view)
     }
 
-//    fileprivate func performSQLite(){
-//        do {
-//
-//            let dataPath = getDBFilePath()[0];
-//             let tmp = getDBFilePath()[1];
-//            let manager = FileManager.default;
-//
-//            if manager.fileExists(atPath: tmp) == false{
-//
-//                try manager.createDirectory(atPath: dataPath, withIntermediateDirectories: true, attributes: nil);
-//                manager.createFile(atPath: tmp, contents: nil, attributes: nil);
-//            }
-//            let db = try RxSwift.Connection(tmp);
-//            let table = Table("MyTable");
-//            let id = Expression<Int64>("id")
-//            let name = Expression<String?>("name")
-//            try db.run(table.create(block: { (tb) in
-//                tb.column(id, primaryKey: true);
-//                tb.column(name);
-//            }));
-//        } catch let err as NSError {
-//            print(err.localizedDescription);
-//            if err.code == 14 {
-//                view.makeToast("无法保存文件");
-//            }
-//            else if err.code == 0 {
-//                view.makeToast("数据库已被创建");
-//            }
-//        }
-//
-//
-    ////        let strCreate = "create table MySQL ( id int primary key, name text );"
-    ////        sqlite.execute(query: strCreate);
-//    }
+    fileprivate func performSQLite(){
+        do {
 
-//    fileprivate func writeColmn(id: Int, name: String) {
-//        do {
-//            let db = try Connection(getDBFilePath()[1]);
-//            let table = Table("MyTable");
-//            let id1 = Expression<Int64>("id")
-//            let name1 = Expression<String?>("name")
-//            let insert = table.insert(id1 <- Int64(id), name1 <- name);
-//            let rowid = try db.run(insert);
-//            print(rowid);
-//        } catch let err as NSError {
-//            print(err.localizedDescription);
-//            view.makeToast("插入数据失败");
-//        }
-//    }
-//
-//    fileprivate func getColmn(){
-//        do {
-//            let db = try Connection(getDBFilePath()[1]);
-//            let table = Table("MyTable");
-//            let id1 = Expression<Int64>("id");
-//            let name1 = Expression<String?>("name");
-    ////            let select = table.select(id1, name1);
-//            for t in try db.prepare(table) {
-//                print("id: \(t[id1]), name: \(t[name1]!)")
-//                // id: 1, name: Optional("Alice"), email: alice@mac.com
-//            }
-//
-//        } catch let err as NSError {
-//            print(err.localizedDescription);
-//        }
-//
-//
-//    }
+            let dataPath = getDBFilePath()[0];
+             let tmp = getDBFilePath()[1];
+            let manager = FileManager.default;
+
+            if manager.fileExists(atPath: tmp) == false{
+
+                try manager.createDirectory(atPath: dataPath, withIntermediateDirectories: true, attributes: nil);
+                manager.createFile(atPath: tmp, contents: nil, attributes: nil);
+            }
+            
+            let db = try Connection(tmp);
+            let table = Table("MyTable");
+            let id = Expression<Int64>("id")
+            let name = Expression<String?>("name")
+            try db.run(table.create(block: { (tb) in
+                tb.column(id, primaryKey: true);
+                tb.column(name);
+            }));
+            view.makeToast("创建成功")
+        } catch let err as NSError {
+            print(err.localizedDescription);
+            if err.code == 14 {
+                view.makeToast("无法保存文件");
+            }
+            else if err.code == 0 {
+                view.makeToast("数据库已被创建");
+            }
+        }
+
+
+    //        let strCreate = "create table MySQL ( id int primary key, name text );"
+    //        sqlite.execute(query: strCreate);
+    }
+
+    fileprivate func writeColmn(id: Int, name: String) {
+        do {
+            let db = try Connection(getDBFilePath()[1]);
+            let table = Table("MyTable");
+            let id1 = Expression<Int64>("id")
+            let name1 = Expression<String?>("name")
+            let insert = table.insert(id1 <- Int64(id), name1 <- name);
+            let rowid = try db.run(insert);
+            print(rowid);
+            view.makeToast("写入数据成功")
+        } catch let err as NSError {
+            print(err.localizedDescription);
+            view.makeToast("插入数据失败");
+        }
+    }
+
+    fileprivate func getColmn(){
+        do {
+            let db = try Connection(getDBFilePath()[1]);
+            let table = Table("MyTable");
+            let id1 = Expression<Int64>("id");
+            let name1 = Expression<String?>("name");
+    //            let select = table.select(id1, name1);
+            var str = ""
+            for t in try db.prepare(table) {
+                print("id: \(t[id1]), name: \(t[name1]!)")
+                // id: 1, name: Optional("Alice"), email: alice@mac.com
+                str = "id: \(t[id1]), name: \(t[name1]!)"
+            }
+            view.makeToast("获取数据成功")
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) { [weak self] in
+                if let strongSelf = self {
+                   strongSelf.view.makeToast(str)
+                }
+            }
+        } catch let err as NSError {
+            print(err.localizedDescription);
+            view.makeToast("获取数据失败");
+        }
+
+
+    }
 
     fileprivate func getDBFilePath() -> [String] {
         let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)

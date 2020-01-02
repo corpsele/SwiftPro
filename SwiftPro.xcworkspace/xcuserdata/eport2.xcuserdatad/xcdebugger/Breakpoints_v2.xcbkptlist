@@ -402,8 +402,8 @@
             filePath = "SwiftPro/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "618"
-            endingLineNumber = "618"
+            startingLineNumber = "628"
+            endingLineNumber = "628"
             landmarkName = "showVideoChoose()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1042,8 +1042,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>
@@ -1058,8 +1058,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>
@@ -1074,8 +1074,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>
@@ -1090,8 +1090,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>
@@ -1106,8 +1106,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "262"
-            endingLineNumber = "262"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>
@@ -1202,10 +1202,10 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "299"
-            endingLineNumber = "299"
-            landmarkName = "OCMVVMVC"
-            landmarkType = "3">
+            startingLineNumber = "303"
+            endingLineNumber = "303"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1218,8 +1218,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>
@@ -1234,8 +1234,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "-initViews"
             landmarkType = "7">
             <Locations>
@@ -1282,8 +1282,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>
@@ -1298,10 +1298,10 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "331"
-            endingLineNumber = "331"
-            landmarkName = "OCMVVMVC"
-            landmarkType = "3">
+            startingLineNumber = "335"
+            endingLineNumber = "335"
+            landmarkName = "-tableView:canPerformAction:forRowAtIndexPath:withSender:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1314,10 +1314,10 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "326"
-            endingLineNumber = "326"
-            landmarkName = "OCMVVMVC"
-            landmarkType = "3">
+            startingLineNumber = "330"
+            endingLineNumber = "330"
+            landmarkName = "-tableView:editingStyleForRowAtIndexPath:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1330,10 +1330,10 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321"
-            landmarkName = "OCMVVMVC"
-            landmarkType = "3">
+            startingLineNumber = "325"
+            endingLineNumber = "325"
+            landmarkName = "-tableView:canEditRowAtIndexPath:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1346,8 +1346,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -1373,8 +1373,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>
@@ -1389,8 +1389,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>

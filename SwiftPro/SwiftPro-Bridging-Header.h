@@ -12,6 +12,8 @@
 
 #import "OCMVVMVC.h"
 
+#import "SQLite.h"
+
 //#import <Masonry/Masonry.h>
 //#import <AuthenticationServices/AuthenticationServices.h>
 

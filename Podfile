@@ -52,7 +52,7 @@ target 'SwiftPro' do
     pod 'RxBlocking'
     pod 'RxOptional'
     pod 'RxKeyboard'
-    pod 'SQLite'
+#    pod 'SQLite'
     pod 'R.swift'
     pod 'SSZipArchive'
     pod 'Spring'
