@@ -169,6 +169,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         }
         
+        
     }
 
     @objc func deviceOrientationListener(noti _: Notification) {

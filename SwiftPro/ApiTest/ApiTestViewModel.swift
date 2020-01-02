@@ -20,6 +20,13 @@ import Toast_Swift
 import NVActivityIndicatorView
 
 class ApiTestViewModel: NSObject {
+    var viewAppearSignal: SignalProducer<Void, Never>! {
+        didSet{
+            viewAppearSignal.startWithValues { (Void) in
+                print("SignalProducer<Void, Never>")
+            }
+        }
+    }
     private var apiModel: Observable<[SectionModel<String, City>]>?
     private var tableView: UITableView?
     private var view: UIView?
@@ -60,6 +67,7 @@ class ApiTestViewModel: NSObject {
                 self?.clickCommand.onNext((self?.count)!)
                  NVActivityIndicatorPresenter.sharedInstance.startAnimating(ActivityData())
                 self?.requestApi()
+                IQKeyboardManager.shared().resignFirstResponder()
                 })
         }
     }

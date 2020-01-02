@@ -13,6 +13,7 @@
 #import "OCMVVMVC.h"
 
 #import "SQLite.h"
+#import <IQKeyboardManager/IQKeyboardManager.h>
 
 //#import <Masonry/Masonry.h>
 //#import <AuthenticationServices/AuthenticationServices.h>

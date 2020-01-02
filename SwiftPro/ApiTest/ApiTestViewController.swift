@@ -52,6 +52,7 @@ class ApiTestViewController: UIViewController {
         }) {
             
         }
+        vm.viewAppearSignal = self.reactive.viewWillAppear.producer
         
         
     }
