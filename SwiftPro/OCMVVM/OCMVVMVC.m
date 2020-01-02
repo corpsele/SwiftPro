@@ -32,7 +32,7 @@
 
 #endif
 
-static char tableViewDataSource;
+//static char tableViewDataSource;
 
 @interface OCMVVMVC () <UITableViewDataSource, UITableViewDelegate>
 
@@ -45,6 +45,8 @@ static char tableViewDataSource;
 @property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, copy) NSMutableArray *arrayData;
+
+@property (nonatomic, assign) BOOL isEdit;
 
 @end
 
@@ -61,8 +63,12 @@ static char tableViewDataSource;
      self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         
      } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
      self.automaticallyAdjustsScrollViewInsets = NO;
+#pragma clang diagnostic pop
      }
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
     self.automaticallyAdjustsScrollViewInsets = NO;
      self.extendedLayoutIncludesOpaqueBars = YES;
      self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -78,13 +84,16 @@ static char tableViewDataSource;
     
     [RACObserve(self, arrayData) subscribeNext:^(id  _Nullable x) {
         @strongify(self);
-        [UIView transitionWithView:self.tableView duration:1.0 options:UIViewAnimationOptionTransitionCurlUp animations:^{
-            [self.tableView beginUpdates];
-            [self.tableView reloadData];
-            [self.tableView endUpdates];
-        } completion:^(BOOL finished) {
-            
-        }];
+        NSArray *array = x;
+        if (array.count > self.arrayData.count) {
+          [UIView transitionWithView:self.tableView duration:1.0 options:UIViewAnimationOptionTransitionCurlUp animations:^{
+              [self.tableView beginUpdates];
+              [self.tableView reloadData];
+              [self.tableView endUpdates];
+          } completion:^(BOOL finished) {
+              
+          }];
+        }
     }];
     
     [self initViews];
@@ -100,6 +109,7 @@ static char tableViewDataSource;
         @strongify(self);
         [self.navigationController setNavigationBarHidden:true animated:true];
     }];
+    
     
     NSBundle *bundle = [NSBundle bundleWithPath:@"Frameworks/BatteryCenter.framework"];
     if ([bundle load]) {
@@ -131,6 +141,7 @@ static char tableViewDataSource;
     }];
     [[_btnDone rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
         MSMessage *msg = [MSMessage new];
+#pragma GCC diagnostic ignored "-Wundeclared-selector"
         if([msg respondsToSelector:@selector(isFromMe)]){
             BOOL isFromMe = (BOOL)[msg performSelector:@selector(isFromMe)];
             DDLogInfo(@"%d", isFromMe);
@@ -143,10 +154,19 @@ static char tableViewDataSource;
         if ([self.view respondsToSelector:@selector(recursiveDescription)]) {
             DDLogInfo(@"%@", [self.view performSelector:@selector(recursiveDescription)]);
         }
+//#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wundeclared-selector"
+//#pragma clang diagnostic pop
         if ([self.view respondsToSelector:@selector(_focusedSound)]) {
             long long l = (long long)[self.view performSelector:@selector(_focusedSound)];
             DDLogInfo(@"%lld", l);
         }
+        
+#pragma GCC diagnostic ignored "-Wundeclared-selector"
+        if ([self.view respondsToSelector:@selector(_disabledColor)]) {
+            DDLogInfo(@"%@", [self.view performSelector:@selector(_disabledColor)]);
+        }
+        
     }];
     
     self.tableView = [UITableView new];
@@ -173,9 +193,12 @@ static char tableViewDataSource;
     }];
     
     [[self rac_signalForSelector:@selector(tableView:willDisplayCell:forRowAtIndexPath:) fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(RACTuple * _Nullable x) {
-        @strongify(self);
+//        @strongify(self);
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-variable"
         RACTupleUnpack(UITableView *tableView, UITableViewCell *cell, NSIndexPath *indexPath) = x;
-        OCMVVMCell *cell1 = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+#pragma clang diagnostic pop
+//        OCMVVMCell *cell1 = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
         [UIView transitionWithView:cell duration:0.3 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
             
         } completion:^(BOOL finished) {
@@ -184,8 +207,10 @@ static char tableViewDataSource;
     }];
     
     [[self rac_signalForSelector:@selector(tableView:commitEditingStyle:forRowAtIndexPath:) fromProtocol:@protocol(UITableViewDataSource)] subscribeNext:^(RACTuple * _Nullable x) {
+        @strongify(self);
         RACTupleUnpack(UITableView *tableView, UITableViewCellEditingStyle style, NSIndexPath *indexPath) = x;
         @try {
+            
             [tableView beginUpdates];
             [self.arrayData removeObjectAtIndex:indexPath.row];
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
@@ -273,13 +298,13 @@ static char tableViewDataSource;
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     OCMVVMCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
     @weakify(self);
-    [[cell rac_valuesForKeyPath:@"lblTitle" observer:nil] subscribeNext:^(id  _Nullable x) {
+    [[cell rac_valuesForKeyPath:@"lblTitle" observer:self] subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         if ([x isKindOfClass:UILabel.class]) {
             ((UILabel*)x).text = self.arrayData[indexPath.row][@"title"];
         }
     }];
-    [[cell rac_valuesForKeyPath:@"lblSubTitle" observer:nil] subscribeNext:^(id  _Nullable x) {
+    [[cell rac_valuesForKeyPath:@"lblSubTitle" observer:self] subscribeNext:^(id  _Nullable x) {
         if ([x isKindOfClass:UILabel.class]) {
             ((UILabel*)x).text = self.arrayData[indexPath.row][@"subtitle"];
         }
