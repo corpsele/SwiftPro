@@ -159,9 +159,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
 //                let dns = DnsSettingsClass.initWithServers("192.168.0.101");
                 
-                print("dns = \(DnsSettingsClass)");
+                print("dns = \(DnsSettingsClass!)");
                 let dns = DnsSettingsClass?.init();
-                dns?.perform(Selector("initWithServers:"), with: "192.168.0.101");
+//                dns?.perform(#selector(initWithServers), with: "192.168.0.101")
+                dns?.perform(Selector(("initWithServers:")), with: "192.168.0.101");
             } catch let err {
                 print(err.localizedDescription);
             }
@@ -275,7 +276,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             case let ViewControllerCellType.VCCellTypeDisplay(cell):
                 cell.textLabel?.text = getTotalCacheSize()
                 return cell
-            case let ViewControllerCellType.VCCellTypeAuth(cell):
+                
+            case ViewControllerCellType.VCCellTypeAuth(_):
 //                if #available(iOS 13.0, *) {
 //                    let btnAuth = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .black)
 //                    btnAuth.addTarget(self, action: #selector(btnAuthAction(sender:)), for: .touchUpInside)

@@ -208,7 +208,10 @@
     
     [[self rac_signalForSelector:@selector(tableView:commitEditingStyle:forRowAtIndexPath:) fromProtocol:@protocol(UITableViewDataSource)] subscribeNext:^(RACTuple * _Nullable x) {
         @strongify(self);
-        RACTupleUnpack(UITableView *tableView, UITableViewCellEditingStyle style, NSIndexPath *indexPath) = x;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-variable"
+        RACTupleUnpack(UITableView *tableView,  UITableViewCellEditingStyle style, NSIndexPath *indexPath) = x;
+#pragma clang diagnostic pop
         @try {
             
             [tableView beginUpdates];
