@@ -19,6 +19,7 @@
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import <Messages/Messages.h>
 #import <SDWebImage/SDWebImage.h>
+#import "CheckSignCer.h"
 
 #define kCellIdentifier @"kCellIdentifier"
 
@@ -116,6 +117,8 @@
     if ([bundle load]) {
         
     }
+    
+    DDLogWarn(@"isFromJailbrokenChannel = %d", [CheckSignCer isFromJailbrokenChannel]);
     
 }
 

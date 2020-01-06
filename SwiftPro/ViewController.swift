@@ -319,8 +319,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             navigationController?.pushViewController(videoVC ?? UIViewController(), animated: true)
         case 1:
 
-            print("")
-
+            let n = forgJump(9)
+            print("n = \(n!)")
+            
         case 2:
             chooseVideoURL()
 
@@ -586,6 +587,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
 
 
+    }
+    
+    // MARK: 青蛙跳
+    // 若把条件修改成一次可以跳一级，也可以跳2级...也可以跳上n级呢，则f(n) = 2^{n-1}
+    //这里需要注意一下溢出的问题，因为在swift里若相加溢出，则会直接crash，所以这里相加使用了 &+，溢出后返回nil
+    fileprivate func forgJump(_ number: UInt64) -> UInt64? {
+        if number == 1 {
+            return 1
+        }else if number == 2 {
+            return 1
+        }
+        var fibNMinusOne:UInt64 = 1
+        var fibNMinusTwo:UInt64 = 1
+        var fibN:UInt64 = 0
+        for _ in 3...number {
+            fibN = fibNMinusOne &+ fibNMinusTwo
+            if(fibN < fibNMinusOne) {
+                return nil
+            }
+            fibNMinusTwo = fibNMinusOne
+            fibNMinusOne = fibN
+        }
+        return fibN
     }
 
     fileprivate func getDBFilePath() -> [String] {

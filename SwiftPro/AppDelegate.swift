@@ -106,4 +106,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func handleCrashException(_ exceptionMessage: String, extraInfo _: [AnyHashable: Any]?) {
         print(exceptionMessage)
     }
+    
+    
 }
+
+

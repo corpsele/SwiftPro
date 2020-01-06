@@ -28,6 +28,7 @@
 		5CBA37C2237298B700D25A68 /* wma.wma in Resources */ = {isa = PBXBuildFile; fileRef = 5CBA37C1237298B700D25A68 /* wma.wma */; };
 		5CBA37C42372B37A00D25A68 /* wav.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5CBA37C32372B37900D25A68 /* wav.wav */; };
 		5CBA37C62372B43D00D25A68 /* mp4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5CBA37C52372B43D00D25A68 /* mp4.mp4 */; };
+		5CDC1DB123C2E3750060969C /* CheckSignCer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC1DB023C2E3750060969C /* CheckSignCer.m */; };
 		5CE28A1E23B46E93009E196B /* RVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE28A0C23B46E93009E196B /* RVMViewModel.m */; };
 		5CE28A1F23B46E93009E196B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CE28A0F23B46E93009E196B /* Info.plist */; };
 		5CE28A3723B48545009E196B /* OCMVVMVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE28A3623B48545009E196B /* OCMVVMVC.m */; };
@@ -336,6 +337,8 @@
 		5CBA37C1237298B700D25A68 /* wma.wma */ = {isa = PBXFileReference; lastKnownFileType = file; path = wma.wma; sourceTree = "<group>"; };
 		5CBA37C32372B37900D25A68 /* wav.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wav.wav; sourceTree = "<group>"; };
 		5CBA37C52372B43D00D25A68 /* mp4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = mp4.mp4; sourceTree = "<group>"; };
+		5CDC1DAF23C2E3750060969C /* CheckSignCer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckSignCer.h; sourceTree = "<group>"; };
+		5CDC1DB023C2E3750060969C /* CheckSignCer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckSignCer.m; sourceTree = "<group>"; };
 		5CE28A0C23B46E93009E196B /* RVMViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVMViewModel.m; sourceTree = "<group>"; };
 		5CE28A0E23B46E93009E196B /* RVMViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVMViewModel.h; sourceTree = "<group>"; };
 		5CE28A0F23B46E93009E196B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -667,6 +670,8 @@
 				5C3EE899238379EF00A4FC4D /* HGNotifactionMainView.h */,
 				5C3EE89A238379EF00A4FC4D /* HGNotifactionMainView.m */,
 				5C3EE8C02383F18600A4FC4D /* TestViewController.swift */,
+				5CDC1DAF23C2E3750060969C /* CheckSignCer.h */,
+				5CDC1DB023C2E3750060969C /* CheckSignCer.m */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -1777,6 +1782,7 @@
 				645A00A122F80FA500F3BC9B /* UIControl+CYLTabBarControllerExtention.m in Sources */,
 				645A00A922F80FA500F3BC9B /* CYLBaseTableViewController.m in Sources */,
 				645A00A722F80FA500F3BC9B /* CAAnimation+CYLBadgeExtention.m in Sources */,
+				5CDC1DB123C2E3750060969C /* CheckSignCer.m in Sources */,
 				64BC6C9C22E155600051A79D /* MainNaviViewController.swift in Sources */,
 				64BC6C9622E065BE0051A79D /* KxMovieDecoder.m in Sources */,
 				645A00A022F80FA500F3BC9B /* CYLTabBar.m in Sources */,
