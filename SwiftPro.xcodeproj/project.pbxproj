@@ -28,7 +28,9 @@
 		5CBA37C2237298B700D25A68 /* wma.wma in Resources */ = {isa = PBXBuildFile; fileRef = 5CBA37C1237298B700D25A68 /* wma.wma */; };
 		5CBA37C42372B37A00D25A68 /* wav.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5CBA37C32372B37900D25A68 /* wav.wav */; };
 		5CBA37C62372B43D00D25A68 /* mp4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5CBA37C52372B43D00D25A68 /* mp4.mp4 */; };
-		5CDC1DB123C2E3750060969C /* CheckSignCer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC1DB023C2E3750060969C /* CheckSignCer.m */; };
+		5CDC1DB123C2E3750060969C /* CheckSignCer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC1DB023C2E3750060969C /* CheckSignCer.mm */; };
+		5CDC1DC223C470CA0060969C /* QueueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC1DC023C470CA0060969C /* QueueVC.swift */; };
+		5CDC1DC323C470CA0060969C /* QueueVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CDC1DC123C470CA0060969C /* QueueVC.xib */; };
 		5CE28A1E23B46E93009E196B /* RVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE28A0C23B46E93009E196B /* RVMViewModel.m */; };
 		5CE28A1F23B46E93009E196B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CE28A0F23B46E93009E196B /* Info.plist */; };
 		5CE28A3723B48545009E196B /* OCMVVMVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE28A3623B48545009E196B /* OCMVVMVC.m */; };
@@ -338,7 +340,9 @@
 		5CBA37C32372B37900D25A68 /* wav.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wav.wav; sourceTree = "<group>"; };
 		5CBA37C52372B43D00D25A68 /* mp4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = mp4.mp4; sourceTree = "<group>"; };
 		5CDC1DAF23C2E3750060969C /* CheckSignCer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckSignCer.h; sourceTree = "<group>"; };
-		5CDC1DB023C2E3750060969C /* CheckSignCer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckSignCer.m; sourceTree = "<group>"; };
+		5CDC1DB023C2E3750060969C /* CheckSignCer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CheckSignCer.mm; sourceTree = "<group>"; };
+		5CDC1DC023C470CA0060969C /* QueueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueVC.swift; sourceTree = "<group>"; };
+		5CDC1DC123C470CA0060969C /* QueueVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QueueVC.xib; sourceTree = "<group>"; };
 		5CE28A0C23B46E93009E196B /* RVMViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVMViewModel.m; sourceTree = "<group>"; };
 		5CE28A0E23B46E93009E196B /* RVMViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVMViewModel.h; sourceTree = "<group>"; };
 		5CE28A0F23B46E93009E196B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -671,7 +675,9 @@
 				5C3EE89A238379EF00A4FC4D /* HGNotifactionMainView.m */,
 				5C3EE8C02383F18600A4FC4D /* TestViewController.swift */,
 				5CDC1DAF23C2E3750060969C /* CheckSignCer.h */,
-				5CDC1DB023C2E3750060969C /* CheckSignCer.m */,
+				5CDC1DB023C2E3750060969C /* CheckSignCer.mm */,
+				5CDC1DC023C470CA0060969C /* QueueVC.swift */,
+				5CDC1DC123C470CA0060969C /* QueueVC.xib */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -1631,6 +1637,7 @@
 				5CBA37C42372B37A00D25A68 /* wav.wav in Resources */,
 				64DB5EB522D732110067DD61 /* Assets.xcassets in Resources */,
 				5CBA37C62372B43D00D25A68 /* mp4.mp4 in Resources */,
+				5CDC1DC323C470CA0060969C /* QueueVC.xib in Resources */,
 				64DB5EB322D732110067DD61 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1782,7 +1789,7 @@
 				645A00A122F80FA500F3BC9B /* UIControl+CYLTabBarControllerExtention.m in Sources */,
 				645A00A922F80FA500F3BC9B /* CYLBaseTableViewController.m in Sources */,
 				645A00A722F80FA500F3BC9B /* CAAnimation+CYLBadgeExtention.m in Sources */,
-				5CDC1DB123C2E3750060969C /* CheckSignCer.m in Sources */,
+				5CDC1DB123C2E3750060969C /* CheckSignCer.mm in Sources */,
 				64BC6C9C22E155600051A79D /* MainNaviViewController.swift in Sources */,
 				64BC6C9622E065BE0051A79D /* KxMovieDecoder.m in Sources */,
 				645A00A022F80FA500F3BC9B /* CYLTabBar.m in Sources */,
@@ -1798,6 +1805,7 @@
 				64ECDF0222E9A29A005ACB34 /* NSString+WOCrash.m in Sources */,
 				5CE28A1E23B46E93009E196B /* RVMViewModel.m in Sources */,
 				64A8B1A422D82ABE00897918 /* TableViewCell.swift in Sources */,
+				5CDC1DC223C470CA0060969C /* QueueVC.swift in Sources */,
 				6426830922FD70CB00029E30 /* UINavigationControllerExtension.swift in Sources */,
 				64DB5EDD22D816F80067DD61 /* PublicFrameworks.swift in Sources */,
 				645A009F22F80FA500F3BC9B /* UIView+CYLTabBarControllerExtention.m in Sources */,

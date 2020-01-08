@@ -120,6 +120,8 @@
     
     DDLogWarn(@"isFromJailbrokenChannel = %d", [CheckSignCer isFromJailbrokenChannel]);
     
+//    [[CheckSignCer shared] checkDebugWithExit];
+    
 }
 
 - (void)initViews

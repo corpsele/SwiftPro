@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)shared;
 + (BOOL)isFromJailbrokenChannel;
+- (void)checkDebugWithExit;
 
 @end
 

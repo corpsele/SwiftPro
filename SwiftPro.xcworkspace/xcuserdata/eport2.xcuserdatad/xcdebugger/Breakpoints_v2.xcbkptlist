@@ -290,8 +290,8 @@
             filePath = "SwiftPro/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "425"
-            endingLineNumber = "425"
+            startingLineNumber = "446"
+            endingLineNumber = "446"
             landmarkName = "chooseVideoURL()"
             landmarkType = "7">
          </BreakpointContent>
@@ -306,8 +306,8 @@
             filePath = "SwiftPro/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "359"
-            endingLineNumber = "359"
+            startingLineNumber = "377"
+            endingLineNumber = "377"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -322,8 +322,8 @@
             filePath = "SwiftPro/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "366"
-            endingLineNumber = "366"
+            startingLineNumber = "384"
+            endingLineNumber = "384"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -338,8 +338,8 @@
             filePath = "SwiftPro/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "361"
-            endingLineNumber = "361"
+            startingLineNumber = "379"
+            endingLineNumber = "379"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -402,8 +402,8 @@
             filePath = "SwiftPro/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "653"
-            endingLineNumber = "653"
+            startingLineNumber = "674"
+            endingLineNumber = "674"
             landmarkName = "showVideoChoose()"
             landmarkType = "7">
          </BreakpointContent>
@@ -978,8 +978,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>
@@ -988,6 +988,22 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3B8F05CB-C4D2-47D6-9CE0-3C1B80607E8D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
+            landmarkName = "-initViews"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8338AA33-EC3D-4FE3-8048-48FEE11A8FB4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -1003,22 +1019,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8338AA33-EC3D-4FE3-8048-48FEE11A8FB4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
-            landmarkName = "-initViews"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "7A57264F-9DFB-4B51-BDE0-796B89EF9612"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1026,8 +1026,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>
@@ -1042,8 +1042,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
+            startingLineNumber = "271"
+            endingLineNumber = "271"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>
@@ -1138,8 +1138,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "306"
-            endingLineNumber = "306"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1154,8 +1154,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>
@@ -1170,8 +1170,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "-initViews"
             landmarkType = "7">
             <Locations>
@@ -1218,8 +1218,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>
@@ -1234,8 +1234,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "338"
-            endingLineNumber = "338"
+            startingLineNumber = "340"
+            endingLineNumber = "340"
             landmarkName = "-tableView:canPerformAction:forRowAtIndexPath:withSender:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1250,8 +1250,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "333"
-            endingLineNumber = "333"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
             landmarkName = "-tableView:editingStyleForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1266,8 +1266,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "328"
-            endingLineNumber = "328"
+            startingLineNumber = "330"
+            endingLineNumber = "330"
             landmarkName = "-tableView:canEditRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -1309,8 +1309,8 @@
             filePath = "SwiftPro/OCMVVM/OCMVVMVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
             landmarkName = "-initViews"
             landmarkType = "7">
          </BreakpointContent>
@@ -1405,8 +1405,8 @@
             filePath = "SwiftPro/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "607"
-            endingLineNumber = "607"
+            startingLineNumber = "628"
+            endingLineNumber = "628"
             landmarkName = "forgJump(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1423,7 +1423,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
             endingLineNumber = "25"
-            landmarkName = "+isFromJailbrokenChannel"
+            landmarkName = "-checkDebugWithExit"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1439,7 +1439,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
             endingLineNumber = "29"
-            landmarkName = "+isFromJailbrokenChannel"
+            landmarkName = "-checkDebugWithExit"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1455,7 +1455,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
             endingLineNumber = "30"
-            landmarkName = "+isFromJailbrokenChannel"
+            landmarkName = "-checkDebugWithExit"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1472,6 +1472,310 @@
             startingLineNumber = "39"
             endingLineNumber = "39"
             landmarkName = "+isFromJailbrokenChannel"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DF115D40-9971-4674-BB94-ADADD83B38BC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "324"
+            endingLineNumber = "324"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1822D3C6-F973-4555-845C-F1C85694BC72"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/Src/QueueVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "requestSomeApiWithoutRX()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1822D3C6-F973-4555-845C-F1C85694BC72 - 163315204ff882f5"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Error) -&gt; () in SwiftPro.QueueVC.(requestSomeApi in _7CDCC0BB2CA90767A2F5A80B35D53D6A)() -&gt; ()"
+                  moduleName = "SwiftPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/Src/QueueVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "1822D3C6-F973-4555-845C-F1C85694BC72 - e4ed2c1e795be3c0"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; () in SwiftPro.QueueVC.(requestSomeApi in _7CDCC0BB2CA90767A2F5A80B35D53D6A)() -&gt; ()"
+                  moduleName = "SwiftPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/Src/QueueVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "787AC4E2-F01E-4FE3-A099-F523FE8AA09B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/Src/QueueVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "787AC4E2-F01E-4FE3-A099-F523FE8AA09B - 4ac3ab73ba7cc767"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Int) -&gt; () in closure #1 (RxSwift.Event&lt;()&gt;) -&gt; () in SwiftPro.QueueVC.viewDidLoad() -&gt; ()"
+                  moduleName = "SwiftPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/Src/QueueVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "195">
+               </Location>
+               <Location
+                  uuid = "787AC4E2-F01E-4FE3-A099-F523FE8AA09B - 4ac3ab73ba7cc767"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Int) -&gt; () in closure #1 (RxSwift.Event&lt;()&gt;) -&gt; () in SwiftPro.QueueVC.viewDidLoad() -&gt; ()"
+                  moduleName = "SwiftPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/Src/QueueVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "732">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E7F5282-D485-4E18-B2BB-0D3B464A5CE5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/Src/QueueVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "requestSomeApiWithoutRX()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "62D74929-14C3-4EA3-A020-CB9D02B98696"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/Src/QueueVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "requestSomeApiWithoutRX()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "62D74929-14C3-4EA3-A020-CB9D02B98696 - de865bbb2f477272"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftPro.QueueVC.(requestSomeApi in _7CDCC0BB2CA90767A2F5A80B35D53D6A)() -&gt; ()"
+                  moduleName = "SwiftPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/Src/QueueVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "622">
+               </Location>
+               <Location
+                  uuid = "62D74929-14C3-4EA3-A020-CB9D02B98696 - 5c4e040904a4c366"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.NSHTTPURLResponse, Any) -&gt; () in SwiftPro.QueueVC.(requestSomeApi in _7CDCC0BB2CA90767A2F5A80B35D53D6A)() -&gt; ()"
+                  moduleName = "SwiftPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/Src/QueueVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "231">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "90B6539E-630C-443F-80EB-1D96B8EE596B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/Src/QueueVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E7376EA9-E55B-40FF-8C97-8694CA492D78"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/Src/QueueVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E7376EA9-E55B-40FF-8C97-8694CA492D78 - 3d627deb04aed647"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Array&lt;__C.NSURLSessionDataTask&gt;, Swift.Array&lt;__C.NSURLSessionUploadTask&gt;, Swift.Array&lt;__C.NSURLSessionDownloadTask&gt;) -&gt; () in closure #1 (RxSwift.Event&lt;()&gt;) -&gt; () in SwiftPro.QueueVC.viewDidLoad() -&gt; ()"
+                  moduleName = "SwiftPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/Src/QueueVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "E7376EA9-E55B-40FF-8C97-8694CA492D78 - 7ea2de1265bb9e24"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.NSURLSessionDataTask) -&gt; () in closure #2 (Swift.Array&lt;__C.NSURLSessionDataTask&gt;, Swift.Array&lt;__C.NSURLSessionUploadTask&gt;, Swift.Array&lt;__C.NSURLSessionDownloadTask&gt;) -&gt; () in closure #1 (RxSwift.Event&lt;()&gt;) -&gt; () in SwiftPro.QueueVC.viewDidLoad() -&gt; ()"
+                  moduleName = "SwiftPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/Src/QueueVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FEB38648-0F7D-4689-AC95-B554A18A8EF8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/Src/QueueVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FEB38648-0F7D-4689-AC95-B554A18A8EF8 - 6f6bc5190a665a3b"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #3 (Swift.Int) -&gt; () in closure #1 (RxSwift.Event&lt;()&gt;) -&gt; () in SwiftPro.QueueVC.viewDidLoad() -&gt; ()"
+                  moduleName = "SwiftPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/Src/QueueVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "157">
+               </Location>
+               <Location
+                  uuid = "FEB38648-0F7D-4689-AC95-B554A18A8EF8 - c3de5424011bc829"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.NSHTTPURLResponse, Any) -&gt; () in closure #2 () -&gt; () in closure #3 (Swift.Int) -&gt; () in closure #1 (RxSwift.Event&lt;()&gt;) -&gt; () in SwiftPro.QueueVC.viewDidLoad() -&gt; ()"
+                  moduleName = "SwiftPro"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/eport2/Documents/SwiftPro/SwiftPro/Src/QueueVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "231">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE3EAED6-EEE3-4D9A-9E82-A326AACEBFFD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftPro/Src/QueueVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

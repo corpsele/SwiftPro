@@ -313,6 +313,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.shake()
         }
+        
+        if let type = arrayCell[indexPath.row] as? CellDic {
+            if let cell1 = tableView.dequeueReusableCell(withIdentifier: type.cellIdentify, for: indexPath) as? CheckCell {
+                view.makeToast("checkcell = \(cell1)")
+                
+            }
+        }
+        
+        switch arrayCell[indexPath.row] {
+        case ViewControllerCellType.VCCellTypeDisplay(let cell1):
+            view.makeToast("cell1 = \((cell1.textLabel?.text)!)")
+            break
+        case ViewControllerCellType.VCCellTypeAuth(let cell2):
+            view.makeToast("cell2 = \(cell2)")
+            break
+        default:
+            break
+        }
 
         switch indexPath.row {
         case 0:
@@ -321,7 +339,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
             let n = forgJump(9)
             print("n = \(n!)")
-            
+            self.view.makeToast("n = \(n!)")
         case 2:
             chooseVideoURL()
 
@@ -379,6 +397,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             navigationController?.pushViewController(vc, animated: true)
         case 22:
             let vc = OCMVVMVC()
+            navigationController?.pushViewController(vc, animated: true)
+        case 23:
+            let vc = QueueVC()
             navigationController?.pushViewController(vc, animated: true)
         default:
             print(indexPath.row)
