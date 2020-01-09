@@ -58,6 +58,8 @@ class QueueVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
         dataSource.canEditRowAtIndexPath = {[weak self] (_, index) in
