@@ -67,12 +67,17 @@ class QueueVC: UIViewController {
                     break
                 case 1:
                     strongSelf.queueDQ.async(group: strongSelf.queueGroup){
-                        
+                        strongSelf.queueGroup.enter()
                         requestJSON(.post, URL.init(string: "http://localhost:8050/SpringTest/user/api_json.action") ?? URL.init(fileURLWithPath: ""), parameters: ["username":"corpse","password":"corpse"], encoding: URLEncoding.httpBody, headers: [:]).subscribe(onNext: {[weak self] (response, json) in
                             guard let strongSelf = self else {return}
                             let data = JSON(json)
                             strongSelf.view.makeToast("result = \(data.dictionary!)")
                             strongSelf.sema.signal()
+                            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3.0, execute: {
+                                strongSelf.queueGroup.leave()
+                            })
+                            
+                            
                             }, onError: {[weak self] (err) in
                                 guard let strongSelf = self else{return}
                                 strongSelf.view.makeToast("err \(err.localizedDescription)")
