@@ -84,6 +84,12 @@ class QueueVC: UIViewController {
                         }.disposed(by: strongSelf.disposeBag)
                         strongSelf.sema.wait()
                     }
+                    strongSelf.queueGroup.notify(queue: strongSelf.queueDQ, execute: {[weak self] in
+                        guard let strongSelf = self else {return}
+                        DispatchQueue.main.async {
+                                        strongSelf.view.makeToast("group notify")
+                        }
+                    })
                     break
                 default:
                     break
@@ -92,12 +98,45 @@ class QueueVC: UIViewController {
             strongSelf.view.makeToast(event.debugDescription)
         }.disposed(by: disposeBag)
         
-        queueGroup.notify(queue: DispatchQueue.main, execute: {[weak self] in
+
+        
+        btnDQCurrent.rx.tap.subscribe {[weak self] (event) in
             guard let strongSelf = self else {return}
-            DispatchQueue.main.async {
-                            strongSelf.view.makeToast("group notify")
-            }
-        })
+            print("serial sync thread", Thread.current)
+            strongSelf.actionSheet("Sync", "Async") { (index) -> (Void) in
+                switch index {
+                case 0:
+                    strongSelf.queueDQ.sync {
+                        strongSelf.requestSomeApi()
+                    }
+                    break
+                case 1:
+                    strongSelf.queueDQ.async(group: strongSelf.queueGroup){
+                        
+                        requestJSON(.post, URL.init(string: "http://localhost:8050/SpringTest/user/api_json.action") ?? URL.init(fileURLWithPath: ""), parameters: ["username":"corpse","password":"corpse"], encoding: URLEncoding.httpBody, headers: [:]).subscribe(onNext: {[weak self] (response, json) in
+                            guard let strongSelf = self else {return}
+                            let data = JSON(json)
+                            strongSelf.view.makeToast("result = \(data.dictionary!)")
+                            strongSelf.sema.signal()
+                            }, onError: {[weak self] (err) in
+                                guard let strongSelf = self else{return}
+                                strongSelf.view.makeToast("err \(err.localizedDescription)")
+                                strongSelf.sema.signal()
+                        }, onCompleted: {
+                            strongSelf.sema.signal()
+                        }) {
+                            
+                        }.disposed(by: strongSelf.disposeBag)
+                        strongSelf.sema.wait()
+                    }
+                    break
+                default:
+                    break
+                }
+            }.show()
+            strongSelf.view.makeToast(event.debugDescription)
+
+        }.disposed(by: disposeBag)
         
         btnOpration.rx.tap.subscribe {[weak self] (event) in
             guard let strongSelf = self else{return}
