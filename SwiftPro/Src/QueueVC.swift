@@ -16,6 +16,7 @@ import Toast_Swift
 import Alamofire
 import RxAlamofire
 import SwiftyJSON
+import RxDataSources
 
 class QueueVC: UIViewController {
     @IBOutlet weak var btnDQ: UIButton!
@@ -24,6 +25,7 @@ class QueueVC: UIViewController {
     @IBOutlet weak var btnGlobal: UIButton!
     @IBOutlet weak var btnMain: UIButton!
     @IBOutlet weak var btnOpration: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     
     //串行
     let queueDQ = DispatchQueue(label: "label")
@@ -39,9 +41,24 @@ class QueueVC: UIViewController {
     let operationMain = OperationQueue.main
     let queueGroup = DispatchGroup()
     let sema = DispatchSemaphore(value: 0)
+    
+    var arrayData = BehaviorSubject(value: [SectionModel<String,[String: Any]>]())
+    
+    private let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, [String: Any]>>(configureCell: { (_, table, index, model) in
+        let cell = table.dequeueReusableCell(withIdentifier: "Cell")
+        let str = "\((model["id"] as? String)!) \((model["username"] as? String)!) \((model["password"] as? String)!) \((model["createtime"] as? String)!)"
+            cell?.textLabel?.text = str
+        
+        return cell!
+    })
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+
+        arrayData.asObserver().bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+
         
         operationMain.maxConcurrentOperationCount = 1
 
@@ -111,17 +128,22 @@ class QueueVC: UIViewController {
             strongSelf.actionSheet("Sync", "Async") { (index) -> (Void) in
                 switch index {
                 case 0:
-                    strongSelf.queueDQ.sync {
+                    strongSelf.queueDQCurrent.sync {
                         strongSelf.requestSomeApi()
                     }
                     break
                 case 1:
-                    strongSelf.queueDQ.async(group: strongSelf.queueGroup){
+                    strongSelf.queueDQCurrent.async(group: strongSelf.queueGroup){
                         
-                        requestJSON(.post, URL.init(string: "http://localhost:8050/SpringTest/user/api_json.action") ?? URL.init(fileURLWithPath: ""), parameters: ["username":"corpse","password":"corpse"], encoding: URLEncoding.httpBody, headers: [:]).subscribe(onNext: {[weak self] (response, json) in
+                        requestJSON(.get, URL.init(string: "http://localhost:8050/SpringTest/user/api_getAll.action") ?? URL.init(fileURLWithPath: ""), parameters: ["":""], encoding: URLEncoding.default, headers: [:]).subscribe(onNext: {[weak self] (response, json) in
                             guard let strongSelf = self else {return}
-                            let data = JSON(json)
-                            strongSelf.view.makeToast("result = \(data.dictionary!)")
+//                            let data = JSON(json)
+                            if let array = json as? [[String: Any]] {
+                               strongSelf.view.makeToast("result = \(array)")
+                                let myOrignal = SectionModel<String, [String: Any]>.init(model: "", items: array)
+                                strongSelf.arrayData.onNext([myOrignal])
+                            }
+                            
                             strongSelf.sema.signal()
                             }, onError: {[weak self] (err) in
                                 guard let strongSelf = self else{return}

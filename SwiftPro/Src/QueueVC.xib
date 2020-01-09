@@ -16,6 +16,7 @@
                 <outlet property="btnMain" destination="pqI-4P-tbq" id="ebo-aJ-LWL"/>
                 <outlet property="btnOpration" destination="dfo-Bd-rDA" id="gEJ-6E-cA7"/>
                 <outlet property="lblStatus" destination="VDS-sc-iKW" id="LNm-uO-H3e"/>
+                <outlet property="tableView" destination="e4E-Ac-4ON" id="Zyw-d2-5b9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -73,9 +74,17 @@
                     </constraints>
                     <state key="normal" title="opration"/>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e4E-Ac-4ON">
+                    <rect key="frame" x="0.0" y="565" width="414" height="297"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="297" id="xc5-Di-ZLK"/>
+                    </constraints>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="e4E-Ac-4ON" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="1tu-4C-JWU"/>
                 <constraint firstItem="8Be-y0-geV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="46" id="GGo-3y-34x"/>
                 <constraint firstItem="8Be-y0-geV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="KyR-Fk-fDL"/>
                 <constraint firstItem="gr6-KT-j0G" firstAttribute="top" secondItem="8Be-y0-geV" secondAttribute="bottom" constant="24" id="MBT-sy-KZm"/>
@@ -87,7 +96,9 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VDS-sc-iKW" secondAttribute="trailing" constant="47" id="j6z-Zn-Kwb"/>
                 <constraint firstItem="gr6-KT-j0G" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="46" id="myw-Oh-Z78"/>
                 <constraint firstItem="dfo-Bd-rDA" firstAttribute="top" secondItem="gr6-KT-j0G" secondAttribute="bottom" constant="24" id="otP-yW-vOb"/>
+                <constraint firstItem="e4E-Ac-4ON" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pai-CH-IHL"/>
                 <constraint firstItem="VDS-sc-iKW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="tCX-UE-hz1"/>
+                <constraint firstItem="e4E-Ac-4ON" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="wex-tz-MJ7"/>
                 <constraint firstItem="dfo-Bd-rDA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="41" id="wjB-PH-gkX"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
