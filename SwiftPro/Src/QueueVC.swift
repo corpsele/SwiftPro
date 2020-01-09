@@ -59,6 +59,17 @@ class QueueVC: UIViewController {
 
         arrayData.asObserver().bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
 
+        tableView.rx.itemSelected.subscribe(onNext: {[weak self] (index) in
+            guard let strongSelf = self else {return}
+            let dic = strongSelf.dataSource[index]
+            strongSelf.view.makeToast("\(index)    \((dic["username"])!)")
+        }, onError: { (err) in
+            
+        }, onCompleted: {
+            
+        }) {
+            
+        }.disposed(by: disposeBag)
         
         operationMain.maxConcurrentOperationCount = 1
 
@@ -139,7 +150,7 @@ class QueueVC: UIViewController {
                             guard let strongSelf = self else {return}
 //                            let data = JSON(json)
                             if let array = json as? [[String: Any]] {
-                               strongSelf.view.makeToast("result = \(array)")
+//                               strongSelf.view.makeToast("result = \(array)")
                                 let myOrignal = SectionModel<String, [String: Any]>.init(model: "", items: array)
                                 strongSelf.arrayData.onNext([myOrignal])
                             }
