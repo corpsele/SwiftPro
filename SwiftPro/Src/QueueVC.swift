@@ -68,10 +68,10 @@ class QueueVC: UIViewController {
                 case 1:
                     strongSelf.queueDQ.async(group: strongSelf.queueGroup){
                         
-                        requestJSON(.get, URL.init(string: "http://localhost:8050/SpringTest/user/getall.form") ?? URL.init(fileURLWithPath: ""), parameters: [:], encoding: URLEncoding.httpBody, headers: [:]).subscribe(onNext: {[weak self] (response, json) in
+                        requestJSON(.post, URL.init(string: "http://localhost:8050/SpringTest/user/api_json.action") ?? URL.init(fileURLWithPath: ""), parameters: ["username":"corpse","password":"corpse"], encoding: URLEncoding.httpBody, headers: [:]).subscribe(onNext: {[weak self] (response, json) in
                             guard let strongSelf = self else {return}
                             let data = JSON(json)
-                            strongSelf.view.makeToast("result = \(data["result"])")
+                            strongSelf.view.makeToast("result = \(data.dictionary!)")
                             strongSelf.sema.signal()
                             }, onError: {[weak self] (err) in
                                 guard let strongSelf = self else{return}
