@@ -49,7 +49,7 @@ class QueueVC: UIViewController {
     
     private let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, [String: Any]>>(configureCell: { (_, table, index, model) in
         let cell = table.dequeueReusableCell(withIdentifier: "Cell")
-        let str = "\((model["id"] as? String)!) \((model["username"] as? String)!) \((model["password"] as? String)!) \((model["createtime"] as? String)!)"
+        let str = "\(index) \((model["id"] as? String)!) \((model["username"] as? String)!) \((model["password"] as? String)!) \((model["createtime"] as? String)!)"
             cell?.textLabel?.text = str
         
         return cell!
@@ -63,6 +63,13 @@ class QueueVC: UIViewController {
         dataSource.canEditRowAtIndexPath = {[weak self] (_, index) in
             guard let strongSelf = self else {return false}
             return strongSelf.tableView.isEditing
+        }
+        
+        dataSource.canMoveRowAtIndexPath = {[weak self] (_, index) in
+//            guard let strongSelf = self else {
+//                return false
+//            }
+            return true
         }
 
         arrayData.asObserver().bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
@@ -78,7 +85,25 @@ class QueueVC: UIViewController {
         }) {
             
         }.disposed(by: disposeBag)
-        
+
+        tableView.rx.itemMoved.subscribe(onNext: {[weak self] (sIndex, dIndex) in
+            guard let strongSelf = self else {return}
+            do{
+                            var data = try strongSelf.arrayData.value()
+            //                var items = data.first
+                data[0].items.swapAt(sIndex.row, dIndex.row)
+            //                data[0] = items!
+                            strongSelf.arrayData.onNext(data)
+            }catch let err {
+                strongSelf.view.makeToast(err.localizedDescription)
+            }
+        }, onError: { (err) in
+            
+        }, onCompleted: {
+            
+        }) {
+            
+        }.disposed(by: disposeBag)
 
         tableView.rx.itemSelected.subscribe(onNext: {[weak self] (index) in
             guard let strongSelf = self else {return}
