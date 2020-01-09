@@ -19,6 +19,7 @@ import SwiftyJSON
 import RxDataSources
 
 class QueueVC: UIViewController {
+    
     @IBOutlet weak var btnDQ: UIButton!
     @IBOutlet weak var lblStatus: UILabel!
     @IBOutlet weak var btnDQCurrent: UIButton!
@@ -26,6 +27,7 @@ class QueueVC: UIViewController {
     @IBOutlet weak var btnMain: UIButton!
     @IBOutlet weak var btnOpration: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btnEdit: UIButton!
     
     //串行
     let queueDQ = DispatchQueue(label: "label")
@@ -42,6 +44,7 @@ class QueueVC: UIViewController {
     let queueGroup = DispatchGroup()
     let sema = DispatchSemaphore(value: 0)
     
+//    var arrayData = BehaviorSubject(value: [SectionModel<String,[String: Any]>]())
     var arrayData = BehaviorSubject(value: [SectionModel<String,[String: Any]>]())
     
     private let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, [String: Any]>>(configureCell: { (_, table, index, model) in
@@ -56,8 +59,26 @@ class QueueVC: UIViewController {
         super.viewDidLoad()
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        dataSource.canEditRowAtIndexPath = {[weak self] (_, index) in
+            guard let strongSelf = self else {return false}
+            return strongSelf.tableView.isEditing
+        }
 
         arrayData.asObserver().bind(to: tableView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+        
+        arrayData.subscribe(onNext: {[weak self] (sections) in
+            guard let strongSelf = self else {return}
+
+//            strongSelf.arrayData.onNext(sections)
+        }, onError: { (err) in
+            
+        }, onCompleted: {
+            
+        }) {
+            
+        }.disposed(by: disposeBag)
+        
 
         tableView.rx.itemSelected.subscribe(onNext: {[weak self] (index) in
             guard let strongSelf = self else {return}
@@ -71,7 +92,50 @@ class QueueVC: UIViewController {
             
         }.disposed(by: disposeBag)
         
+        tableView.rx.modelDeleted([String: Any].self).subscribe(onNext: {[weak self] (dic) in
+            guard let strongSelf = self else {return}
+            
+        }, onError: { (err) in
+            
+        }, onCompleted: {
+            
+        }) {
+            
+        }.disposed(by: disposeBag)
+        
+        tableView.rx.itemDeleted.subscribe(onNext: {[weak self] (index) in
+            guard let strongSelf = self else {return}
+            do{
+                var data = try strongSelf.arrayData.value()
+//                var items = data.first
+                data[0].items.remove(at: index.row)
+//                data[0] = items!
+                strongSelf.arrayData.onNext(data)
+            }catch let err {
+                strongSelf.view.makeToast(err.localizedDescription)
+            }
+            
+        }, onError: { (err) in
+            
+        }, onCompleted: {
+            
+        }) {
+            
+        }.disposed(by: disposeBag)
+        
         operationMain.maxConcurrentOperationCount = 1
+        
+        btnEdit.rx.tap.subscribe(onNext: {[weak self] _ in
+            guard let strongSelf = self else {return}
+            strongSelf.tableView.setEditing(!strongSelf.tableView.isEditing, animated: true)
+            
+        }, onError: { (err) in
+            
+        }, onCompleted: {
+            
+        }) {
+            
+        }.disposed(by: disposeBag)
 
         // Do any additional setup after loading the view.
         btnDQ.rx.tap.subscribe {[weak self] (event) in
@@ -242,6 +306,12 @@ class QueueVC: UIViewController {
 //
 //        }.disposed(by: disposeBag)
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return .delete
+    }
+    
+    
 
 
     /*

@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="btnDQ" destination="8Be-y0-geV" id="m28-GA-r3Q"/>
                 <outlet property="btnDQCurrent" destination="e42-Ru-wfY" id="9AV-MO-oXo"/>
+                <outlet property="btnEdit" destination="Ae8-Iw-7OU" id="7UC-Og-ZCH"/>
                 <outlet property="btnGlobal" destination="gr6-KT-j0G" id="VIm-II-wIm"/>
                 <outlet property="btnMain" destination="pqI-4P-tbq" id="ebo-aJ-LWL"/>
                 <outlet property="btnOpration" destination="dfo-Bd-rDA" id="gEJ-6E-cA7"/>
@@ -81,9 +82,18 @@
                         <constraint firstAttribute="height" constant="297" id="xc5-Di-ZLK"/>
                     </constraints>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ae8-Iw-7OU">
+                    <rect key="frame" x="334" y="44" width="60" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="PYC-ZB-HRr"/>
+                        <constraint firstAttribute="width" constant="60" id="muk-AX-hIR"/>
+                    </constraints>
+                    <state key="normal" title="edit"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Ae8-Iw-7OU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="1YF-6A-QGR"/>
                 <constraint firstItem="e4E-Ac-4ON" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="1tu-4C-JWU"/>
                 <constraint firstItem="8Be-y0-geV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="46" id="GGo-3y-34x"/>
                 <constraint firstItem="8Be-y0-geV" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="KyR-Fk-fDL"/>
@@ -93,6 +103,7 @@
                 <constraint firstItem="e42-Ru-wfY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="46" id="d2x-og-eiS"/>
                 <constraint firstItem="pqI-4P-tbq" firstAttribute="top" secondItem="e42-Ru-wfY" secondAttribute="bottom" constant="25" id="f9b-CH-q3n"/>
                 <constraint firstItem="e42-Ru-wfY" firstAttribute="top" secondItem="VDS-sc-iKW" secondAttribute="bottom" constant="27" id="g8F-Pq-Sqw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ae8-Iw-7OU" secondAttribute="trailing" constant="20" id="hyD-1p-SbU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="VDS-sc-iKW" secondAttribute="trailing" constant="47" id="j6z-Zn-Kwb"/>
                 <constraint firstItem="gr6-KT-j0G" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="46" id="myw-Oh-Z78"/>
                 <constraint firstItem="dfo-Bd-rDA" firstAttribute="top" secondItem="gr6-KT-j0G" secondAttribute="bottom" constant="24" id="otP-yW-vOb"/>
