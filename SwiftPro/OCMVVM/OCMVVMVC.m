@@ -20,6 +20,8 @@
 #import <Messages/Messages.h>
 #import <SDWebImage/SDWebImage.h>
 #import "CheckSignCer.h"
+#import "DYKit.h"
+
 
 #define kCellIdentifier @"kCellIdentifier"
 
@@ -49,6 +51,8 @@
 @property (nonatomic, copy) NSMutableArray *arrayData;
 
 @property (nonatomic, assign) BOOL isEdit;
+
+@property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
 
@@ -122,6 +126,8 @@
     
 //    [[CheckSignCer shared] checkDebugWithExit];
     
+    
+    
 }
 
 - (void)initViews
@@ -187,7 +193,33 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     [self.tableView registerClass:OCMVVMCell.class forCellReuseIdentifier:kCellIdentifier];
     
+
+    
     @weakify(self);
+    
+//    [self.tableView setNumberOfRowsInSection:^NSInteger(UITableView *tableView, NSInteger section) {
+//        @strongify(self);
+//        return self.arrayData.count;
+//    }];
+//
+//    [self.tableView assembly:^(id cell, id model, NSIndexPath *indexPath) {
+//        @strongify(self);
+//        OCMVVMCell *cell1 = cell;
+////        @weakify(self);
+//        [[cell1 rac_valuesForKeyPath:@"lblTitle" observer:self] subscribeNext:^(id  _Nullable x) {
+////            @strongify(self);
+//            if ([x isKindOfClass:UILabel.class]) {
+//                ((UILabel*)x).text = self.arrayData[indexPath.row][@"title"];
+//            }
+//        }];
+//        [[cell1 rac_valuesForKeyPath:@"lblSubTitle" observer:self] subscribeNext:^(id  _Nullable x) {
+//            if ([x isKindOfClass:UILabel.class]) {
+//                ((UILabel*)x).text = self.arrayData[indexPath.row][@"subtitle"];
+//            }
+//        }];
+//        return cell1;
+//    }];
+    
     [[self rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:) fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(RACTuple * _Nullable x) {
         @strongify(self);
         RACTupleUnpack(UITableView *tableView, NSIndexPath *indexPath) = x;
@@ -237,6 +269,9 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 
+//    [self.tableView setCanEditRowAtIndexPath:^BOOL(UITableView *tableView, NSIndexPath *indexPath) {
+//        return false;
+//    }];
     
 //    @weakify(self);
 //    [[self.tableView rac_signalForSelector:@selector(tableView:cellForRowAtIndexPath:) fromProtocol:@protocol(UITableViewDataSource)] subscribeNext:^(RACTuple * _Nullable x) {
@@ -325,10 +360,10 @@
     return self.arrayData.count;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return true;
-}
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return true;
+//}
 
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {

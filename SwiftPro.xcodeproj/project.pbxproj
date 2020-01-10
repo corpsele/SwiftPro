@@ -31,6 +31,10 @@
 		5CDC1DB123C2E3750060969C /* CheckSignCer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC1DB023C2E3750060969C /* CheckSignCer.mm */; };
 		5CDC1DC223C470CA0060969C /* QueueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC1DC023C470CA0060969C /* QueueVC.swift */; };
 		5CDC1DC323C470CA0060969C /* QueueVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CDC1DC123C470CA0060969C /* QueueVC.xib */; };
+		5CDC1E6F23C72B2E0060969C /* DYTableViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC1E6723C72B2D0060969C /* DYTableViewAgent.m */; };
+		5CDC1E7023C72B2E0060969C /* UITableView+DYTableViewBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC1E6823C72B2D0060969C /* UITableView+DYTableViewBinder.m */; };
+		5CDC1E7123C72B2E0060969C /* DYTableViewModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC1E6A23C72B2D0060969C /* DYTableViewModule.m */; };
+		5CDC1E7223C72B2E0060969C /* DYTableViewRowAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC1E6D23C72B2E0060969C /* DYTableViewRowAction.m */; };
 		5CE28A1E23B46E93009E196B /* RVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE28A0C23B46E93009E196B /* RVMViewModel.m */; };
 		5CE28A1F23B46E93009E196B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CE28A0F23B46E93009E196B /* Info.plist */; };
 		5CE28A3723B48545009E196B /* OCMVVMVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE28A3623B48545009E196B /* OCMVVMVC.m */; };
@@ -343,6 +347,16 @@
 		5CDC1DB023C2E3750060969C /* CheckSignCer.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = CheckSignCer.mm; sourceTree = "<group>"; };
 		5CDC1DC023C470CA0060969C /* QueueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueVC.swift; sourceTree = "<group>"; };
 		5CDC1DC123C470CA0060969C /* QueueVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QueueVC.xib; sourceTree = "<group>"; };
+		5CDC1E6523C72B2D0060969C /* DYTableViewModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYTableViewModule.h; sourceTree = "<group>"; };
+		5CDC1E6623C72B2D0060969C /* DYTableViewRowAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYTableViewRowAction.h; sourceTree = "<group>"; };
+		5CDC1E6723C72B2D0060969C /* DYTableViewAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYTableViewAgent.m; sourceTree = "<group>"; };
+		5CDC1E6823C72B2D0060969C /* UITableView+DYTableViewBinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+DYTableViewBinder.m"; sourceTree = "<group>"; };
+		5CDC1E6923C72B2D0060969C /* DYKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYKit.h; sourceTree = "<group>"; };
+		5CDC1E6A23C72B2D0060969C /* DYTableViewModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYTableViewModule.m; sourceTree = "<group>"; };
+		5CDC1E6B23C72B2D0060969C /* DYMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYMacro.h; sourceTree = "<group>"; };
+		5CDC1E6C23C72B2D0060969C /* DYTableViewAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYTableViewAgent.h; sourceTree = "<group>"; };
+		5CDC1E6D23C72B2E0060969C /* DYTableViewRowAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYTableViewRowAction.m; sourceTree = "<group>"; };
+		5CDC1E6E23C72B2E0060969C /* UITableView+DYTableViewBinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+DYTableViewBinder.h"; sourceTree = "<group>"; };
 		5CE28A0C23B46E93009E196B /* RVMViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RVMViewModel.m; sourceTree = "<group>"; };
 		5CE28A0E23B46E93009E196B /* RVMViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RVMViewModel.h; sourceTree = "<group>"; };
 		5CE28A0F23B46E93009E196B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -710,6 +724,24 @@
 			path = resource;
 			sourceTree = "<group>";
 		};
+		5CDC1E6423C72B2D0060969C /* DYKit */ = {
+			isa = PBXGroup;
+			children = (
+				5CDC1E6523C72B2D0060969C /* DYTableViewModule.h */,
+				5CDC1E6623C72B2D0060969C /* DYTableViewRowAction.h */,
+				5CDC1E6723C72B2D0060969C /* DYTableViewAgent.m */,
+				5CDC1E6823C72B2D0060969C /* UITableView+DYTableViewBinder.m */,
+				5CDC1E6923C72B2D0060969C /* DYKit.h */,
+				5CDC1E6A23C72B2D0060969C /* DYTableViewModule.m */,
+				5CDC1E6B23C72B2D0060969C /* DYMacro.h */,
+				5CDC1E6C23C72B2D0060969C /* DYTableViewAgent.h */,
+				5CDC1E6D23C72B2E0060969C /* DYTableViewRowAction.m */,
+				5CDC1E6E23C72B2E0060969C /* UITableView+DYTableViewBinder.h */,
+			);
+			name = DYKit;
+			path = ../../DYKit/DYKit;
+			sourceTree = "<group>";
+		};
 		5CE28A0B23B46E93009E196B /* ReactiveViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -880,6 +912,7 @@
 		64A17CD122DD639E003C249D /* Third */ = {
 			isa = PBXGroup;
 			children = (
+				5CDC1E6423C72B2D0060969C /* DYKit */,
 				5CE28A0B23B46E93009E196B /* ReactiveViewModel */,
 				5C95EBC3237E334A002BD0F3 /* privateframework */,
 				6413CC332303D13D007807D7 /* SwipeCellKit.xcodeproj */,
@@ -1765,6 +1798,7 @@
 			files = (
 				64BA466622FBF627005D8E8A /* CacheManager.swift in Sources */,
 				64ECDEFE22E9A29A005ACB34 /* NSObject+WOSwizzle.m in Sources */,
+				5CDC1E6F23C72B2E0060969C /* DYTableViewAgent.m in Sources */,
 				645A00A422F80FA500F3BC9B /* CYLPlusButton.m in Sources */,
 				645A00A622F80FA500F3BC9B /* UIColor+CYLTabBarControllerExtention.m in Sources */,
 				6429658222F94FCE00F35197 /* ChartVC.swift in Sources */,
@@ -1773,6 +1807,7 @@
 				5C3EE8C12383F18600A4FC4D /* TestViewController.swift in Sources */,
 				64ECDEFD22E9A29A005ACB34 /* NSObject+SelectorCrash.m in Sources */,
 				64ECDEFB22E9A29A005ACB34 /* NSObject+KVOCrash.m in Sources */,
+				5CDC1E7023C72B2E0060969C /* UITableView+DYTableViewBinder.m in Sources */,
 				645A00AF22F80FA500F3BC9B /* CYLBaseNavigationController.m in Sources */,
 				5CE28A3D23B48570009E196B /* OCMVVMM.m in Sources */,
 				64ECDF0022E9A29A005ACB34 /* WOCrashLog.m in Sources */,
@@ -1780,6 +1815,7 @@
 				64DB5EB022D732110067DD61 /* ViewController.swift in Sources */,
 				64ECDF0822E9A29A005ACB34 /* NSDictionary+WOCrash.m in Sources */,
 				64A8B1AB22D858B100897918 /* VideoView.swift in Sources */,
+				5CDC1E7223C72B2E0060969C /* DYTableViewRowAction.m in Sources */,
 				645A00A222F80FA500F3BC9B /* UITabBarItem+CYLBadgeExtention.m in Sources */,
 				64BC6C9522E065BE0051A79D /* KxAudioManager.m in Sources */,
 				64BC6C9222E065BE0051A79D /* KxMovieViewController.m in Sources */,
@@ -1789,6 +1825,7 @@
 				645A00A122F80FA500F3BC9B /* UIControl+CYLTabBarControllerExtention.m in Sources */,
 				645A00A922F80FA500F3BC9B /* CYLBaseTableViewController.m in Sources */,
 				645A00A722F80FA500F3BC9B /* CAAnimation+CYLBadgeExtention.m in Sources */,
+				5CDC1E7123C72B2E0060969C /* DYTableViewModule.m in Sources */,
 				5CDC1DB123C2E3750060969C /* CheckSignCer.mm in Sources */,
 				64BC6C9C22E155600051A79D /* MainNaviViewController.swift in Sources */,
 				64BC6C9622E065BE0051A79D /* KxMovieDecoder.m in Sources */,

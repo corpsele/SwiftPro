@@ -5,9 +5,12 @@
 //  Created by eport2 on 2019/11/19.
 //  Copyright © 2019 eport. All rights reserved.
 //
-
+import WebKit
+import RxSwift
 
 class TestViewController: UIViewController {
+    
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad();
@@ -53,6 +56,86 @@ class TestViewController: UIViewController {
 //            make.height.equalTo(60.0)
 ////            make.width.equalTo(UIScreen.main.bounds.size.width)
 //        }
+        addWebView()
+    }
+    
+    lazy var webView: WKWebView = {
+       let view = WKWebView()
+        return view
+    }()
+    
+    lazy var btnBack: UIButton = {
+       let btn = UIButton()
+        btn.setTitle("后退", for: .normal)
+        btn.setTitleColor(.blue, for: .normal)
+        btn.setTitleColor(.gray, for: .disabled)
+        return btn
+    }()
+    
+    lazy var btnForward: UIButton = {
+       let btn = UIButton()
+        btn.setTitle("前进", for: .normal)
+        btn.setTitleColor(.blue, for: .normal)
+        btn.setTitleColor(.gray, for: .disabled)
+        return btn
+    }()
+    
+    fileprivate func addWebView(){
+//        URL.init(string: "http://localhost:8050/SpringTest/") ?? URL.init(fileURLWithPath: "")
+        webView.load(URLRequest.init(urlString: "http://localhost:8050/SpringTest/") ?? URLRequest.init(url: URL.init(string: "http://localhost:8050/SpringTest/") ?? URL.init(fileURLWithPath: "")))
+        self.view.addSubview(webView)
+        webView.snp.makeConstraints { (make) in
+            make.bottom.left.right.equalToSuperview()
+            make.height.equalTo(300.0)
+        }
+        
+        self.view.addSubview(btnBack)
+        btnBack.snp.makeConstraints { (make) in
+            make.bottom.equalTo(webView.snp.top)
+            make.left.equalToSuperview()
+            make.width.equalTo(100.0)
+            make.height.equalTo(50.0)
+        }
+        self.view.addSubview(btnForward)
+        btnForward.snp.makeConstraints { (make) in
+            make.bottom.equalTo(webView.snp.top)
+            make.right.equalToSuperview()
+            make.width.equalTo(100.0)
+            make.height.equalTo(50.0)
+        }
+        
+        btnBack.rx.tap.subscribe {[weak self] (event) in
+            guard let strongSelf = self else {return}
+            strongSelf.webView.goBack()
+        }.disposed(by: disposeBag)
+        
+        btnForward.rx.tap.subscribe {[weak self] (event) in
+            guard let strongSelf = self else {return}
+            strongSelf.webView.goForward()
+        }.disposed(by: disposeBag)
+        
+        webView.rx.observeWeakly(Bool.self, "canGoBack").subscribe(onNext: {[weak self] (flag) in
+            guard let strongSelf = self else {return}
+            strongSelf.btnBack.isEnabled = (flag!)
+        }, onError: { (err) in
+            
+        }, onCompleted: {
+            
+        }) {
+            
+        }.disposed(by: disposeBag)
+        
+        webView.rx.observeWeakly(Bool.self, "canGoForward").subscribe(onNext: {[weak self] (flag) in
+            guard let strongSelf = self else {return}
+            strongSelf.btnForward.isEnabled = (flag!)
+        }, onError: { (err) in
+            
+        }, onCompleted: {
+            
+        }) {
+            
+        }.disposed(by: disposeBag)
+        
     }
     
 }
