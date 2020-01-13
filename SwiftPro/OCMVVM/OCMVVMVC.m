@@ -22,7 +22,6 @@
 #import "CheckSignCer.h"
 #import "DYKit.h"
 
-
 #define kCellIdentifier @"kCellIdentifier"
 
 
@@ -132,6 +131,7 @@
 
 - (void)initViews
 {
+    @weakify(self);
     self.viewBackground = [UIView new];
     [self.view addSubview:self.viewBackground];
     [self.viewBackground mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -152,6 +152,8 @@
         make.height.mas_equalTo(50.0);
     }];
     [[_btnDone rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        @strongify(self);
+        [self.tableView setEditing:!self.tableView.editing animated:true];
         MSMessage *msg = [MSMessage new];
 #pragma GCC diagnostic ignored "-Wundeclared-selector"
         if([msg respondsToSelector:@selector(isFromMe)]){
@@ -195,7 +197,7 @@
     
 
     
-    @weakify(self);
+    
     
 //    [self.tableView setNumberOfRowsInSection:^NSInteger(UITableView *tableView, NSInteger section) {
 //        @strongify(self);
@@ -220,54 +222,90 @@
 //        return cell1;
 //    }];
     
-    [[self rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:) fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(RACTuple * _Nullable x) {
+    
+    
+//    [self.tableView setNumberOfRowsInSection:^NSInteger(UITableView *tableView, NSInteger section) {
+//        @strongify(self);
+//        return self.arrayData.count;
+//    }];
+    
+    [self.tableView assembly:^(OCMVVMCell *cell, id model, NSIndexPath *indexPath) {
         @strongify(self);
-        RACTupleUnpack(UITableView *tableView, NSIndexPath *indexPath) = x;
-        OCMVVMCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
-        NSLog(@"cell = %@, indexPath = %@",cell, self.arrayData[indexPath.row]);
-        [self.view makeToast:[NSString stringWithFormat:@"cell = %@, indexPath = %@",cell, self.arrayData[indexPath.row][@"title"]]];
-        DDLogInfo(@"cell = %@, indexPath = %@",cell, self.arrayData[indexPath.row]);
+//        OCMVVMCell *cell1 = [self.tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+//        OCMVVMCell *cell1 = (OCMVVMCell *)cell;
+//        @weakify(self);
+        [[cell rac_valuesForKeyPath:@"lblTitle" observer:self] subscribeNext:^(id  _Nullable x) {
+            @strongify(self);
+            if ([x isKindOfClass:UILabel.class]) {
+                NSString *str = [NSString stringWithFormat:@"%ld %@", indexPath.row, self.arrayData[indexPath.row][@"title"]];
+                ((UILabel*)x).text = str;
+            }
+        }];
+        [[cell rac_valuesForKeyPath:@"lblSubTitle" observer:self] subscribeNext:^(id  _Nullable x) {
+            if ([x isKindOfClass:UILabel.class]) {
+                ((UILabel*)x).text = self.arrayData[indexPath.row][@"subtitle"];
+            }
+        }];
+//        return cell;
         
+
+    } withPlug:OCMVVMCell.class];
+    
+    self.tableView.data = self.arrayData;
+    
+    [self.tableView setCanEditRowAtIndexPath:^BOOL(UITableView *tableView, NSIndexPath *indexPath) {
+        return true;
     }];
     
-    [[self rac_signalForSelector:@selector(tableView:willDisplayCell:forRowAtIndexPath:) fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(RACTuple * _Nullable x) {
-//        @strongify(self);
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wunused-variable"
-        RACTupleUnpack(UITableView *tableView, UITableViewCell *cell, NSIndexPath *indexPath) = x;
-#pragma clang diagnostic pop
-//        OCMVVMCell *cell1 = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+    [self.tableView setEditActionsForRowAtIndexPath:^NSArray<UITableViewRowAction *> *(UITableView *tableView, NSIndexPath *indexPath) {
+        @strongify(self);
+        UITableViewRowAction *action = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+            [self.arrayData removeObjectAtIndex:indexPath.row];
+            tableView.data = self.arrayData;
+//            [tableView beginUpdates];
+//            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//            [tableView endUpdates];
+            [UIView transitionWithView:tableView duration:0.3 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+               [tableView reloadData];
+            } completion:^(BOOL finished) {
+                
+            }];
+        }];
+        return @[action];
+    }];
+    
+    [[[self.tableView.willDisplayCellSignal reduceEach:^id (UITableView *tableView ,OCMVVMCell *cell, NSIndexPath *indexPath){
+//        OCMVVMCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
         [UIView transitionWithView:cell duration:0.3 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
             
         } completion:^(BOOL finished) {
             
         }];
-    }];
-    
-    [[self rac_signalForSelector:@selector(tableView:commitEditingStyle:forRowAtIndexPath:) fromProtocol:@protocol(UITableViewDataSource)] subscribeNext:^(RACTuple * _Nullable x) {
-        @strongify(self);
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wunused-variable"
-        RACTupleUnpack(UITableView *tableView,  UITableViewCellEditingStyle style, NSIndexPath *indexPath) = x;
-#pragma clang diagnostic pop
-        @try {
-            
-            [tableView beginUpdates];
-            [self.arrayData removeObjectAtIndex:indexPath.row];
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-            [tableView endUpdates];
-        } @catch (NSException *exception) {
-            DDLogInfo(@"exception = %@", exception.description);
-        } @finally {
-            
-        }
-
+        return cell;
+    }] filter:^BOOL(id  _Nullable value) {
+        return value != nil;
+    }] subscribeNext:^(id  _Nullable x) {
         
     }];
+     
+    [[[self.tableView.didSelectRowAtIndexPathSignal reduceEach:^id (UITableView *tableView ,NSIndexPath *indexPath){
+        @strongify(self);
+        OCMVVMCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+        NSLog(@"cell = %@, indexPath = %@",cell, self.arrayData[indexPath.row]);
+        [self.view makeToast:[NSString stringWithFormat:@"cell = %@, indexPath = %@",cell, self.arrayData[indexPath.row][@"title"]]];
+        DDLogInfo(@"cell = %@, indexPath = %@",cell, self.arrayData[indexPath.row]);
+
+        return @(indexPath.row);
+    }] filter:^BOOL(id  _Nullable value) {
+        return [value intValue] == 0;
+    }] subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        
+
+    }];
     
-    
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
+//    self.tableView.delegate = self;
+//    self.tableView.dataSource = self;
 
 //    [self.tableView setCanEditRowAtIndexPath:^BOOL(UITableView *tableView, NSIndexPath *indexPath) {
 //        return false;
@@ -339,40 +377,40 @@
 }
 */
 
-- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    OCMVVMCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
-    @weakify(self);
-    [[cell rac_valuesForKeyPath:@"lblTitle" observer:self] subscribeNext:^(id  _Nullable x) {
-        @strongify(self);
-        if ([x isKindOfClass:UILabel.class]) {
-            ((UILabel*)x).text = self.arrayData[indexPath.row][@"title"];
-        }
-    }];
-    [[cell rac_valuesForKeyPath:@"lblSubTitle" observer:self] subscribeNext:^(id  _Nullable x) {
-        if ([x isKindOfClass:UILabel.class]) {
-            ((UILabel*)x).text = self.arrayData[indexPath.row][@"subtitle"];
-        }
-    }];
-    return cell;
-}
+//- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+//    OCMVVMCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier];
+//    @weakify(self);
+//    [[cell rac_valuesForKeyPath:@"lblTitle" observer:self] subscribeNext:^(id  _Nullable x) {
+//        @strongify(self);
+//        if ([x isKindOfClass:UILabel.class]) {
+//            ((UILabel*)x).text = self.arrayData[indexPath.row][@"title"];
+//        }
+//    }];
+//    [[cell rac_valuesForKeyPath:@"lblSubTitle" observer:self] subscribeNext:^(id  _Nullable x) {
+//        if ([x isKindOfClass:UILabel.class]) {
+//            ((UILabel*)x).text = self.arrayData[indexPath.row][@"subtitle"];
+//        }
+//    }];
+//    return cell;
+//}
 
-- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.arrayData.count;
-}
+//- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    return self.arrayData.count;
+//}
 
 //- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 //{
 //    return true;
 //}
 
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return UITableViewCellEditingStyleDelete;
-}
-
-- (BOOL)tableView:(UITableView *)tableView canPerformAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
-{
-    return true;
-}
+//- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    return UITableViewCellEditingStyleDelete;
+//}
+//
+//- (BOOL)tableView:(UITableView *)tableView canPerformAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
+//{
+//    return true;
+//}
 
 @end
