@@ -37,7 +37,7 @@
 
 //static char tableViewDataSource;
 
-@interface OCMVVMVC () <UITableViewDataSource, UITableViewDelegate>
+@interface OCMVVMVC ()
 
 @property (nonatomic, strong) OCMVVMVM *vm;
 
@@ -87,16 +87,18 @@
         }
     });
     
+    
     [RACObserve(self, arrayData) subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         NSArray *array = x;
         if (array.count > self.arrayData.count) {
+            self.tableView.data = self.arrayData;
           [UIView transitionWithView:self.tableView duration:1.0 options:UIViewAnimationOptionTransitionCurlUp animations:^{
               [self.tableView beginUpdates];
               [self.tableView reloadData];
               [self.tableView endUpdates];
           } completion:^(BOOL finished) {
-              
+
           }];
         }
     }];
@@ -268,7 +270,7 @@
             [UIView transitionWithView:tableView duration:0.3 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
                [tableView reloadData];
             } completion:^(BOOL finished) {
-                
+
             }];
         }];
         return @[action];
