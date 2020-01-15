@@ -137,6 +137,7 @@
 - (RACSignal*)moveRowAtIndexPathSignal;
 - (RACSignal*)moveItemAtIndexPathSignal;
 - (RACSignal*)performDropWithCoordinatorSignal;
+- (RACSignal*)collectionViewWillDisplayCellSignal;
 
 
 

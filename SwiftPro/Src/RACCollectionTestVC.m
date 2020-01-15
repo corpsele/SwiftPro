@@ -112,6 +112,19 @@
         
     }];
     
+    [[[self.collectionView.collectionViewWillDisplayCellSignal reduceEach:^id (UICollectionView *collectionView, UICollectionViewCell *cell, NSIndexPath *indexPath){
+        [UIView transitionWithView:cell duration:0.3 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+            
+        } completion:^(BOOL finished) {
+            
+        }];
+        return cell;
+    }] filter:^BOOL(id  _Nullable value) {
+        return value != nil;
+    }] subscribeNext:^(id  _Nullable x) {
+        
+    }];
+    
     [self.collectionView setItemsForBeginningDragSession:^NSArray<UIDragItem *> *(UICollectionView *collectionView, id<UIDragSession> session, NSIndexPath *indexPath) {
         NSItemProvider *itemProvider = [[NSItemProvider alloc] init];
         

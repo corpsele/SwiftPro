@@ -264,4 +264,10 @@ DYSYNTH_DYNAMIC_PROPERTY_CTYPE(autoReload, setAutoReload, BOOL)
     return [self.agent rac_signalForSelector:@selector(collectionView:performDropWithCoordinator:)];
 }
 
+- (RACSignal *)collectionViewWillDisplayCellSignal
+{
+    [self agentInitialize];
+    return [self.agent rac_signalForSelector:@selector(collectionView:willDisplayCell:forItemAtIndexPath:)];
+}
+
 @end

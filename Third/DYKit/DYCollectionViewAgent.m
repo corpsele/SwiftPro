@@ -521,4 +521,9 @@ DYN_LAZY(tableModuleLists, NSMutableArray)
     
 }
 
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
 @end
