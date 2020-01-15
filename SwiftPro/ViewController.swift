@@ -401,6 +401,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         case 23:
             let vc = QueueVC()
             navigationController?.pushViewController(vc, animated: true)
+        case 24:
+            let vc = RACCollectionTestVC()
+            navigationController?.pushViewController(vc, animated: true)
         default:
             print(indexPath.row)
         }

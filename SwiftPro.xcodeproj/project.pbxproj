@@ -23,6 +23,9 @@
 		5C2D2E0223CC63C50067EF17 /* UITableView+DYTableViewBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D2DFA23CC63C50067EF17 /* UITableView+DYTableViewBinder.m */; };
 		5C2D2E0323CC63C50067EF17 /* DYTableViewModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D2DFC23CC63C50067EF17 /* DYTableViewModule.m */; };
 		5C2D2E0423CC63C50067EF17 /* DYTableViewRowAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D2DFF23CC63C50067EF17 /* DYTableViewRowAction.m */; };
+		5C2D2E0723CD464E0067EF17 /* DYCollectionViewAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D2E0623CD464E0067EF17 /* DYCollectionViewAgent.m */; };
+		5C2D2E0A23CD46600067EF17 /* UICollectionView+DYCollectionViewBinder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D2E0823CD46600067EF17 /* UICollectionView+DYCollectionViewBinder.m */; };
+		5C2D2E0D23CD4D220067EF17 /* RACCollectionTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C2D2E0C23CD4D220067EF17 /* RACCollectionTestVC.m */; };
 		5C3EE89B238379EF00A4FC4D /* HGNotifactionMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3EE89A238379EF00A4FC4D /* HGNotifactionMainView.m */; };
 		5C3EE8C12383F18600A4FC4D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3EE8C02383F18600A4FC4D /* TestViewController.swift */; };
 		5C4A088F23B5DD3E00076A53 /* OCMVVMCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4A088E23B5DD3E00076A53 /* OCMVVMCell.m */; };
@@ -335,6 +338,12 @@
 		5C2D2DFE23CC63C50067EF17 /* DYTableViewAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYTableViewAgent.h; sourceTree = "<group>"; };
 		5C2D2DFF23CC63C50067EF17 /* DYTableViewRowAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYTableViewRowAction.m; sourceTree = "<group>"; };
 		5C2D2E0023CC63C50067EF17 /* UITableView+DYTableViewBinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+DYTableViewBinder.h"; sourceTree = "<group>"; };
+		5C2D2E0523CD464E0067EF17 /* DYCollectionViewAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DYCollectionViewAgent.h; sourceTree = "<group>"; };
+		5C2D2E0623CD464E0067EF17 /* DYCollectionViewAgent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DYCollectionViewAgent.m; sourceTree = "<group>"; };
+		5C2D2E0823CD46600067EF17 /* UICollectionView+DYCollectionViewBinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+DYCollectionViewBinder.m"; sourceTree = "<group>"; };
+		5C2D2E0923CD46600067EF17 /* UICollectionView+DYCollectionViewBinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+DYCollectionViewBinder.h"; sourceTree = "<group>"; };
+		5C2D2E0B23CD4D220067EF17 /* RACCollectionTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACCollectionTestVC.h; sourceTree = "<group>"; };
+		5C2D2E0C23CD4D220067EF17 /* RACCollectionTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACCollectionTestVC.m; sourceTree = "<group>"; };
 		5C3EE8902382817B00A4FC4D /* NEDNSSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEDNSSettings.h; sourceTree = "<group>"; };
 		5C3EE8922382A00600A4FC4D /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = "../Apple-Runtime-Headers/iOS_S/System/Library/PrivateFrameworks/NetworkExtension.framework"; sourceTree = "<group>"; };
 		5C3EE899238379EF00A4FC4D /* HGNotifactionMainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HGNotifactionMainView.h; sourceTree = "<group>"; };
@@ -685,6 +694,10 @@
 		5C2D2DF623CC63C50067EF17 /* DYKit */ = {
 			isa = PBXGroup;
 			children = (
+				5C2D2E0923CD46600067EF17 /* UICollectionView+DYCollectionViewBinder.h */,
+				5C2D2E0823CD46600067EF17 /* UICollectionView+DYCollectionViewBinder.m */,
+				5C2D2E0523CD464E0067EF17 /* DYCollectionViewAgent.h */,
+				5C2D2E0623CD464E0067EF17 /* DYCollectionViewAgent.m */,
 				5C2D2DF723CC63C50067EF17 /* DYTableViewModule.h */,
 				5C2D2DF823CC63C50067EF17 /* DYTableViewRowAction.h */,
 				5C2D2DF923CC63C50067EF17 /* DYTableViewAgent.m */,
@@ -709,6 +722,8 @@
 				5CDC1DB023C2E3750060969C /* CheckSignCer.mm */,
 				5CDC1DC023C470CA0060969C /* QueueVC.swift */,
 				5CDC1DC123C470CA0060969C /* QueueVC.xib */,
+				5C2D2E0B23CD4D220067EF17 /* RACCollectionTestVC.h */,
+				5C2D2E0C23CD4D220067EF17 /* RACCollectionTestVC.m */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -1818,9 +1833,11 @@
 				645A00A222F80FA500F3BC9B /* UITabBarItem+CYLBadgeExtention.m in Sources */,
 				64BC6C9522E065BE0051A79D /* KxAudioManager.m in Sources */,
 				64BC6C9222E065BE0051A79D /* KxMovieViewController.m in Sources */,
+				5C2D2E0723CD464E0067EF17 /* DYCollectionViewAgent.m in Sources */,
 				64ECDF0522E9A29A005ACB34 /* NSAttributedString+WOCrash.m in Sources */,
 				645A00A322F80FA500F3BC9B /* UIViewController+CYLNavigationControllerExtention.m in Sources */,
 				5C4A088F23B5DD3E00076A53 /* OCMVVMCell.m in Sources */,
+				5C2D2E0D23CD4D220067EF17 /* RACCollectionTestVC.m in Sources */,
 				645A00A122F80FA500F3BC9B /* UIControl+CYLTabBarControllerExtention.m in Sources */,
 				645A00A922F80FA500F3BC9B /* CYLBaseTableViewController.m in Sources */,
 				645A00A722F80FA500F3BC9B /* CAAnimation+CYLBadgeExtention.m in Sources */,
@@ -1829,6 +1846,7 @@
 				64BC6C9C22E155600051A79D /* MainNaviViewController.swift in Sources */,
 				64BC6C9622E065BE0051A79D /* KxMovieDecoder.m in Sources */,
 				645A00A022F80FA500F3BC9B /* CYLTabBar.m in Sources */,
+				5C2D2E0A23CD46600067EF17 /* UICollectionView+DYCollectionViewBinder.m in Sources */,
 				64ECDEB222E985CE005ACB34 /* CellAnimator.swift in Sources */,
 				64A8B1AD22D858C300897918 /* VideoViewController.swift in Sources */,
 				64ECDF0722E9A29A005ACB34 /* NSMutableString+WOCrash.m in Sources */,
