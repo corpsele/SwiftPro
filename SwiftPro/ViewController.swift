@@ -182,7 +182,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     deinit {}
 
     fileprivate func addStatusBar() {
-        let window = UIApplication.shared.keyWindow
+        let window = UIApplication.shared.windows.last
         windowStatusBar.addSubview(viewStatusBar)
         MainStatusView.statusView = viewStatusBar
         viewStatusBar.snp.makeConstraints { make in
@@ -190,8 +190,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         window?.addSubview(windowStatusBar)
         MainStatusView.statusWindow = windowStatusBar
-        windowStatusBar.makeKeyAndVisible()
-        window?.makeKeyAndVisible()
         windowStatusBar.snp.makeConstraints { make in
             make.left.right.top.equalToSuperview()
             if UIDevice.isX() == true {
@@ -200,6 +198,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 make.height.equalTo(20.0)
             }
         }
+        windowStatusBar.makeKeyAndVisible()
+        window?.makeKeyAndVisible()
     }
 
     fileprivate lazy var viewStatusBar: UIView = {
@@ -210,7 +210,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     fileprivate lazy var windowStatusBar: UIWindow = {
         let view = UIWindow()
-        view.windowLevel = UIWindowLevelStatusBar + 100
+        view.windowLevel = UIWindowLevelStatusBar + 1000
         return view
     }()
 
@@ -222,7 +222,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             make.top.bottom.left.right.equalToSuperview()
         }
 
-        addStatusBar()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()) { [weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.addStatusBar()
+        }
+        
     }
 
     // MARK: - Register TableViewCell
