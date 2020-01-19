@@ -43,6 +43,10 @@
 		5CE28A3723B48545009E196B /* OCMVVMVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE28A3623B48545009E196B /* OCMVVMVC.m */; };
 		5CE28A3A23B4855F009E196B /* OCMVVMVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE28A3923B4855F009E196B /* OCMVVMVM.m */; };
 		5CE28A3D23B48570009E196B /* OCMVVMM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE28A3C23B48570009E196B /* OCMVVMM.m */; };
+		5CEC741823D3DFEB00B81CF1 /* SortTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC741723D3DFEB00B81CF1 /* SortTest.swift */; };
+		5CEC741B23D4249000B81CF1 /* SortVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC741923D4249000B81CF1 /* SortVC.swift */; };
+		5CEC741C23D4249000B81CF1 /* SortVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CEC741A23D4249000B81CF1 /* SortVC.xib */; };
+		5CEC741E23D4337100B81CF1 /* SortVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC741D23D4337100B81CF1 /* SortVM.swift */; };
 		6413CC392303D14C007807D7 /* SwipeCellKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6413CC382303D13D007807D7 /* SwipeCellKit.framework */; };
 		6413CC3A2303D14C007807D7 /* SwipeCellKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6413CC382303D13D007807D7 /* SwipeCellKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6413CC3D2303D14C007807D7 /* Sica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6413CC282303D12C007807D7 /* Sica.framework */; };
@@ -375,6 +379,10 @@
 		5CE28A3923B4855F009E196B /* OCMVVMVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCMVVMVM.m; sourceTree = "<group>"; };
 		5CE28A3B23B48570009E196B /* OCMVVMM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCMVVMM.h; sourceTree = "<group>"; };
 		5CE28A3C23B48570009E196B /* OCMVVMM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCMVVMM.m; sourceTree = "<group>"; };
+		5CEC741723D3DFEB00B81CF1 /* SortTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortTest.swift; sourceTree = "<group>"; };
+		5CEC741923D4249000B81CF1 /* SortVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortVC.swift; sourceTree = "<group>"; };
+		5CEC741A23D4249000B81CF1 /* SortVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SortVC.xib; sourceTree = "<group>"; };
+		5CEC741D23D4337100B81CF1 /* SortVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortVM.swift; sourceTree = "<group>"; };
 		6413CC1E2303D12B007807D7 /* Sica.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sica.xcodeproj; path = Sica/Sica.xcodeproj; sourceTree = "<group>"; };
 		6413CC332303D13D007807D7 /* SwipeCellKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwipeCellKit.xcodeproj; path = SwipeCellKit/SwipeCellKit.xcodeproj; sourceTree = "<group>"; };
 		6426830522FD1F4E00029E30 /* SwiftMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -724,6 +732,10 @@
 				5CDC1DC123C470CA0060969C /* QueueVC.xib */,
 				5C2D2E0B23CD4D220067EF17 /* RACCollectionTestVC.h */,
 				5C2D2E0C23CD4D220067EF17 /* RACCollectionTestVC.m */,
+				5CEC741723D3DFEB00B81CF1 /* SortTest.swift */,
+				5CEC741923D4249000B81CF1 /* SortVC.swift */,
+				5CEC741A23D4249000B81CF1 /* SortVC.xib */,
+				5CEC741D23D4337100B81CF1 /* SortVM.swift */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -1685,6 +1697,7 @@
 				64DB5EB522D732110067DD61 /* Assets.xcassets in Resources */,
 				5CBA37C62372B43D00D25A68 /* mp4.mp4 in Resources */,
 				5CDC1DC323C470CA0060969C /* QueueVC.xib in Resources */,
+				5CEC741C23D4249000B81CF1 /* SortVC.xib in Resources */,
 				64DB5EB322D732110067DD61 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1823,6 +1836,7 @@
 				64ECDEFB22E9A29A005ACB34 /* NSObject+KVOCrash.m in Sources */,
 				5C2D2E0223CC63C50067EF17 /* UITableView+DYTableViewBinder.m in Sources */,
 				645A00AF22F80FA500F3BC9B /* CYLBaseNavigationController.m in Sources */,
+				5CEC741E23D4337100B81CF1 /* SortVM.swift in Sources */,
 				5CE28A3D23B48570009E196B /* OCMVVMM.m in Sources */,
 				64ECDF0022E9A29A005ACB34 /* WOCrashLog.m in Sources */,
 				64BC6C9322E065BE0051A79D /* KxMovieGLView.m in Sources */,
@@ -1852,7 +1866,9 @@
 				64ECDF0722E9A29A005ACB34 /* NSMutableString+WOCrash.m in Sources */,
 				5CE28A3723B48545009E196B /* OCMVVMVC.m in Sources */,
 				5C8ABA4223B19FDA00E48318 /* ApiTestViewModel.swift in Sources */,
+				5CEC741823D3DFEB00B81CF1 /* SortTest.swift in Sources */,
 				645A009E22F80FA500F3BC9B /* CYLTabBar+CYLTabBarControllerExtention.m in Sources */,
+				5CEC741B23D4249000B81CF1 /* SortVC.swift in Sources */,
 				645A00AB22F80FA500F3BC9B /* UITabBarItem+CYLTabBarControllerExtention.m in Sources */,
 				645A00AA22F80FA500F3BC9B /* UIView+CYLBadgeExtention.m in Sources */,
 				6429659622F95AFA00F35197 /* SliderMenuTestVC.swift in Sources */,
