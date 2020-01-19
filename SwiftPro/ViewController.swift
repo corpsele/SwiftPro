@@ -77,7 +77,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 UIDevice.current.setValue(NSNumber(value: UIDeviceOrientation.portrait.rawValue), forKey: "orientation")
             }
         }, onError: { err in
-            print(err)
+            print("\(#function) in \(#file) : \(#line) = \(err)")
         })
     }
 
@@ -140,7 +140,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        /System/Library/PrivateFrameworks/WiFiKit.framework
        let lib = dlopen("/Users/eport2/Documents/Apple-Runtime-Headers/iOS_S/System/Library/PrivateFrameworks/NetworkExtension.framework/NetworkExtension", RTLD_LAZY);
         if (lib != nil) {
-            print("framework init successed");
+            println("framework init successed");
+            print("\(#file) in \(#function) : \(#line) = framework init successed")
 //            initWithServers = dlsym(lib, "initWithServers");
         }
         
@@ -149,6 +150,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if let framework = Bundle(path: "/Users/eport2/Documents/Apple-Runtime-Headers/iOS_S/System/Library/PrivateFrameworks/NetworkExtension.framework") {
             print("bundle framework init successed");
+            HGLog("bundle framework init successed")
             do {
                 try framework.loadAndReturnError();
                 

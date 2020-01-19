@@ -27,6 +27,22 @@ import SwiftyJSON
 import Toast_Swift
 import UIKit
 
+//封装的日志输出功能（T表示不指定日志信息参数类型）
+func HGLog<T>(_ message:T, file:String = #file, function:String = #function,
+           line:Int = #line) {
+    #if DEBUG
+        //获取文件名
+        let fileName = (file as NSString).lastPathComponent
+        //打印日志内容
+        print("\(file):\(line) \(function) | \(message)")
+    #endif
+}
+
+func println(_ str: String)
+{
+    print("\(#function) in \(#file) : \(#line) = \(str)")
+}
+
 func safeAreaTop() -> CGFloat {
     if #available(iOS 11.0, *) {
         // iOS 12.0以后的非刘海手机top为 20.0
