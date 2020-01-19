@@ -17,6 +17,7 @@ class SortVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let disposeBag = DisposeBag()
+    var arrayData: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,11 @@ class SortVC: UIViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
+        vm.arrayDataPublish?.subscribe(onNext: {[weak self] (strs) in
+            guard let strongSelf = self else {return}
+            strongSelf.arrayData = strs
+            }).disposed(by: disposeBag)
+        
         vm.model = Observable<[SectionModel<String, String>]>.create {[weak self] (observer) -> Disposable in
             guard let strongSelf = self else {return Disposables.create()}
             observer.onNext([SectionModel<String,String>.init(model: "", items: strongSelf.vm.arrayData)])
@@ -33,6 +39,8 @@ class SortVC: UIViewController {
             return Disposables.create()
         }
         vm.model?.bind(to: (tableView?.rx.items(dataSource: vm.dataSource))!).disposed(by: disposeBag)
+        
+        tableView.rx.itemSelected.bind(to: vm.tableCellSelected).disposed(by: disposeBag)
         
         tableView.rx.itemSelected.subscribe(onNext: {[weak self] (index) in
             guard let strongSelf = self else {return}
@@ -43,13 +51,7 @@ class SortVC: UIViewController {
             default:
                 break
             }
-        }, onError: { (err) in
-            
-        }, onCompleted: {
-            
-        }) {
-            
-        }.disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
         
     }
     
