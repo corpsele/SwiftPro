@@ -7,3 +7,4 @@
 //
 
 #import "UITableView+DYTableViewBinder.h"
+#import "UICollectionView+DYCollectionViewBinder.h"

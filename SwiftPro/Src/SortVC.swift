@@ -23,7 +23,7 @@ class SortVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navigationController?.setToolbarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         

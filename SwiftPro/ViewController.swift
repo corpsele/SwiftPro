@@ -413,6 +413,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         case 25:
             let vc = SortVC()
             navigationController?.pushViewController(vc, animated: true)
+        case 26:
+            let vc = OCSortVC()
+            navigationController?.pushViewController(vc, animated: true)
         default:
             print(indexPath.row)
         }
