@@ -93,7 +93,7 @@ static OCSortTest *sortTest;
 }
 
 // MARK: 插入排序
--(void)insertSequence:(NSMutableArray *)arr
+-(NSMutableArray *)insertSequence:(NSMutableArray *)arr
 {
     for (int i = 1; i<arr.count; i++) {
         int a=[arr[i] intValue];
@@ -105,6 +105,7 @@ static OCSortTest *sortTest;
         arr[k+1] = [NSString stringWithFormat:@"%d",a];
         NSLog(@"%@",arr);
     }
+    return arr;
 }
 
 // MARK: 快速排序

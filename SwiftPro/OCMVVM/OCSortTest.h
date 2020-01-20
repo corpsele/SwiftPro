@@ -14,6 +14,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)shared;
 
+-(void)bubbleSequence:(NSMutableArray *)arr;
+
+-(void)chooseSequence:(NSMutableArray *)arr;
+
+-(NSMutableArray *)insertSequence:(NSMutableArray *)arr;
+
+-(void)quickSequence:(NSMutableArray *)arr andleft:(int)left andright:(int)right;
+
 @end
 
 NS_ASSUME_NONNULL_END

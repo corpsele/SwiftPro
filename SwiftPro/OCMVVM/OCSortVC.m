@@ -11,6 +11,7 @@
 #import "DYKit.h"
 #import "OCSortVM.h"
 #import "Define.h"
+#import "OCSortTest.h"
 
 @interface OCSortVC ()
 
@@ -42,7 +43,14 @@
         @strongify(self);
         RACTupleUnpack(UITableView *tableView, NSIndexPath *index) = x;
         NSLog(@"indexPath = %@", index);
-
+        switch (index.row) {
+            case 0:
+                NSLog(@"insertSort = %@", [[OCSortTest shared] insertSequence:[self.vm valueForKey:@"data"]]);
+                break;
+                
+            default:
+                break;
+        }
     }];
     
 }
