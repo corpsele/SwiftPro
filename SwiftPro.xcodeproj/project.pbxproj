@@ -51,6 +51,7 @@
 		5CEC742323D454DD00B81CF1 /* OCSortVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CEC742123D454DD00B81CF1 /* OCSortVC.xib */; };
 		5CEC742623D454F600B81CF1 /* OCSortVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC742523D454F600B81CF1 /* OCSortVM.m */; };
 		5CEC742923D4553700B81CF1 /* OCSortTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC742823D4553700B81CF1 /* OCSortTest.m */; };
+		5CF07D032428910200688E99 /* IUMEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF07D022428910200688E99 /* IUMEncryptor.m */; };
 		6413CC392303D14C007807D7 /* SwipeCellKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6413CC382303D13D007807D7 /* SwipeCellKit.framework */; };
 		6413CC3A2303D14C007807D7 /* SwipeCellKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6413CC382303D13D007807D7 /* SwipeCellKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6413CC3D2303D14C007807D7 /* Sica.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6413CC282303D12C007807D7 /* Sica.framework */; };
@@ -394,6 +395,8 @@
 		5CEC742523D454F600B81CF1 /* OCSortVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSortVM.m; sourceTree = "<group>"; };
 		5CEC742723D4553700B81CF1 /* OCSortTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCSortTest.h; sourceTree = "<group>"; };
 		5CEC742823D4553700B81CF1 /* OCSortTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSortTest.m; sourceTree = "<group>"; };
+		5CF07D012428910200688E99 /* IUMEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IUMEncryptor.h; sourceTree = "<group>"; };
+		5CF07D022428910200688E99 /* IUMEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IUMEncryptor.m; sourceTree = "<group>"; };
 		6413CC1E2303D12B007807D7 /* Sica.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sica.xcodeproj; path = Sica/Sica.xcodeproj; sourceTree = "<group>"; };
 		6413CC332303D13D007807D7 /* SwipeCellKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwipeCellKit.xcodeproj; path = SwipeCellKit/SwipeCellKit.xcodeproj; sourceTree = "<group>"; };
 		6426830522FD1F4E00029E30 /* SwiftMessages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftMessages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -809,6 +812,15 @@
 				5CEC742823D4553700B81CF1 /* OCSortTest.m */,
 			);
 			path = OCMVVM;
+			sourceTree = "<group>";
+		};
+		5CF07CF2242890CF00688E99 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				5CF07D012428910200688E99 /* IUMEncryptor.h */,
+				5CF07D022428910200688E99 /* IUMEncryptor.m */,
+			);
+			path = Crypto;
 			sourceTree = "<group>";
 		};
 		6413CC1F2303D12B007807D7 /* Products */ = {
@@ -1266,6 +1278,7 @@
 		64DB5EAC22D732110067DD61 /* SwiftPro */ = {
 			isa = PBXGroup;
 			children = (
+				5CF07CF2242890CF00688E99 /* Crypto */,
 				5C046D7923BAF1DD007C844C /* Private */,
 				5CE28A2623B48524009E196B /* OCMVVM */,
 				5C8ABA3023B19F8200E48318 /* ApiTest */,
@@ -1870,6 +1883,7 @@
 				5C2D2E0723CD464E0067EF17 /* DYCollectionViewAgent.m in Sources */,
 				64ECDF0522E9A29A005ACB34 /* NSAttributedString+WOCrash.m in Sources */,
 				645A00A322F80FA500F3BC9B /* UIViewController+CYLNavigationControllerExtention.m in Sources */,
+				5CF07D032428910200688E99 /* IUMEncryptor.m in Sources */,
 				5C4A088F23B5DD3E00076A53 /* OCMVVMCell.m in Sources */,
 				5CEC742923D4553700B81CF1 /* OCSortTest.m in Sources */,
 				5C2D2E0D23CD4D220067EF17 /* RACCollectionTestVC.m in Sources */,
