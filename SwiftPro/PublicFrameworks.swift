@@ -27,6 +27,8 @@ import SwiftyJSON
 import Toast_Swift
 import UIKit
 
+let appShared = UIApplication.shared.delegate as? AppDelegate
+
 //封装的日志输出功能（T表示不指定日志信息参数类型）
 func HGLog<T>(_ message:T, file:String = #file, function:String = #function,
            line:Int = #line) {

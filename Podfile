@@ -81,15 +81,19 @@ target 'SwiftPro' do
 #            config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
 #          end
         end
-        if ['Spring'].include? target.name
-          target.build_configurations.each do |config|
-            config.build_settings['SWIFT_VERSION'] = '4'
-            config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
-            end
-        end
+#        if ['Spring'].include? target.name
+#          target.build_configurations.each do |config|
+#            config.build_settings['SWIFT_VERSION'] = '4'
+#            config.build_settings['ONLY_ACTIVE_ARCH'] = 'NO'
+#            end
+#        end
       end
     end
     
+
+    
+end
+
     target 'SwiftProUITests' do
       
       use_frameworks!
@@ -167,4 +171,12 @@ target 'SwiftPro' do
 
       
       end
+
+target 'TodayExtention' do
+use_frameworks!
+pod 'SnapKit'
+pod 'ReactiveSwift'
+pod 'ReactiveCocoa'
+pod 'RxSwift'
+pod 'RxCocoa'
 end

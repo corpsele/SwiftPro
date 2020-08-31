@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var vc: ViewController?
     var mainNavi: MainNaviViewController?
     var allowRotation: Bool = true
+    var todayDefault: UserDefaults?
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 //        WOCrashProtectorManager.makeAllEffective();
@@ -65,6 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 定义日志级别
         DDLog.add(DDTTYLogger.sharedInstance)
         DDTTYLogger.sharedInstance.colorsEnabled = true
+        
+        todayDefault = UserDefaults.init(suiteName: "group.swiftpro")
 
         return true
     }

@@ -7,7 +7,7 @@
 //
 
 import Alamofire
-//import AuthenticationServices
+// import AuthenticationServices
 import CoreServices
 import Eureka
 import JJException
@@ -28,8 +28,7 @@ import Toast_Swift
 import UIKit
 import ZHRefresh
 
-
-typealias initWithServers = (Any) -> (Any);
+typealias initWithServers = (Any) -> (Any)
 
 struct MainStatusView {
     static var statusView: UIView?
@@ -59,8 +58,7 @@ struct TableViewCellIdentify {
     static let kkTableViewCellAuth: String = "TableViewCheckCellAuth"
 }
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource//, ASAuthorizationControllerDelegate, ASWebAuthenticationPresentationContextProviding
-{
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource { // , ASAuthorizationControllerDelegate, ASWebAuthenticationPresentationContextProviding
     var arrayCell: [Any] = [Any](repeating: 0, count: 500)
 
     required init?(coder aDecoder: NSCoder) {
@@ -70,7 +68,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
 
 //        NotificationCenter.default.addObserver(self, selector: #selector(deviceOrientationListener), name: UIDevice.orientationDidChangeNotification, object: self);
-        
+
         _ = NotificationCenter.default.rx.notification(NSNotification.Name.UIDeviceOrientationDidChange, object: self).subscribe(onNext: { _ in
             let orientation = UIDevice.current.orientation
             if orientation != UIDeviceOrientation.portrait {
@@ -138,40 +136,48 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 //        view.subviews[999];
 //        /System/Library/PrivateFrameworks/WiFiKit.framework
-       let lib = dlopen("/Users/eport2/Documents/Apple-Runtime-Headers/iOS_S/System/Library/PrivateFrameworks/NetworkExtension.framework/NetworkExtension", RTLD_LAZY);
-        if (lib != nil) {
-            println("framework init successed");
+        let lib = dlopen("/Users/eport2/Documents/Apple-Runtime-Headers/iOS_S/System/Library/PrivateFrameworks/NetworkExtension.framework/NetworkExtension", RTLD_LAZY)
+        if lib != nil {
+            println("framework init successed")
             print("\(#file) in \(#function) : \(#line) = framework init successed")
 //            initWithServers = dlsym(lib, "initWithServers");
         }
-        
+
 //        printApplicationState();
-        
-        
+
         if let framework = Bundle(path: "/Users/eport2/Documents/Apple-Runtime-Headers/iOS_S/System/Library/PrivateFrameworks/NetworkExtension.framework") {
-            print("bundle framework init successed");
+            print("bundle framework init successed")
             HGLog("bundle framework init successed")
             do {
-                try framework.loadAndReturnError();
-                
-                let DnsSettingsClass = NSClassFromString("NEDNSSettings") as? NSObject.Type;
-                
-//                dns.perform(Selector("initWithServers"), with: "192.168.0.101");
-                
-                
-//                let dns = DnsSettingsClass.initWithServers("192.168.0.101");
-                
-                print("dns = \(DnsSettingsClass!)");
-                let dns = DnsSettingsClass?.init();
-//                dns?.perform(#selector(initWithServers), with: "192.168.0.101")
-                dns?.perform(Selector(("initWithServers:")), with: "192.168.0.101");
-            } catch let err {
-                print(err.localizedDescription);
-            }
+                try framework.loadAndReturnError()
 
+                let DnsSettingsClass = NSClassFromString("NEDNSSettings") as? NSObject.Type
+
+//                dns.perform(Selector("initWithServers"), with: "192.168.0.101");
+
+//                let dns = DnsSettingsClass.initWithServers("192.168.0.101");
+
+                print("dns = \(DnsSettingsClass!)")
+                let dns = DnsSettingsClass?.init()
+//                dns?.perform(#selector(initWithServers), with: "192.168.0.101")
+                dns?.perform(Selector(("initWithServers:")), with: "192.168.0.101")
+            } catch let err {
+                print(err.localizedDescription)
+            }
+        }
+        
+        NotificationCenter.default.rx.notification(Notification.Name.init("kTodayExtensionMsg1")).subscribe(onNext: { (noti) in
+            
+        }, onError: { (err) in
+            
+        }, onCompleted: {
+            
+        }) {
+            
         }
         
         
+//        todayDefault?.set("I Quit", forKey: "msg")
     }
 
     @objc func deviceOrientationListener(noti _: Notification) {
@@ -225,10 +231,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
 
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()) { [weak self] in
-            guard let strongSelf = self else {return}
+            guard let strongSelf = self else { return }
             strongSelf.addStatusBar()
         }
-        
     }
 
     // MARK: - Register TableViewCell
@@ -283,8 +288,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             case let ViewControllerCellType.VCCellTypeDisplay(cell):
                 cell.textLabel?.text = getTotalCacheSize()
                 return cell
-                
-            case ViewControllerCellType.VCCellTypeAuth(_):
+
+            case ViewControllerCellType.VCCellTypeAuth:
 //                if #available(iOS 13.0, *) {
 //                    let btnAuth = ASAuthorizationAppleIDButton(authorizationButtonType: .signIn, authorizationButtonStyle: .black)
 //                    btnAuth.addTarget(self, action: #selector(btnAuthAction(sender:)), for: .touchUpInside)
@@ -319,21 +324,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.shake()
         }
-        
+
         if let type = arrayCell[indexPath.row] as? CellDic {
             if let cell1 = tableView.dequeueReusableCell(withIdentifier: type.cellIdentify, for: indexPath) as? CheckCell {
                 view.makeToast("checkcell = \(cell1)")
-                
             }
         }
-        
+
         switch arrayCell[indexPath.row] {
-        case ViewControllerCellType.VCCellTypeDisplay(let cell1):
+        case let ViewControllerCellType.VCCellTypeDisplay(cell1):
             view.makeToast("cell1 = \((cell1.textLabel?.text)!)")
-            break
-        case ViewControllerCellType.VCCellTypeAuth(let cell2):
+        case let ViewControllerCellType.VCCellTypeAuth(cell2):
             view.makeToast("cell2 = \(cell2)")
-            break
         default:
             break
         }
@@ -345,7 +347,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
             let n = forgJump(9)
             print("n = \(n!)")
-            self.view.makeToast("n = \(n!)")
+            view.makeToast("n = \(n!)")
         case 2:
             chooseVideoURL()
 
@@ -354,14 +356,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         case 4:
             playWithVLCInLocal()
         case 5:
-            performSQLite();
-            break
+            performSQLite()
         case 6:
-            writeColmn(id: indexPath.row, name: indexPath.row.string);
-            break
+            writeColmn(id: indexPath.row, name: indexPath.row.string)
         case 7:
-            getColmn();
-            break
+            getColmn()
         case 8:
             let vc = EurekaTestViewController(style: .plain)
             navigationController?.pushViewController(vc)
@@ -385,21 +384,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             navigationController?.pushViewController(vc, animated: true)
         case 19:
 //            let url = URL(string: "CustomseSpace://dfdf");
-            let url = URL.init(string: "CustomseSpace://dfdf");
+            let url = URL(string: "CustomseSpace://dfdf")
             if #available(iOS 10, *) {
-                UIApplication.shared.open(url ?? URL.init(fileURLWithPath: ""), options: [:],
-                                           completionHandler: {
-                                             (success) in
-                                            print(success);
-                 })
-             } else {
-                 UIApplication.shared.openURL(url ?? URL.init(fileURLWithPath: ""))
-             }
+                UIApplication.shared.open(url ?? URL(fileURLWithPath: ""), options: [:],
+                                          completionHandler: {
+                                              success in
+                                              print(success)
+                })
+            } else {
+                UIApplication.shared.openURL(url ?? URL(fileURLWithPath: ""))
+            }
         case 20:
             let vc = TestViewController()
             navigationController?.pushViewController(vc, animated: true)
         case 21:
-            let vc = ApiTestViewController();
+            let vc = ApiTestViewController()
             navigationController?.pushViewController(vc, animated: true)
         case 22:
             let vc = OCMVVMVC()
@@ -416,6 +415,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         case 26:
             let vc = OCSortVC()
             navigationController?.pushViewController(vc, animated: true)
+        case 27:
+//            NotificationCenter.default.post(name: NSNotification.Name., object: nil, userInfo: ["msg": "I Quit"])
+            appShared?.todayDefault?.set("I Quit", forKey: "msg")
+            appShared?.todayDefault?.synchronize()
+            print(appShared?.todayDefault?.object(forKey: "msg"))
+            print("27")
+            case 28:
+            //            NotificationCenter.default.post(name: NSNotification.Name., object: nil, userInfo: ["msg": "I Quit"])
+                        appShared?.todayDefault?.set("lossless", forKey: "msg")
+                        appShared?.todayDefault?.synchronize()
+                        print(appShared?.todayDefault?.object(forKey: "msg"))
+                        print("28")
         default:
             print(indexPath.row)
         }
@@ -427,31 +438,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             print("no")
         }
     }
-/*
-    @objc func btnAuthAction(sender _: Any) {
-        if #available(iOS 13.0, *) {
-            let appleIDProvider = ASAuthorizationAppleIDProvider()
 
-            // 创建新的AppleID 授权请求
-            let appleIDRequest = appleIDProvider.createRequest()
+    /*
+     @objc func btnAuthAction(sender _: Any) {
+         if #available(iOS 13.0, *) {
+             let appleIDProvider = ASAuthorizationAppleIDProvider()
 
-            // 在用户授权期间请求的联系信息
-            appleIDRequest.requestedScopes = [ASAuthorization.Scope.fullName, ASAuthorization.Scope.email]
+             // 创建新的AppleID 授权请求
+             let appleIDRequest = appleIDProvider.createRequest()
 
-            // 由ASAuthorizationAppleIDProvider创建的授权请求 管理授权请求的控制器
-            let authorizationController = ASAuthorizationController(authorizationRequests: [appleIDRequest])
+             // 在用户授权期间请求的联系信息
+             appleIDRequest.requestedScopes = [ASAuthorization.Scope.fullName, ASAuthorization.Scope.email]
 
-            // 设置授权控制器通知授权请求的成功与失败的代理
-            authorizationController.delegate = self
+             // 由ASAuthorizationAppleIDProvider创建的授权请求 管理授权请求的控制器
+             let authorizationController = ASAuthorizationController(authorizationRequests: [appleIDRequest])
 
-            // 设置提供 展示上下文的代理，在这个上下文中 系统可以展示授权界面给用户
-            authorizationController.presentationContextProvider = self as? ASAuthorizationControllerPresentationContextProviding
+             // 设置授权控制器通知授权请求的成功与失败的代理
+             authorizationController.delegate = self
 
-            // 在控制器初始化期间启动授权流
-            authorizationController.performRequests()
-        }
-    }
-*/
+             // 设置提供 展示上下文的代理，在这个上下文中 系统可以展示授权界面给用户
+             authorizationController.presentationContextProvider = self as? ASAuthorizationControllerPresentationContextProviding
+
+             // 在控制器初始化期间启动授权流
+             authorizationController.performRequests()
+         }
+     }
+     */
     fileprivate func chooseVideoURL() {
         let sheetAlert = UIAlertController(title: "播放视频", message: "选择视频地址", preferredStyle: .actionSheet)
         let action1 = UIAlertAction(title: "sv_mp4", style: .default) { [weak self] _ in
@@ -475,21 +487,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let vc = KxMovieViewController.movieViewController(withContentPath: "http://43.248.49.206/hgmeap-pluginserver-hgmeapDMZVideo/hgmeapAssist/video/mp3.mp3?token=lCJ8a5aB7Segc8ZS2337aFpXHvKMCGCkV0LGC190kFkz8kt5GT", parameters: nil) as! KxMovieViewController
             self?.playWithKXMovie(movieVC: vc)
         }
-                let action6 = UIAlertAction(title: "test_wma", style: .default) { [weak self] _ in
-        //            http://43.248.49.206/hgmeap-pluginserver-hgmeapDMZVideo/hgmeapAssist/video/mp3.mp3?token=lCJ8a5aB7Segc8ZS2337aFpXHvKMCGCkV0LGC190kFkz8kt5GT
-                    let tmp = Bundle.main.path(forResource: "wma", ofType: "wma")
-                    let vc =
-                        KxMovieViewController.movieViewController(withContentPath: tmp, parameters: nil) as! KxMovieViewController
-                    self?.playWithKXMovie(movieVC: vc)
-                }
-        
+        let action6 = UIAlertAction(title: "test_wma", style: .default) { [weak self] _ in
+            //            http://43.248.49.206/hgmeap-pluginserver-hgmeapDMZVideo/hgmeapAssist/video/mp3.mp3?token=lCJ8a5aB7Segc8ZS2337aFpXHvKMCGCkV0LGC190kFkz8kt5GT
+            let tmp = Bundle.main.path(forResource: "wma", ofType: "wma")
+            let vc =
+                KxMovieViewController.movieViewController(withContentPath: tmp, parameters: nil) as! KxMovieViewController
+            self?.playWithKXMovie(movieVC: vc)
+        }
+
         let action7 = UIAlertAction(title: "test_wav", style: .default) { [weak self] _ in
-        //            http://43.248.49.206/hgmeap-pluginserver-hgmeapDMZVideo/hgmeapAssist/video/mp3.mp3?token=lCJ8a5aB7Segc8ZS2337aFpXHvKMCGCkV0LGC190kFkz8kt5GT
-                    let tmp = Bundle.main.path(forResource: "wav", ofType: "wav")
-                    let vc =
-                        KxMovieViewController.movieViewController(withContentPath: tmp, parameters: nil) as! KxMovieViewController
-                    self?.playWithKXMovie(movieVC: vc)
-                }
+            //            http://43.248.49.206/hgmeap-pluginserver-hgmeapDMZVideo/hgmeapAssist/video/mp3.mp3?token=lCJ8a5aB7Segc8ZS2337aFpXHvKMCGCkV0LGC190kFkz8kt5GT
+            let tmp = Bundle.main.path(forResource: "wav", ofType: "wav")
+            let vc =
+                KxMovieViewController.movieViewController(withContentPath: tmp, parameters: nil) as! KxMovieViewController
+            self?.playWithKXMovie(movieVC: vc)
+        }
 //        http://43.248.49.206:80/hgmeap-pluginserver-hgmeapDMZVideo/hgmeapAssist/video/avi.avi?token=9fjeVM641qXWs9YCPZ1h1h6wBM9DLol18bRDro5NR7FL1pXX9S
         sheetAlert.addAction(action1)
         sheetAlert.addAction(action2)
@@ -545,66 +557,62 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         SwiftMessages.show(view: view)
     }
 
-    fileprivate func performSQLite(){
+    fileprivate func performSQLite() {
         do {
+            let dataPath = getDBFilePath()[0]
+            let tmp = getDBFilePath()[1]
+            let manager = FileManager.default
 
-            let dataPath = getDBFilePath()[0];
-             let tmp = getDBFilePath()[1];
-            let manager = FileManager.default;
-
-            if manager.fileExists(atPath: tmp) == false{
-
-                try manager.createDirectory(atPath: dataPath, withIntermediateDirectories: true, attributes: nil);
-                manager.createFile(atPath: tmp, contents: nil, attributes: nil);
+            if manager.fileExists(atPath: tmp) == false {
+                try manager.createDirectory(atPath: dataPath, withIntermediateDirectories: true, attributes: nil)
+                manager.createFile(atPath: tmp, contents: nil, attributes: nil)
             }
-            
-            let db = try Connection(tmp);
-            let table = Table("MyTable");
+
+            let db = try Connection(tmp)
+            let table = Table("MyTable")
             let id = Expression<Int64>("id")
             let name = Expression<String?>("name")
-            try db.run(table.create(block: { (tb) in
-                tb.column(id, primaryKey: true);
-                tb.column(name);
-            }));
+            try db.run(table.create(block: { tb in
+                tb.column(id, primaryKey: true)
+                tb.column(name)
+            }))
             view.makeToast("创建成功")
         } catch let err as NSError {
-            print(err.localizedDescription);
+            print(err.localizedDescription)
             if err.code == 14 {
-                view.makeToast("无法保存文件");
-            }
-            else if err.code == 0 {
-                view.makeToast("数据库已被创建");
+                view.makeToast("无法保存文件")
+            } else if err.code == 0 {
+                view.makeToast("数据库已被创建")
             }
         }
 
-
-    //        let strCreate = "create table MySQL ( id int primary key, name text );"
-    //        sqlite.execute(query: strCreate);
+        //        let strCreate = "create table MySQL ( id int primary key, name text );"
+        //        sqlite.execute(query: strCreate);
     }
 
     fileprivate func writeColmn(id: Int, name: String) {
         do {
-            let db = try Connection(getDBFilePath()[1]);
-            let table = Table("MyTable");
+            let db = try Connection(getDBFilePath()[1])
+            let table = Table("MyTable")
             let id1 = Expression<Int64>("id")
             let name1 = Expression<String?>("name")
-            let insert = table.insert(id1 <- Int64(id), name1 <- name);
-            let rowid = try db.run(insert);
-            print(rowid);
+            let insert = table.insert(id1 <- Int64(id), name1 <- name)
+            let rowid = try db.run(insert)
+            print(rowid)
             view.makeToast("写入数据成功")
         } catch let err as NSError {
-            print(err.localizedDescription);
-            view.makeToast("插入数据失败");
+            print(err.localizedDescription)
+            view.makeToast("插入数据失败")
         }
     }
 
-    fileprivate func getColmn(){
+    fileprivate func getColmn() {
         do {
-            let db = try Connection(getDBFilePath()[1]);
-            let table = Table("MyTable");
-            let id1 = Expression<Int64>("id");
-            let name1 = Expression<String?>("name");
-    //            let select = table.select(id1, name1);
+            let db = try Connection(getDBFilePath()[1])
+            let table = Table("MyTable")
+            let id1 = Expression<Int64>("id")
+            let name1 = Expression<String?>("name")
+            //            let select = table.select(id1, name1);
             var str = ""
             for t in try db.prepare(table) {
                 print("id: \(t[id1]), name: \(t[name1]!)")
@@ -614,32 +622,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             view.makeToast("获取数据成功")
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) { [weak self] in
                 if let strongSelf = self {
-                   strongSelf.view.makeToast(str)
+                    strongSelf.view.makeToast(str)
                 }
             }
         } catch let err as NSError {
-            print(err.localizedDescription);
-            view.makeToast("获取数据失败");
+            print(err.localizedDescription)
+            view.makeToast("获取数据失败")
         }
-
-
     }
-    
+
     // MARK: 青蛙跳
+
     // 若把条件修改成一次可以跳一级，也可以跳2级...也可以跳上n级呢，则f(n) = 2^{n-1}
-    //这里需要注意一下溢出的问题，因为在swift里若相加溢出，则会直接crash，所以这里相加使用了 &+，溢出后返回nil
+    // 这里需要注意一下溢出的问题，因为在swift里若相加溢出，则会直接crash，所以这里相加使用了 &+，溢出后返回nil
     fileprivate func forgJump(_ number: UInt64) -> UInt64? {
         if number == 1 {
             return 1
-        }else if number == 2 {
+        } else if number == 2 {
             return 1
         }
-        var fibNMinusOne:UInt64 = 1
-        var fibNMinusTwo:UInt64 = 1
-        var fibN:UInt64 = 0
-        for _ in 3...number {
+        var fibNMinusOne: UInt64 = 1
+        var fibNMinusTwo: UInt64 = 1
+        var fibN: UInt64 = 0
+        for _ in 3 ... number {
             fibN = fibNMinusOne &+ fibNMinusTwo
-            if(fibN < fibNMinusOne) {
+            if fibN < fibNMinusOne {
                 return nil
             }
             fibNMinusTwo = fibNMinusOne
@@ -697,7 +704,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let tableView = UITableView()
 
         tableView.rx.itemSelected.subscribe { _ in
-            print("item selected");
+            print("item selected")
         }
         tableView.separatorStyle = .none
         tableView.snp.makeConstraints { make in
@@ -765,10 +772,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return [.portrait, .landscapeRight];
+        return [.portrait, .landscapeRight]
     }
 
     override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-        return .portrait;
+        return .portrait
     }
 }
