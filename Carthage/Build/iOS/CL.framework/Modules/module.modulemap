@@ -1,0 +1,11 @@
+framework module CL {
+  umbrella header "CL.h"
+
+  export *
+  module * { export * }
+}
+
+module CL.Swift {
+    header "CL-Swift.h"
+    requires objc
+}

@@ -64,8 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        OOMDetector.getInstance()?.setupLeakChecker()
         
         // 定义日志级别
-        DDLog.add(DDTTYLogger.sharedInstance)
-        DDTTYLogger.sharedInstance.colorsEnabled = true
+        DDLog.add(DDTTYLogger.sharedInstance!)
+        DDTTYLogger.sharedInstance?.colorsEnabled = true
         
         todayDefault = UserDefaults.init(suiteName: "group.swiftpro")
 

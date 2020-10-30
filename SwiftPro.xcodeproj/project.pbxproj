@@ -134,7 +134,6 @@
 		64DB5EC322D732110067DD61 /* SwiftProTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DB5EC222D732110067DD61 /* SwiftProTests.swift */; };
 		64DB5ECE22D732110067DD61 /* SwiftProUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DB5ECD22D732110067DD61 /* SwiftProUITests.swift */; };
 		64DB5EDD22D816F80067DD61 /* PublicFrameworks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DB5EDC22D816F80067DD61 /* PublicFrameworks.swift */; };
-		64ECDE9A22E952E6005ACB34 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ECDE9922E952E6005ACB34 /* TestModel.swift */; };
 		64ECDEB222E985CE005ACB34 /* CellAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ECDEA522E985CE005ACB34 /* CellAnimator.swift */; };
 		64ECDEFB22E9A29A005ACB34 /* NSObject+KVOCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ECDEDE22E9A29A005ACB34 /* NSObject+KVOCrash.m */; };
 		64ECDEFC22E9A29A005ACB34 /* NSTimer+Crash.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ECDEDF22E9A29A005ACB34 /* NSTimer+Crash.m */; };
@@ -151,10 +150,9 @@
 		64ECDF0722E9A29A005ACB34 /* NSMutableString+WOCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ECDEF422E9A29A005ACB34 /* NSMutableString+WOCrash.m */; };
 		64ECDF0822E9A29A005ACB34 /* NSDictionary+WOCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ECDEF722E9A29A005ACB34 /* NSDictionary+WOCrash.m */; };
 		64ECDF0922E9A29A005ACB34 /* NSMutableArray+WOCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ECDEF822E9A29A005ACB34 /* NSMutableArray+WOCrash.m */; };
-		64ECDF2722EAF371005ACB34 /* EurekaTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64ECDF2622EAF371005ACB34 /* EurekaTestViewController.swift */; };
 		64EF22D122F3CE44008587EB /* QueueDownloadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EF22D022F3CE44008587EB /* QueueDownloadVC.swift */; };
-		72CAB09F7E25E81D1E12EBDB /* Pods_SwiftPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823C4CB278DAA4567D2213AD /* Pods_SwiftPro.framework */; };
 		9FB00ABCE7F0F7638DD6F748 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		E104A48AE0F21320BF827FAC /* Pods_SwiftPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823C4CB278DAA4567D2213AD /* Pods_SwiftPro.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -329,15 +327,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5C95EBC6237E5173002BD0F3 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 12;
-			dstPath = SwiftPro/Private;
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		5CF7016424F8EEDB00999BEC /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -681,7 +670,6 @@
 		64DB5ECF22D732110067DD61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64DB5EDC22D816F80067DD61 /* PublicFrameworks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicFrameworks.swift; sourceTree = "<group>"; };
 		64ECDE6222E85A4F005ACB34 /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../../../Downloads/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
-		64ECDE9922E952E6005ACB34 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		64ECDEA522E985CE005ACB34 /* CellAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellAnimator.swift; sourceTree = "<group>"; };
 		64ECDEDC22E9A29A005ACB34 /* WOCrashLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WOCrashLog.h; sourceTree = "<group>"; };
 		64ECDEDD22E9A29A005ACB34 /* NSObject+NSNotificationCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NSNotificationCrash.h"; sourceTree = "<group>"; };
@@ -713,7 +701,6 @@
 		64ECDEF822E9A29A005ACB34 /* NSMutableArray+WOCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+WOCrash.m"; sourceTree = "<group>"; };
 		64ECDEF922E9A29A005ACB34 /* NSObject+SelectorCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SelectorCrash.h"; sourceTree = "<group>"; };
 		64ECDEFA22E9A29A005ACB34 /* NSObject+WOSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+WOSwizzle.h"; sourceTree = "<group>"; };
-		64ECDF2622EAF371005ACB34 /* EurekaTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurekaTestViewController.swift; sourceTree = "<group>"; };
 		64EF22D022F3CE44008587EB /* QueueDownloadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueueDownloadVC.swift; sourceTree = "<group>"; };
 		6C4EA2537766C9B2FF9E0161 /* Pods-TodayExtention.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayExtention.release.xcconfig"; path = "Target Support Files/Pods-TodayExtention/Pods-TodayExtention.release.xcconfig"; sourceTree = "<group>"; };
 		7391A4153C1618937E18DFBA /* Pods-SwiftPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPro.debug.xcconfig"; path = "Target Support Files/Pods-SwiftPro/Pods-SwiftPro.debug.xcconfig"; sourceTree = "<group>"; };
@@ -779,8 +766,8 @@
 				64A17D9022DD651D003C249D /* libavcodec.a in Frameworks */,
 				64A17D9222DD651D003C249D /* libavdevice.a in Frameworks */,
 				64A17D9322DD651D003C249D /* libswresample.a in Frameworks */,
-				72CAB09F7E25E81D1E12EBDB /* Pods_SwiftPro.framework in Frameworks */,
 				9FB00ABCE7F0F7638DD6F748 /* (null) in Frameworks */,
+				E104A48AE0F21320BF827FAC /* Pods_SwiftPro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1470,8 +1457,6 @@
 				6429657422F94FA200F35197 /* Chart */,
 				645A004A22F7CDE000F3BC9B /* Calendar */,
 				64EF22C422F3CE1F008587EB /* Download */,
-				64ECDF2522EAF30D005ACB34 /* Eureka */,
-				64ECDE8C22E952B9005ACB34 /* Test */,
 				64BC6C9A22E155440051A79D /* Main */,
 				64BC6C9722E153EF0051A79D /* Extension */,
 				64A17CD122DD639E003C249D /* Third */,
@@ -1533,14 +1518,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		64ECDE8C22E952B9005ACB34 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				64ECDE9922E952E6005ACB34 /* TestModel.swift */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
 		64ECDEDB22E9A29A005ACB34 /* WOCrashProtector */ = {
 			isa = PBXGroup;
 			children = (
@@ -1585,14 +1562,6 @@
 				64ECDEF822E9A29A005ACB34 /* NSMutableArray+WOCrash.m */,
 			);
 			path = WOContainer;
-			sourceTree = "<group>";
-		};
-		64ECDF2522EAF30D005ACB34 /* Eureka */ = {
-			isa = PBXGroup;
-			children = (
-				64ECDF2622EAF371005ACB34 /* EurekaTestViewController.swift */,
-			);
-			path = Eureka;
 			sourceTree = "<group>";
 		};
 		64EF22C422F3CE1F008587EB /* Download */ = {
@@ -1735,8 +1704,8 @@
 				64A8B1C822D88A9800897918 /* Embed Frameworks */,
 				B7CEE9AB18EBD75E3BADF43F /* [CP] Embed Pods Frameworks */,
 				6449F5CD23069BA100EBADAE /* ShellScript */,
-				5C95EBC6237E5173002BD0F3 /* CopyFiles */,
 				5CF7016424F8EEDB00999BEC /* Embed App Extensions */,
+				5C8B7C46254BF05E00903DCE /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -2077,6 +2046,25 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwiftProUITests/Pods-SwiftProUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5C8B7C46254BF05E00903DCE /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/CL.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
 		6449F5CD23069BA100EBADAE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2283,7 +2271,6 @@
 				5C8ABA4423B19FEB00E48318 /* ApiTestModel.swift in Sources */,
 				64ECDF0322E9A29A005ACB34 /* NSMutableDictionary+WOCrash.m in Sources */,
 				64ECDF0122E9A29A005ACB34 /* WOCrashProtectorManager.m in Sources */,
-				64ECDE9A22E952E6005ACB34 /* TestModel.swift in Sources */,
 				64A8B1A922D8589100897918 /* VideoViewModel.swift in Sources */,
 				642965B922F96AD900F35197 /* LeftSideVC.swift in Sources */,
 				5CE28A3A23B4855F009E196B /* OCMVVMVM.m in Sources */,
@@ -2299,7 +2286,6 @@
 				64ECDEFF22E9A29A005ACB34 /* NSObject+NSNotificationCrash.m in Sources */,
 				5CEC742623D454F600B81CF1 /* OCSortVM.m in Sources */,
 				645A00AD22F80FA500F3BC9B /* CYLTabBarController.m in Sources */,
-				64ECDF2722EAF371005ACB34 /* EurekaTestViewController.swift in Sources */,
 				645A00AC22F80FA500F3BC9B /* UIBarButtonItem+CYLBadgeExtention.m in Sources */,
 				645A005922F7CE9D00F3BC9B /* BaseWithNaviVC.swift in Sources */,
 				64ECDEFC22E9A29A005ACB34 /* NSTimer+Crash.m in Sources */,
@@ -2721,6 +2707,7 @@
 					"$(PROJECT_DIR)/Third",
 					"$(PROJECT_DIR)/Third/privateframework",
 					"$(PROJECT_DIR)/SwiftPro/Private",
+					"$(PROJECT_DIR)/Third/CL",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2765,8 +2752,6 @@
 					"-framework",
 					"\"CryptoSwift\"",
 					"-framework",
-					"\"Eureka\"",
-					"-framework",
 					"\"FSCalendar\"",
 					"-framework",
 					"\"Foundation\"",
@@ -2799,10 +2784,6 @@
 					"-framework",
 					"\"ReactiveSwift\"",
 					"-framework",
-					"\"Realm\"",
-					"-framework",
-					"\"RealmSwift\"",
-					"-framework",
 					"\"Result\"",
 					"-framework",
 					"\"Rswift\"",
@@ -2816,8 +2797,6 @@
 					"\"RxKeyboard\"",
 					"-framework",
 					"\"RxOptional\"",
-					"-framework",
-					"\"RxRealm\"",
 					"-framework",
 					"\"RxRelay\"",
 					"-framework",
@@ -2846,8 +2825,6 @@
 					"\"SwiftHEXColors\"",
 					"-framework",
 					"\"SwiftValidator\"",
-					"-framework",
-					"\"SwifterSwift\"",
 					"-framework",
 					"\"SwiftyJSON\"",
 					"-framework",
@@ -2898,6 +2875,7 @@
 					"$(PROJECT_DIR)/Third/iOSSDK",
 					"$(PROJECT_DIR)/Third/privateframework",
 					"$(PROJECT_DIR)/SwiftPro/Private",
+					"$(PROJECT_DIR)/Third/CL",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2942,8 +2920,6 @@
 					"-framework",
 					"\"CryptoSwift\"",
 					"-framework",
-					"\"Eureka\"",
-					"-framework",
 					"\"FSCalendar\"",
 					"-framework",
 					"\"Foundation\"",
@@ -2976,10 +2952,6 @@
 					"-framework",
 					"\"ReactiveSwift\"",
 					"-framework",
-					"\"Realm\"",
-					"-framework",
-					"\"RealmSwift\"",
-					"-framework",
 					"\"Result\"",
 					"-framework",
 					"\"Rswift\"",
@@ -2993,8 +2965,6 @@
 					"\"RxKeyboard\"",
 					"-framework",
 					"\"RxOptional\"",
-					"-framework",
-					"\"RxRealm\"",
 					"-framework",
 					"\"RxRelay\"",
 					"-framework",
@@ -3023,8 +2993,6 @@
 					"\"SwiftHEXColors\"",
 					"-framework",
 					"\"SwiftValidator\"",
-					"-framework",
-					"\"SwifterSwift\"",
 					"-framework",
 					"\"SwiftyJSON\"",
 					"-framework",

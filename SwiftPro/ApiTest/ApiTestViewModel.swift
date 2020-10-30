@@ -65,7 +65,7 @@ class ApiTestViewModel: NSObject {
             btnSearchDriver?.subscribe(onNext: {[weak self] () in
                 self?.count = (self?.count)! + 1
                 self?.clickCommand.onNext((self?.count)!)
-                 NVActivityIndicatorPresenter.sharedInstance.startAnimating(ActivityData())
+//                 NVActivityIndicatorPresenter.sharedInstance.startAnimating(ActivityData())
                 self?.requestApi()
                 IQKeyboardManager.shared().resignFirstResponder()
                 })
@@ -89,7 +89,7 @@ class ApiTestViewModel: NSObject {
         apiModel = ApiTestModel.requestApi()
         apiModel?.subscribe(onNext: {[weak self] (model) in
             print("model = \(model)")
-            NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+//            NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
             self?.bindData()
             }).disposed(by: disposeBag)
         if !isBinded {
@@ -123,11 +123,6 @@ class ApiTestViewModel: NSObject {
 //            return cell!
 //        }
     }
-    
-    override init() {
-        super.init()
-        
 
-    }
 
 }

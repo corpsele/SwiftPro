@@ -9,14 +9,14 @@
 import Alamofire
 // import AuthenticationServices
 import CoreServices
-import Eureka
+//import Eureka
 import JJException
 import LocalAuthentication
 import Material
 import pop
-import Realm
+//import Realm
 // import ToastSwiftFramework
-import RealmSwift
+//import RealmSwift
 import RxCocoa
 import RxSwift
 import Sica
@@ -27,6 +27,7 @@ import SwipeCellKit
 import Toast_Swift
 import UIKit
 import ZHRefresh
+import CL
 
 typealias initWithServers = (Any) -> (Any)
 
@@ -104,7 +105,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         addViews()
         registerTableViewCell()
 
-        let type = CellDic(cellIdentify: TableViewCellIdentify.kkTableViewCellCheck, cellType: CheckCell.self)
+        let type = CellDic(cellIdentify: TableViewCellIdentify.kkTableViewCellCheck, cellType: UITableViewCell.self)
         arrayCell[10] = type
         arrayCell[15] = ViewControllerCellType.VCCellTypeDisplay(UITableViewCell())
         tableView.register(type.cellType, forCellReuseIdentifier: type.cellIdentify)
@@ -240,7 +241,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     private func registerTableViewCell() {
         tableView.register(TableViewCell.self, forCellReuseIdentifier: TableViewCellIdentify.kkTableViewCell)
-        tableView.register(CheckCell.self, forCellReuseIdentifier: "CheckCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CheckCell")
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -279,7 +280,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let type = arrayCell[indexPath.row] as? CellDic {
-            if let cell = tableView.dequeueReusableCell(withIdentifier: type.cellIdentify, for: indexPath) as? CheckCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: type.cellIdentify, for: indexPath) as? UITableViewCell {
                 cell.textLabel?.text = "checkcell"
                 return cell
             }
@@ -326,7 +327,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
 
         if let type = arrayCell[indexPath.row] as? CellDic {
-            if let cell1 = tableView.dequeueReusableCell(withIdentifier: type.cellIdentify, for: indexPath) as? CheckCell {
+            if let cell1 = tableView.dequeueReusableCell(withIdentifier: type.cellIdentify, for: indexPath) as? UITableViewCell {
                 view.makeToast("checkcell = \(cell1)")
             }
         }
@@ -362,8 +363,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         case 7:
             getColmn()
         case 8:
-            let vc = EurekaTestViewController(style: .plain)
-            navigationController?.pushViewController(vc)
+//            let vc = EurekaTestViewController(style: .plain)
+//            navigationController?.pushViewController(vc)
+        break
         case 9:
             let vc = QueueDownloadVC()
             navigationController?.pushViewController(vc)
@@ -682,14 +684,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 
-    fileprivate func initRealm() {
-        do {
-            let realm = try Realm()
-            realm.create(TestModel.self)
-        } catch let err as NSError {
-            print(err.localizedDescription)
-        }
-    }
+//    fileprivate func initRealm() {
+//        do {
+//            let realm = try Realm()
+//            realm.create(TestModel.self)
+//        } catch let err as NSError {
+//            print(err.localizedDescription)
+//        }
+//    }
 
     fileprivate func showVideoChoose() {
         let view = UIView()

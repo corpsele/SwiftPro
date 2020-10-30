@@ -45,7 +45,7 @@ class SliderMenuTestVC: BaseWithNaviVC {
         present(leftSideVC, animated: true) {}
     }
 
-    func navigationController(_: UINavigationController, willShow _: UIViewController, animated _: Bool) {}
+    override func navigationController(_: UINavigationController, willShow _: UIViewController, animated _: Bool) {}
 
     override func cyl_pushOrPop(to viewController: UIViewController, animated: Bool, callback: @escaping CYLPushOrPopCallback) {
         super.cyl_pushOrPop(to: viewController, animated: animated, callback: callback)

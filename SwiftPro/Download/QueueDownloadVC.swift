@@ -125,7 +125,7 @@ class QueueDownloadVC: UIViewController {
                     self?.tmpData = response.resumeData ?? Data()
 //                        UserDefaults.standard.set(response.resumeData ?? Data(), forKey: "\(index)");
 //                        UserDefaults.standard.synchronize();
-                    MMKV.default().set(response.resumeData ?? Data(), forKey: "\(index)")
+                    MMKV.default()?.set(response.resumeData ?? Data(), forKey: "\(index)")
 //                        MMKV.default().sync();
                     print("下载错误 err = \(err.localizedDescription)")
 
@@ -179,7 +179,7 @@ class QueueDownloadVC: UIViewController {
 //                    UserDefaults.standard.set(response.resumeData ?? Data(), forKey: "\(index)");
 //                    UserDefaults.standard.synchronize();
 
-                    MMKV.default().set(response.resumeData ?? Data(), forKey: "\(index)")
+                    MMKV.default()?.set(response.resumeData ?? Data(), forKey: "\(index)")
 
                 default:
                     print("failed")
@@ -270,7 +270,7 @@ class QueueDownloadVC: UIViewController {
         let request = requests.first
         if downloadCancel[0] == true {
 //            let data: Data = UserDefaults.standard.data(forKey: "1") ?? Data();
-            let data: Data = MMKV.default().data(forKey: "1") ?? Data()
+            let data: Data = MMKV.default()?.data(forKey: "1") ?? Data()
             downloadQueueData(data: data, 1)
             downloadCount += 1
             downloadCancel[0] = false
@@ -295,7 +295,7 @@ class QueueDownloadVC: UIViewController {
         let request = requests.last
         if downloadCancel[1] == true {
 //            let data: Data = UserDefaults.standard.data(forKey: "2") ?? Data();
-            let data: Data = MMKV.default().data(forKey: "2") ?? Data()
+            let data: Data = MMKV.default()?.data(forKey: "2") ?? Data()
             downloadQueueData(data: data, 2)
             downloadCount += 1
             downloadCancel[1] = false

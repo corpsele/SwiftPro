@@ -43,9 +43,9 @@ class CalendarVC: BaseWithNaviVC {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        let animation = AnimationType.from(direction: .top, offset: 30.0)
-        let a2 = AnimationType.random()
-        view.animate(animations: [animation, a2], duration: 2)
+//        let animation = AnimationType.from(direction: .top, offset: 30.0)
+//        let a2 = AnimationType.random()
+//        view.animate(animations: [animation, a2], duration: 2)
     }
 
     override func viewDidAppear(_ animated: Bool) {

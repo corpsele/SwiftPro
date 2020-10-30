@@ -30,6 +30,12 @@ class ApiTestModel: NSObject {
         city = array
         
         error_code = data["error_code"].intValue
+        
+        super.init()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     static func requestApi() -> Observable<[SectionModel<String, City>]> {

@@ -14,7 +14,7 @@ import ObjectMapper
 import Reachability
 import ReactiveCocoa
 import ReactiveSwift
-import Realm
+//import Realm
 import RxAlamofire
 import RxCocoa
 import RxSwift

@@ -8,6 +8,8 @@
 #import "HGNotifactionMainView.h"
 #import <SDWebImage/SDWebImage.h>
 #import <Masonry/Masonry.h>
+#import <CL/CL-Swift.h>
+#import <CL/CL.h>
 
 @interface HGNotifactionMainView()
 {
@@ -57,6 +59,7 @@
     [self addSubMainView];
 //    [svMain scrollRectToVisible:CGRectMake(0, rectMain.size.height * 2, rectMain.size.width, rectMain.size.height) animated:true];
     [self startTimer];
+    
 }
 
 // MARK: 添加视图阴影

@@ -5,35 +5,34 @@ PODS:
   - AlamofireObjectMapper (5.2.1):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
-  - AnyFormatKit (1.0.1)
-  - CocoaLumberjack/Core (3.6.0)
-  - CocoaLumberjack/Swift (3.6.0):
+  - AnyFormatKit (2.0.6)
+  - CocoaLumberjack/Core (3.6.2)
+  - CocoaLumberjack/Swift (3.6.2):
     - CocoaLumberjack/Core
-  - CryptoSwift (1.3.0)
+  - CryptoSwift (1.3.1)
   - Differentiator (4.0.1)
-  - Eureka (4.3.1)
   - fishhook (0.2)
   - FSCalendar (2.8.1)
-  - HandyJSON (5.0.1)
-  - IQKeyboardManager (6.5.4)
-  - JJException (0.2.6):
-    - JJException/All (= 0.2.6)
-  - JJException/All (0.2.6):
+  - HandyJSON (5.0.2)
+  - IQKeyboardManager (6.5.6)
+  - JJException (0.2.9):
+    - JJException/All (= 0.2.9)
+  - JJException/All (0.2.9):
     - JJException/ARC
     - JJException/DeallocBlock
     - JJException/Main
     - JJException/MRC
     - JJException/Swizzle
-  - JJException/ARC (0.2.6):
+  - JJException/ARC (0.2.9):
     - JJException/DeallocBlock
     - JJException/Main
     - JJException/Swizzle
-  - JJException/DeallocBlock (0.2.6)
-  - JJException/Main (0.2.6)
-  - JJException/MRC (0.2.6):
+  - JJException/DeallocBlock (0.2.9)
+  - JJException/Main (0.2.9)
+  - JJException/MRC (0.2.9):
     - JJException/Main
     - JJException/Swizzle
-  - JJException/Swizzle (0.2.6)
+  - JJException/Swizzle (0.2.9)
   - JTAppleCalendar (7.1.7)
   - lottie-ios (2.5.3)
   - Masonry (1.1.0)
@@ -42,42 +41,39 @@ PODS:
   - Material/Core (3.1.8):
     - Motion (~> 3.1.1)
   - MGSwipeTableCell (1.6.11)
-  - MMKV (1.0.23)
+  - MMKV (1.1.2):
+    - MMKVCore (~> 1.1.2)
+  - MMKVCore (1.1.2)
   - Motion (3.1.3):
     - Motion/Core (= 3.1.3)
   - Motion/Core (3.1.3)
   - NSLogger (1.9.7):
     - NSLogger/ObjC (= 1.9.7)
   - NSLogger/ObjC (1.9.7)
-  - NVActivityIndicatorView (4.8.0):
-    - NVActivityIndicatorView/Presenter (= 4.8.0)
-  - NVActivityIndicatorView/Presenter (4.8.0)
-  - ObjectMapper (3.5.1)
+  - NVActivityIndicatorView (5.0.1):
+    - NVActivityIndicatorView/Base (= 5.0.1)
+  - NVActivityIndicatorView/Base (5.0.1)
+  - ObjectMapper (3.5.3)
   - OOMDetector (1.3):
     - fishhook (= 0.2)
   - pop (1.0.12)
-  - R.swift (5.1.0):
-    - R.swift.Library (~> 5.1.0)
-  - R.swift.Library (5.1.0)
+  - R.swift (5.2.2):
+    - R.swift.Library (~> 5.2.0)
+  - R.swift.Library (5.2.0)
   - ReachabilitySwift (5.0.0)
-  - ReactiveCocoa (10.1.0):
-    - ReactiveSwift (~> 6.1)
+  - ReactiveCocoa (11.1.0):
+    - ReactiveSwift (~> 6.2)
   - ReactiveObjC (3.1.1)
-  - ReactiveSwift (6.1.0)
-  - Realm (4.3.0):
-    - Realm/Headers (= 4.3.0)
-  - Realm/Headers (4.3.0)
-  - RealmSwift (4.3.0):
-    - Realm (= 4.3.0)
+  - ReactiveSwift (6.5.0)
   - Result (5.0.0)
   - RxAlamofire (5.1.0):
     - RxAlamofire/Core (= 5.1.0)
   - RxAlamofire/Core (5.1.0):
     - Alamofire (~> 4.8)
     - RxSwift (~> 5.0)
-  - RxBlocking (5.0.1):
+  - RxBlocking (5.1.1):
     - RxSwift (~> 5)
-  - RxCocoa (5.0.1):
+  - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
   - RxDataSources (4.0.1):
@@ -90,12 +86,9 @@ PODS:
   - RxOptional (3.2.0):
     - RxCocoa
     - RxSwift
-  - RxRealm (2.0.0):
-    - RealmSwift (~> 4.0)
-    - RxSwift (~> 5.0)
-  - RxRelay (5.0.1):
+  - RxRelay (5.1.1):
     - RxSwift (~> 5)
-  - RxSwift (5.0.1)
+  - RxSwift (5.1.1)
   - RxSwiftExt (5.2.0):
     - RxSwiftExt/Core (= 5.2.0)
     - RxSwiftExt/RxCocoa (= 5.2.0)
@@ -104,20 +97,20 @@ PODS:
   - RxSwiftExt/RxCocoa (5.2.0):
     - RxCocoa (~> 5.0)
     - RxSwiftExt/Core
-  - SDWebImage (5.4.0):
-    - SDWebImage/Core (= 5.4.0)
-  - SDWebImage/Core (5.4.0)
+  - SDWebImage (5.9.4):
+    - SDWebImage/Core (= 5.9.4)
+  - SDWebImage/Core (5.9.4)
   - SideMenu (5.0.1)
   - SnapKit (4.2.0)
   - Spring (1.0.5)
-  - SQLite (0.1.14)
+  - SQLite (0.1.23)
   - SQLite.swift (0.12.2):
     - SQLite.swift/standard (= 0.12.2)
   - SQLite.swift/standard (0.12.2)
   - SSZipArchive (2.2.2)
   - Starscream (3.1.0)
   - SwiftCharts (0.6.5)
-  - SwiftDate (6.1.0)
+  - SwiftDate (6.2.0)
   - SwifterSwift (5.1.0):
     - SwifterSwift/AppKit (= 5.1.0)
     - SwifterSwift/CoreGraphics (= 5.1.0)
@@ -139,13 +132,13 @@ PODS:
   - SwifterSwift/SpriteKit (5.1.0)
   - SwifterSwift/SwiftStdlib (5.1.0)
   - SwifterSwift/UIKit (5.1.0)
-  - SwiftHEXColors (1.3.1)
+  - SwiftHEXColors (1.4.1)
   - SwiftValidator (4.0.0)
   - SwiftyJSON (5.0.0)
   - TextFieldEffects (1.6.0)
   - Toast (4.0.0)
   - Toast-Swift (5.0.1)
-  - ViewAnimator (2.7.0)
+  - ViewAnimator (3.0.1)
   - XLPagerTabStrip (8.1.0)
   - ZHRefresh (0.1.9)
 
@@ -156,7 +149,6 @@ DEPENDENCIES:
   - AnyFormatKit
   - CocoaLumberjack/Swift
   - CryptoSwift
-  - Eureka
   - FSCalendar
   - HandyJSON
   - IQKeyboardManager
@@ -177,7 +169,6 @@ DEPENDENCIES:
   - ReactiveCocoa
   - ReactiveObjC
   - ReactiveSwift
-  - RealmSwift
   - Result
   - RxAlamofire
   - RxBlocking
@@ -185,7 +176,6 @@ DEPENDENCIES:
   - RxDataSources
   - RxKeyboard
   - RxOptional
-  - RxRealm
   - RxSwift
   - RxSwiftExt
   - SDWebImage
@@ -210,7 +200,7 @@ DEPENDENCIES:
   - ZHRefresh
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireImage
     - AlamofireObjectMapper
@@ -218,7 +208,6 @@ SPEC REPOS:
     - CocoaLumberjack
     - CryptoSwift
     - Differentiator
-    - Eureka
     - fishhook
     - FSCalendar
     - HandyJSON
@@ -230,6 +219,7 @@ SPEC REPOS:
     - Material
     - MGSwipeTableCell
     - MMKV
+    - MMKVCore
     - Motion
     - NSLogger
     - NVActivityIndicatorView
@@ -242,8 +232,6 @@ SPEC REPOS:
     - ReactiveCocoa
     - ReactiveObjC
     - ReactiveSwift
-    - Realm
-    - RealmSwift
     - Result
     - RxAlamofire
     - RxBlocking
@@ -251,7 +239,6 @@ SPEC REPOS:
     - RxDataSources
     - RxKeyboard
     - RxOptional
-    - RxRealm
     - RxRelay
     - RxSwift
     - RxSwiftExt
@@ -294,68 +281,65 @@ SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
-  AnyFormatKit: 7e9955c7e3909b0405ddafe150d2eb4c543a4819
-  CocoaLumberjack: 78b0c238666f4f58db069738ec176f4519557516
-  CryptoSwift: 1283821600233bdbeb96d7b389c3288c3bf77211
+  AnyFormatKit: 3401a4e46db072447a4c7656fa5dc06b12b6678c
+  CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
+  CryptoSwift: f12f037f6d0fcd6d48c96db0071b653de64e6c4d
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
-  Eureka: 28ea296f06710f6745266b71f17862048941a32d
   fishhook: ea19933abfe8f2f52c55fd8b6e2718467d3ebc89
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
-  HandyJSON: d45b8415c501e3affc59ca9762c1197ff0feb646
-  IQKeyboardManager: 72b359cd7e777e3a984cedbe05f8da45320cbb63
-  JJException: 03bddb5cb2389fc5d00f77c9212aba0006295674
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
+  JJException: da7c64ccf29d9938a4075378a7e9a29db7383c37
   JTAppleCalendar: 96da4d8388fa6dc82d6a60d41ef36a015e167e2f
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   Material: a2a3f400a3b549d53ef89e56c58c4535b29db387
   MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
-  MMKV: 031ae51aedc0af1b250922f7ed8a6b6ee2f94c4c
+  MMKV: 319aede3b690572ad00bada5831146c63da3d009
+  MMKVCore: ae976ab3f019a3e4448f884353e0557b324ff136
   Motion: cf1e060e489f6661126374d5c60dbd2ed991605c
   NSLogger: cf3013a4fba189f631f07e6c3d5b8ce2b209654b
-  NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
-  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  NVActivityIndicatorView: 738e843cb8924e9e4fc3e559d0728031624bf860
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   OOMDetector: c23f4dfc969ea9bbd68a57cf7e5a3ca2169263cd
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
-  R.swift: 8cbc4fc69b740305b6a17c8a8ed968eb788962d9
-  R.swift.Library: fa85ce1e0d0b7e818cd9e080df910ba54d2776cc
+  R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
+  R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
-  ReactiveCocoa: 2f1d942d79072eded6d8c3bc7c2a641d40855a56
+  ReactiveCocoa: 7bc87ad2d361b9de141278b1950edd7fe91b15b1
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  ReactiveSwift: b78c7259f8ca46368238c895ae33a6a3bf9f811c
-  Realm: 9357c3589555793e1860a7104a7412bca4a48d99
-  RealmSwift: 402f1e379a8ef82c635313037b043f0f06de880c
+  ReactiveSwift: 8d159904084e908856cde90b2e28823f3c7e485f
   Result: ed341d2f236af425b803e690e9bd8fd0a0cb7c5a
   RxAlamofire: a2d7621de4c23a0c6e7b476b504acc32838ee341
-  RxBlocking: c5e090f42d046df8b0e7752742510f349963710f
-  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxBlocking: 5f700a78cad61ce253ebd37c9a39b5ccc76477b4
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxKeyboard: 6683c4344304a00f943c158bd8a43ce5469c82a7
   RxOptional: d2d6a68064bc16b4801332c40663967f481b0234
-  RxRealm: 900f5c7e6f0a2d6527b56eaf7283f3035ec1e8ba
-  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
-  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   RxSwiftExt: 4ca80336f43c28f11a2825cdd2fc61dd6c044697
-  SDWebImage: 5bf6aec6481ae2a062bdc59f9d6c1d1e552090e0
+  SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
   SideMenu: 87efd943737bb83aedf0358884d09fcf5576636d
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   Spring: 17901566c8ecf3a1327902b940406c64512f9bb1
-  SQLite: db7178116f530fa3c023a08f9c1f93e643de92e4
+  SQLite: 25f557f4203527054287da5ac566b8127ce93ba9
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
   SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
   Starscream: 5cbf3d36bf5af6906d1362bba4ce326bb011d4cc
   SwiftCharts: 2e755ea292f0b87d3e4b2c1eb5afc080a20cdc15
-  SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
+  SwiftDate: d117c3eb6beed72e47d3f4d1e3bc63fa1e66d7c3
   SwifterSwift: a9e8e144832638c2850b43da5feaf9598c6ad65b
-  SwiftHEXColors: 7cc78ce189ddaff81f2ec1259b6b1dffdcda7643
+  SwiftHEXColors: 1cb6e5d55c52749aa33db8f088ac55eb71ca4c7f
   SwiftValidator: 249b6b3ae3b294266c5b9de134d94f18f2d5aa47
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
-  ViewAnimator: 5af1c6f3b310f012bf081259c43717aa54fbae73
+  ViewAnimator: dd18d2f5c1e472f78d0065ff92750fe56cbd2f39
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
   ZHRefresh: 876b409acc73dbd10ea4e7967e1f4aea2ef44a53
 
-PODFILE CHECKSUM: 3955cb0895c8fbc116d4a4faa608136dc6b7f790
+PODFILE CHECKSUM: 6ac81de7e81bcb25a8ad9a31c5c38f4b7eb061b1
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.9.3
