@@ -43,7 +43,6 @@
 		5CDC1DC223C470CA0060969C /* QueueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDC1DC023C470CA0060969C /* QueueVC.swift */; };
 		5CDC1DC323C470CA0060969C /* QueueVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CDC1DC123C470CA0060969C /* QueueVC.xib */; };
 		5CE28A1E23B46E93009E196B /* RVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE28A0C23B46E93009E196B /* RVMViewModel.m */; };
-		5CE28A1F23B46E93009E196B /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5CE28A0F23B46E93009E196B /* Info.plist */; };
 		5CE28A3723B48545009E196B /* OCMVVMVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE28A3623B48545009E196B /* OCMVVMVC.m */; };
 		5CE28A3A23B4855F009E196B /* OCMVVMVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE28A3923B4855F009E196B /* OCMVVMVM.m */; };
 		5CE28A3D23B48570009E196B /* OCMVVMM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE28A3C23B48570009E196B /* OCMVVMM.m */; };
@@ -1998,7 +1997,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CE28A1F23B46E93009E196B /* Info.plist in Resources */,
 				5CBA37C2237298B700D25A68 /* wma.wma in Resources */,
 				64DB5EB822D732110067DD61 /* LaunchScreen.storyboard in Resources */,
 				64BC6C9422E065BE0051A79D /* kxmovie.bundle in Resources */,

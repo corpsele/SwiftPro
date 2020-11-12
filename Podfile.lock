@@ -100,7 +100,6 @@ PODS:
   - SDWebImage (5.9.4):
     - SDWebImage/Core (= 5.9.4)
   - SDWebImage/Core (5.9.4)
-  - SideMenu (5.0.1)
   - SnapKit (4.2.0)
   - Spring (1.0.5)
   - SQLite (0.1.23)
@@ -179,7 +178,6 @@ DEPENDENCIES:
   - RxSwift
   - RxSwiftExt
   - SDWebImage
-  - SideMenu
   - SnapKit
   - Spring
   - SQLite
@@ -243,7 +241,6 @@ SPEC REPOS:
     - RxSwift
     - RxSwiftExt
     - SDWebImage
-    - SideMenu
     - SnapKit
     - Spring
     - SQLite
@@ -320,7 +317,6 @@ SPEC CHECKSUMS:
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   RxSwiftExt: 4ca80336f43c28f11a2825cdd2fc61dd6c044697
   SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
-  SideMenu: 87efd943737bb83aedf0358884d09fcf5576636d
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   Spring: 17901566c8ecf3a1327902b940406c64512f9bb1
   SQLite: 25f557f4203527054287da5ac566b8127ce93ba9
@@ -340,6 +336,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
   ZHRefresh: 876b409acc73dbd10ea4e7967e1f4aea2ef44a53
 
-PODFILE CHECKSUM: 6ac81de7e81bcb25a8ad9a31c5c38f4b7eb061b1
+PODFILE CHECKSUM: 11b00708aa72521a15ff8a015c30cdcb6562eb6d
 
 COCOAPODS: 1.9.3

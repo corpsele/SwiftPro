@@ -59,7 +59,7 @@ target 'SwiftPro' do
     pod 'R.swift'
     pod 'SSZipArchive'
     pod 'Spring'
-    pod 'SideMenu'
+#    pod 'SideMenu'
     pod 'Masonry'
     pod 'SDWebImage'
     pod 'RxDataSources'
