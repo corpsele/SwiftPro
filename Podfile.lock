@@ -97,9 +97,9 @@ PODS:
   - RxSwiftExt/RxCocoa (5.2.0):
     - RxCocoa (~> 5.0)
     - RxSwiftExt/Core
-  - SDWebImage (5.9.4):
-    - SDWebImage/Core (= 5.9.4)
-  - SDWebImage/Core (5.9.4)
+  - SDWebImage (5.9.5):
+    - SDWebImage/Core (= 5.9.5)
+  - SDWebImage/Core (5.9.5)
   - SnapKit (4.2.0)
   - Spring (1.0.5)
   - SQLite (0.1.23)
@@ -137,7 +137,7 @@ PODS:
   - TextFieldEffects (1.6.0)
   - Toast (4.0.0)
   - Toast-Swift (5.0.1)
-  - ViewAnimator (3.0.1)
+  - ViewAnimator (3.0.2)
   - XLPagerTabStrip (8.1.0)
   - ZHRefresh (0.1.9)
 
@@ -198,7 +198,7 @@ DEPENDENCIES:
   - ZHRefresh
 
 SPEC REPOS:
-  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireImage
     - AlamofireObjectMapper
@@ -316,7 +316,7 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   RxSwiftExt: 4ca80336f43c28f11a2825cdd2fc61dd6c044697
-  SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
+  SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   Spring: 17901566c8ecf3a1327902b940406c64512f9bb1
   SQLite: 25f557f4203527054287da5ac566b8127ce93ba9
@@ -332,10 +332,10 @@ SPEC CHECKSUMS:
   TextFieldEffects: 529b8aff706fb40f82c41c780c0777941a893796
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
-  ViewAnimator: dd18d2f5c1e472f78d0065ff92750fe56cbd2f39
+  ViewAnimator: 16435576cd44fca0b0d63147d5031fd3e91d295a
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
   ZHRefresh: 876b409acc73dbd10ea4e7967e1f4aea2ef44a53
 
-PODFILE CHECKSUM: 11b00708aa72521a15ff8a015c30cdcb6562eb6d
+PODFILE CHECKSUM: af2bc06c87d11c6e065dcd2f09988b01455f6fbb
 
 COCOAPODS: 1.9.3

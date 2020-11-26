@@ -8,8 +8,8 @@
 #import "HGNotifactionMainView.h"
 #import <SDWebImage/SDWebImage.h>
 #import <Masonry/Masonry.h>
-#import <CL/CL-Swift.h>
-#import <CL/CL.h>
+//#import <CL/CL-Swift.h>
+//#import <CL/CL.h>
 
 @interface HGNotifactionMainView()
 {

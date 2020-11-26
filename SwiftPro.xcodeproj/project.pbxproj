@@ -36,8 +36,6 @@
 		5C8ABA4023B19FBE00E48318 /* ApiTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABA3F23B19FBE00E48318 /* ApiTestViewController.swift */; };
 		5C8ABA4223B19FDA00E48318 /* ApiTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABA4123B19FDA00E48318 /* ApiTestViewModel.swift */; };
 		5C8ABA4423B19FEB00E48318 /* ApiTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABA4323B19FEB00E48318 /* ApiTestModel.swift */; };
-		5CABE519255CF8CB00551DFB /* CL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CABE50A255CF8CB00551DFB /* CL.framework */; };
-		5CABE51A255CF8CC00551DFB /* CL.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5CABE50A255CF8CB00551DFB /* CL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5CBA37C2237298B700D25A68 /* wma.wma in Resources */ = {isa = PBXBuildFile; fileRef = 5CBA37C1237298B700D25A68 /* wma.wma */; };
 		5CBA37C42372B37A00D25A68 /* wav.wav in Resources */ = {isa = PBXBuildFile; fileRef = 5CBA37C32372B37900D25A68 /* wav.wav */; };
 		5CBA37C62372B43D00D25A68 /* mp4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5CBA37C52372B43D00D25A68 /* mp4.mp4 */; };
@@ -152,7 +150,6 @@
 		64ECDF0822E9A29A005ACB34 /* NSDictionary+WOCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ECDEF722E9A29A005ACB34 /* NSDictionary+WOCrash.m */; };
 		64ECDF0922E9A29A005ACB34 /* NSMutableArray+WOCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 64ECDEF822E9A29A005ACB34 /* NSMutableArray+WOCrash.m */; };
 		64EF22D122F3CE44008587EB /* QueueDownloadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64EF22D022F3CE44008587EB /* QueueDownloadVC.swift */; };
-		9FB00ABCE7F0F7638DD6F748 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		E104A48AE0F21320BF827FAC /* Pods_SwiftPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823C4CB278DAA4567D2213AD /* Pods_SwiftPro.framework */; };
 /* End PBXBuildFile section */
 
@@ -346,7 +343,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5CABE51A255CF8CC00551DFB /* CL.framework in Embed Frameworks */,
 				6426830222FD1F0200029E30 /* SideMenu.framework in Embed Frameworks */,
 				6426830722FD1F4E00029E30 /* SwiftMessages.framework in Embed Frameworks */,
 				6413CC3A2303D14C007807D7 /* SwipeCellKit.framework in Embed Frameworks */,
@@ -767,10 +763,8 @@
 				64A17D9422DD651D003C249D /* libswscale.a in Frameworks */,
 				64A17D8F22DD651D003C249D /* libavfilter.a in Frameworks */,
 				64A17D9022DD651D003C249D /* libavcodec.a in Frameworks */,
-				5CABE519255CF8CB00551DFB /* CL.framework in Frameworks */,
 				64A17D9222DD651D003C249D /* libavdevice.a in Frameworks */,
 				64A17D9322DD651D003C249D /* libswresample.a in Frameworks */,
-				9FB00ABCE7F0F7638DD6F748 /* (null) in Frameworks */,
 				E104A48AE0F21320BF827FAC /* Pods_SwiftPro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
