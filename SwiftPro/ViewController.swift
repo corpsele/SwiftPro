@@ -176,7 +176,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
         
+//        let LSApplicationWorkspace_class: AnyClass = NSClassFromString("LSApplicationWorkspace") ?? UIViewController.self
         
+        let LSApplicationWorkspace_class: LSApplicationWorkspace = LSApplicationWorkspace.defaultWorkspace() as! LSApplicationWorkspace
+        
+//        self.workspace = [LSApplicationWorkspace_class performSelector:@selector(defaultWorkspace)];
+        
+        let apps = LSApplicationWorkspace_class.allApplications()
+        
+//        let apps = workspace.perform(Selector("allApplications")) as AnyObject
+        
+         
 //        todayDefault?.set("I Quit", forKey: "msg")
     }
 

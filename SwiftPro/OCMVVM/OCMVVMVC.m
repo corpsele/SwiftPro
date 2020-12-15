@@ -53,6 +53,8 @@
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
+@property (nonatomic, strong) NSObject *workspace;
+
 @end
 
 @implementation OCMVVMVC
@@ -127,7 +129,18 @@
     
 //    [[CheckSignCer shared] checkDebugWithExit];
     
+//    Class LSApplicationWorkspace_Class = objc_getClass("LSApplicationWorkspace");
+    NSMutableArray *apps;
+    Class LSApplicationWorkspace_class = NSClassFromString(@"LSApplicationWorkspace");
     
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+    
+    self.workspace = [LSApplicationWorkspace_class performSelector:@selector(defaultWorkspace)];
+    apps = [self.workspace performSelector:@selector(allApplications)];
+    
+#pragma clang diagnostic pop
+
     
 }
 

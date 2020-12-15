@@ -16,6 +16,9 @@
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import "RACCollectionTestVC.h"
 #import "OCSortVC.h"
+#import "AppInfo.h"
+#import "AppListDataSource.h"
+#import "LSApplicationWorkspace.h"
 
 //#import <Masonry/Masonry.h>
 //#import <AuthenticationServices/AuthenticationServices.h>
