@@ -438,6 +438,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         appShared?.todayDefault?.synchronize()
                         print(appShared?.todayDefault?.object(forKey: "msg"))
                         print("28")
+        case 29:
+            let vc = BaiduTrackVC()
+            navigationController?.pushViewController(vc, animated: true)
         default:
             print(indexPath.row)
         }

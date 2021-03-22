@@ -34,6 +34,7 @@
 		5C4DC9FB248779120078AFDB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C4DC9FA248779120078AFDB /* Cocoa.framework */; };
 		5C4DC9FE248779120078AFDB /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DC9FD248779120078AFDB /* SourceEditorExtension.swift */; };
 		5C4DCA00248779120078AFDB /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4DC9FF248779120078AFDB /* SourceEditorCommand.swift */; };
+		5C6E9930260871600010F585 /* FrameworkManagerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6E992F260871600010F585 /* FrameworkManagerVC.m */; };
 		5C8ABA4023B19FBE00E48318 /* ApiTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABA3F23B19FBE00E48318 /* ApiTestViewController.swift */; };
 		5C8ABA4223B19FDA00E48318 /* ApiTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABA4123B19FDA00E48318 /* ApiTestViewModel.swift */; };
 		5C8ABA4423B19FEB00E48318 /* ApiTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8ABA4323B19FEB00E48318 /* ApiTestModel.swift */; };
@@ -60,6 +61,7 @@
 		5CEC742323D454DD00B81CF1 /* OCSortVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CEC742123D454DD00B81CF1 /* OCSortVC.xib */; };
 		5CEC742623D454F600B81CF1 /* OCSortVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC742523D454F600B81CF1 /* OCSortVM.m */; };
 		5CEC742923D4553700B81CF1 /* OCSortTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC742823D4553700B81CF1 /* OCSortTest.m */; };
+		5CEDF2AB25C3F52100E30336 /* BaiduTrackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDF2AA25C3F52100E30336 /* BaiduTrackVC.swift */; };
 		5CF07D032428910200688E99 /* IUMEncryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF07D022428910200688E99 /* IUMEncryptor.m */; };
 		5CF7013A24F8DE0800999BEC /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF7013924F8DE0800999BEC /* FinderSync.swift */; };
 		5CF7017824F8F06800999BEC /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CF7017724F8F06800999BEC /* QuickLook.framework */; };
@@ -407,6 +409,8 @@
 		5C4DCA01248779120078AFDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C4DCA02248779120078AFDB /* FormatterTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FormatterTest.entitlements; sourceTree = "<group>"; };
 		5C53E4EC256F50E400CD04E3 /* CL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CL.framework; path = Third/CL.framework; sourceTree = "<group>"; };
+		5C6E992E260871600010F585 /* FrameworkManagerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FrameworkManagerVC.h; sourceTree = "<group>"; };
+		5C6E992F260871600010F585 /* FrameworkManagerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FrameworkManagerVC.m; sourceTree = "<group>"; };
 		5C700F7423B30C8E008BF4B5 /* Differentiator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Differentiator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C700F7523B30C8E008BF4B5 /* RxDataSources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxDataSources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C700F8823B30D2E008BF4B5 /* Differentiator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Differentiator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -451,6 +455,7 @@
 		5CEC742523D454F600B81CF1 /* OCSortVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSortVM.m; sourceTree = "<group>"; };
 		5CEC742723D4553700B81CF1 /* OCSortTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCSortTest.h; sourceTree = "<group>"; };
 		5CEC742823D4553700B81CF1 /* OCSortTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OCSortTest.m; sourceTree = "<group>"; };
+		5CEDF2AA25C3F52100E30336 /* BaiduTrackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaiduTrackVC.swift; sourceTree = "<group>"; };
 		5CF07D012428910200688E99 /* IUMEncryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IUMEncryptor.h; sourceTree = "<group>"; };
 		5CF07D022428910200688E99 /* IUMEncryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IUMEncryptor.m; sourceTree = "<group>"; };
 		5CF7013724F8DE0800999BEC /* FinderExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FinderExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -869,6 +874,8 @@
 				5CEC741923D4249000B81CF1 /* SortVC.swift */,
 				5CEC741A23D4249000B81CF1 /* SortVC.xib */,
 				5CEC741D23D4337100B81CF1 /* SortVM.swift */,
+				5C6E992E260871600010F585 /* FrameworkManagerVC.h */,
+				5C6E992F260871600010F585 /* FrameworkManagerVC.m */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -960,6 +967,14 @@
 				5CEC742823D4553700B81CF1 /* OCSortTest.m */,
 			);
 			path = OCMVVM;
+			sourceTree = "<group>";
+		};
+		5CEDF29B25C3F4CD00E30336 /* BaiduMap */ = {
+			isa = PBXGroup;
+			children = (
+				5CEDF2AA25C3F52100E30336 /* BaiduTrackVC.swift */,
+			);
+			path = BaiduMap;
 			sourceTree = "<group>";
 		};
 		5CF07CF2242890CF00688E99 /* Crypto */ = {
@@ -1486,6 +1501,7 @@
 		64DB5EAC22D732110067DD61 /* SwiftPro */ = {
 			isa = PBXGroup;
 			children = (
+				5CEDF29B25C3F4CD00E30336 /* BaiduMap */,
 				5CBF7B0B25875206003F315F /* AppList */,
 				5C3636FF24FCDC0E00274DF4 /* SwiftProDebug.entitlements */,
 				5CF07CF2242890CF00688E99 /* Crypto */,
@@ -2269,6 +2285,7 @@
 				5CEC741E23D4337100B81CF1 /* SortVM.swift in Sources */,
 				5CBF7B2A25875206003F315F /* AppListDataSource.m in Sources */,
 				5CE28A3D23B48570009E196B /* OCMVVMM.m in Sources */,
+				5CEDF2AB25C3F52100E30336 /* BaiduTrackVC.swift in Sources */,
 				64ECDF0022E9A29A005ACB34 /* WOCrashLog.m in Sources */,
 				64BC6C9322E065BE0051A79D /* KxMovieGLView.m in Sources */,
 				64DB5EB022D732110067DD61 /* ViewController.swift in Sources */,
@@ -2292,6 +2309,7 @@
 				645A00A922F80FA500F3BC9B /* CYLBaseTableViewController.m in Sources */,
 				645A00A722F80FA500F3BC9B /* CAAnimation+CYLBadgeExtention.m in Sources */,
 				5C2D2E0323CC63C50067EF17 /* DYTableViewModule.m in Sources */,
+				5C6E9930260871600010F585 /* FrameworkManagerVC.m in Sources */,
 				5CDC1DB123C2E3750060969C /* CheckSignCer.mm in Sources */,
 				64BC6C9C22E155600051A79D /* MainNaviViewController.swift in Sources */,
 				64BC6C9622E065BE0051A79D /* KxMovieDecoder.m in Sources */,

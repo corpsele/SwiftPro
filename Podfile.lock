@@ -6,6 +6,7 @@ PODS:
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
   - AnyFormatKit (2.0.6)
+  - BaiduTraceKit (3.1.3)
   - CocoaLumberjack/Core (3.6.2)
   - CocoaLumberjack/Swift (3.6.2):
     - CocoaLumberjack/Core
@@ -146,6 +147,7 @@ DEPENDENCIES:
   - AlamofireImage
   - AlamofireObjectMapper
   - AnyFormatKit
+  - BaiduTraceKit
   - CocoaLumberjack/Swift
   - CryptoSwift
   - FSCalendar
@@ -203,6 +205,7 @@ SPEC REPOS:
     - AlamofireImage
     - AlamofireObjectMapper
     - AnyFormatKit
+    - BaiduTraceKit
     - CocoaLumberjack
     - CryptoSwift
     - Differentiator
@@ -279,6 +282,7 @@ SPEC CHECKSUMS:
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
   AnyFormatKit: 3401a4e46db072447a4c7656fa5dc06b12b6678c
+  BaiduTraceKit: bbea320e86e5abb7518dcc7649d6a0630235f4f8
   CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
   CryptoSwift: f12f037f6d0fcd6d48c96db0071b653de64e6c4d
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
@@ -336,6 +340,6 @@ SPEC CHECKSUMS:
   XLPagerTabStrip: 22d4c58200d7c105e0e407ab6bfd01a5d85014be
   ZHRefresh: 876b409acc73dbd10ea4e7967e1f4aea2ef44a53
 
-PODFILE CHECKSUM: af2bc06c87d11c6e065dcd2f09988b01455f6fbb
+PODFILE CHECKSUM: 82db2e1cb56040b0c1fc41266a21d6e3970cba49
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

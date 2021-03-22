@@ -43,6 +43,12 @@ class QueueDownloadVC: UIViewController {
         view.addSubview(btnStart2)
         view.addSubview(btnPause2)
         view.addSubview(btnStop2)
+        
+        btnStop2.shake(direction: UIView.ShakeDirection.horizontal, duration: TimeInterval.init(1), animationType: UIView.ShakeAnimationType.easeInOut) {
+            
+        };
+        
+        btnStop1.shake()
 
         btnStart1.snp.makeConstraints { make in
             make.left.equalTo(20.0)

@@ -68,7 +68,9 @@ target 'SwiftPro' do
     pod 'ReactiveObjC'
     pod 'Toast'
     pod "NSLogger"
+    pod 'BaiduTraceKit' #百度鹰眼轨迹SDK
 #    pod 'DYKit'
+#    pod 'AXAnimationChain-Swift'
     
     # Swift 版本声明
     post_install do |installer|
