@@ -71,6 +71,7 @@ target 'SwiftPro' do
     pod 'BaiduTraceKit' #百度鹰眼轨迹SDK
 #    pod 'DYKit'
 #    pod 'AXAnimationChain-Swift'
+    pod "CTAssetsPickerController"
     
     # Swift 版本声明
     post_install do |installer|

@@ -19,6 +19,7 @@
 #import "AppInfo.h"
 #import "AppListDataSource.h"
 #import "LSApplicationWorkspace.h"
+#import "FrameworkManagerVC.h"
 
 //#import <Masonry/Masonry.h>
 //#import <AuthenticationServices/AuthenticationServices.h>

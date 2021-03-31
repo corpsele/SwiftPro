@@ -441,6 +441,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         case 29:
             let vc = BaiduTrackVC()
             navigationController?.pushViewController(vc, animated: true)
+        case 30:
+            windowStatusBar.isHidden = true;
+            let vc = FrameworkManagerVC()
+            navigationController?.pushViewController(vc, animated: true)
         default:
             print(indexPath.row)
         }
